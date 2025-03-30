@@ -2,7 +2,7 @@
 
 export const SkillsIcons = () => {
   return (
-    <section className="py-16 bg-base-100">
+    <section className="py-16 bg-base-100 bg-black">
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap justify-center gap-8">
           {[
