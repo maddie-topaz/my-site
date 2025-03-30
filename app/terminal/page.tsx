@@ -158,9 +158,9 @@ export default function TerminalHero() {
                             />
                         </form>
                     )}
-                </div>
+                </div>             
             </section>
-            {activeComponent === ethosCommand.command && <SkillsIcons />}
+            {activeComponent == ethosCommand.command && <SkillsIcons />}
         </>
     );
 }

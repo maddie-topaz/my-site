@@ -1,30 +1,53 @@
 "use client";
 
-export const SkillsIcons = () => {
+const developerEthos = [
+  { icon: '🧩', title: 'Composability over Complexity', description: 'I favor modular, composable design — breaking problems down into reusable, testable parts to reduce complexity and increase clarity.'},
+  { icon: '🔐', title: 'Types That Tell the Truth', description: 'I treat types as clear contracts — building predictable, resilient systems through type-safe code that boosts maintainability, developer experience, and early bug detection.' },
+  { icon: '🧪', title: 'Test with Purpose, Ship with Confidence', description: 'I use TDD to drive clarity, ensure stability, and enable fearless iteration — letting tests shape design and catch issues before they reach production.' },
+];
+
+const operationsEthos = [
+  { icon: '🚢', title: 'Built to Ship, Built to Scale', description: 'DevOps isn’t a separate phase — it’s embedded into everything I build. From CI/CD pipelines to IAC, I automate the full delivery lifecycle — deployment, testing, monitoring, and analytics — to enable rapid, resilient, and fault-tolerant software delivery.' },            
+  { icon: '🔄', title: 'Feedback-Driven Development', description: 'I build iteratively — testing assumptions early, learning fast, and refining features based on real feedback, not guesswork.' },    
+  { icon: '🩺', title: 'DevOps as a Diagnostic Lens', description: "I use DevOps as more than automation — it's a lens for understanding systems end-to-end. With observability, logging, and continuous feedback loops, I get to the root cause of issues fast and build solutions that last."},
+]
+
+const deliveryEthos = [
+  { icon: '🎯', title: 'Idea to Impact', description: 'I guide features from discovery to delivery, focusing on solving the right problems, not just shipping code. I lead features with a focus on delivering measurable business and user outcomes — not just checking off tasks.' },
+  { icon: '🛠️', title: 'Built to Last, Built to Adapt', description: 'I design cloud systems that are built to scale, stay reliable under pressure, stay secure by design, and optimize performance and cost — all guided by the AWS Well-Architected Framework.' },
+  { icon: '⛓️', title: 'No Broken Links', description: 'I see delivery as a full-stack responsibility — from database migrations to UI polish — ensuring nothing gets dropped between handoffs.'}
+]
+
+
+const EthosSection = ({ ethos, title }: { ethos: typeof developerEthos; title: string }) => {
   return (
     <section className="py-16 bg-base-100 bg-black">
       <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold text-center mb-12">{title}</h2>
         <div className="flex flex-wrap justify-center gap-8">
-          {[
-            { icon: '⚛️', title: 'React Expert', description: 'Building performant UIs with React and Next.js. I specialize in creating reusable components with proper TypeScript typing and accessibility considerations.' },
-            { icon: '📦', title: 'TypeScript', description: 'Type-safe code for better maintainability and developer experience. I leverage advanced TypeScript features to catch bugs at compile time and improve code quality.' },
-            { icon: '☁️', title: 'Cloud Native', description: 'Scalable cloud architectures using AWS, GCP or Azure. I design systems that are resilient, cost-effective and can handle variable workloads.' },
-            { icon: '🧪', title: 'Testing', description: 'Quality through comprehensive automated testing at all levels - unit, integration and end-to-end. I ensure test coverage while maintaining test maintainability.' },
-            { icon: '🚢', title: 'DevOps', description: 'Experience building CI/CD pipelines and infrastructure as code. I automate deployments and monitoring to enable rapid, reliable software delivery.' },
-            { icon: '🔄', title: 'Agile', description: 'Iterative development approach, delivering value early and often is core to how I build software. I facilitate effective collaboration through ceremonies like sprint planning and retrospectives.' }
-          ].map((skill, index) => (
-            <div key={index} className="card w-72 bg-base-100 shadow-xl">
+          {ethos.map((skill, index) => (
+            <div key={index} className="card w-96 bg-base-100 shadow-xl">
               <div className="card-body items-center text-center">
-                <div className="w-20 h-20 rounded-full bg-base-200 flex items-center justify-center text-3xl mb-2">
+                <div className="w-24 h-24 rounded-full bg-base-200 flex items-center justify-center text-4xl mb-4">
                   {skill.icon}
                 </div>
-                <h3 className="text-lg font-semibold">{skill.title}</h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400">{skill.description}</p>
+                <h3 className="text-xl font-semibold">{skill.title}</h3>
+                <p className="text-base text-gray-500 dark:text-gray-400 mb-4">{skill.description}</p>
               </div>
             </div>
           ))}
         </div>
       </div>
     </section>
+  );
+};
+
+export const SkillsIcons = () => {
+  return (
+    <div className="bg-black">
+      <EthosSection ethos={developerEthos} title="Developer Ethos" />
+      <EthosSection ethos={operationsEthos} title="Operations Ethos" />
+      <EthosSection ethos={deliveryEthos} title="Delivery Ethos" />
+    </div>
   );
 };
