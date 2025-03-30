@@ -1,65 +1,27 @@
-import { Metadata } from "next"
+"use client";
+
 import { Button } from "components/Button/Button"
-
-import { LP_GRID_ITEMS } from "lp-items"
-
-export const metadata: Metadata = {
-  title: "Maddie - Engineering Portfolio",
-  twitter: {
-    card: "summary_large_image",
-  },
-  openGraph: {
-    url: "",
-    images: [
-      {
-        width: 1200,
-        height: 630,
-        url: "",
-      },
-    ],
-  },
-}
+import { AnimatedTerminal } from "components/AnimatedTerminal";
+import { SkillsIcons } from "components/SkillsIcons";
 
 export default function Web() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-base-100">
       {/* Hero Section */}
       <section className="hero min-h-screen bg-base-200">
         <div className="hero-content text-center">
           <div className="max-w-2xl">
             <h1 className="text-5xl font-bold">Hi 👋 I'm Maddie </h1>
-            <p className="py-6 text-lg">
-            Building systems that scale and ship without friction.
-            </p>
+            <AnimatedTerminal />
           </div>
         </div>
       </section>
 
       {/* Skills Icons Section */}
-      <section className="py-16 bg-base-100">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-8">
-            {[
-              { icon: '⚛️', title: 'React Expert', description: 'Building performant UIs with React' },
-              { icon: '📦', title: 'TypeScript', description: 'Type-safe code for better maintainability' },
-              { icon: '☁️', title: 'Cloud Native', description: 'Scalable cloud architectures' },
-              { icon: '🧪', title: 'Testing', description: 'Quality through comprehensive testing' },
-              { icon: '🚢', title: 'DevOps', description: 'CI/CD pipelines and infrastructure' },
-              { icon: '🔄', title: 'Agile', description: 'Iterative development process' }
-            ].map((skill, index) => (
-              <div key={index} className="flex flex-col items-center">
-                <div className="w-20 h-20 rounded-full bg-base-200 flex items-center justify-center text-3xl mb-2">
-                  {skill.icon}
-                </div>
-                <h3 className="text-lg font-semibold">{skill.title}</h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400">{skill.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <SkillsIcons />
 
-      <section id="about" className="bg-white dark:bg-gray-900 py-8 sm:py-16">
+      {/* About Section */ }
+      <section id="about" className="dark:bg-gray-900 py-8 sm:py-16">
         <div className="mx-auto max-w-(--breakpoint-xl) px-4 lg:px-6">
           <h2 className="mb-8 text-3xl font-bold text-center dark:text-white">About Me</h2>
           <div className="grid gap-8 md:grid-cols-2">

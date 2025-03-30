@@ -1,5 +1,8 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const defaultTheme = require("tailwindcss/defaultTheme")
+import daisyui from "daisyui"
+const typography = require("@tailwindcss/typography")
+
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -81,8 +84,34 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [typography, daisyui],
+  daisyui: {
+    themes: [
+      "light",
+      "dark",
+      "cupcake",
+      "bumblebee",
+      "emerald",
+      "corporate",
+      "synthwave",
+      "retro",
+      "cyberpunk",
+      "valentine",
+      "halloween",
+      "garden",
+      "forest",
+      "aqua",
+      "dracula",
+      "night",
+    ],
+    base: true, // applies background color and foreground color for root element by default
+    styled: true, // include daisyUI colors and design decisions for all components
+    utils: true, // adds responsive and modifier utility classes
+    prefix: "", // prefix for daisyUI classnames (components, modifiers and responsive class names. Not colors)
+    logs: true, // Shows info about daisyUI version and used config in the console when building your CSS
+    themeRoot: ":root", // The element that receives theme color CSS variables
   future: {
     hoverOnlyWhenSupported: true,
   },
+}
 }
