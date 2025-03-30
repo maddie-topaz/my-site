@@ -5,21 +5,36 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { SkillsIcons } from 'components/SkillsIcons';
 
 export function Help() {
+    const commands = [helpCommand, ethosCommand];
+    
     return (
         <div className="mt-4 text-green-300">
             Available commands:
             <ul className="list-disc list-inside mt-1">
-                <li><kbd className="kbd kbd-sm text-green-400 bg-black border-green-500 border">
-                    help
-                </kbd> — Show available commands</li>
-                <li><kbd className="kbd kbd-sm text-green-400 bg-black border-green-500 border">ethos --show</kbd> — Learn about my technical philosophy</li>
+                {commands.map((cmd, index) => (
+                    <li key={index}>
+                        <kbd className="kbd kbd-sm text-green-400 bg-black border-green-500 border">
+                            {cmd.command}
+                        </kbd> — {cmd.description}
+                    </li>
+                ))}
                 <li><kbd className="kbd kbd-sm text-green-400 bg-black border-green-500 border">clear</kbd> — Clear the terminal</li>
             </ul>
         </div>
     );
 }
 
-type Command = 'skills --show' | 'help';
+const ethosCommand = {
+    command: 'ethos --show',
+    description: 'Learn about my technical philosophy', 
+}
+
+const helpCommand = {
+    command: 'help',
+    description: 'Show available commands',
+}
+
+type Command = typeof ethosCommand.command | typeof helpCommand.command;
 
 export default function TerminalHero() {
     const [typedLine, setTypedLine] = useState('');
@@ -72,7 +87,7 @@ export default function TerminalHero() {
         const cmd = input.trim().toLowerCase() as Command;
         setLines((prev) => [...prev, `> ${input}`]);
 
-        if (cmd === 'skills --show' || cmd === 'help') {
+        if (cmd === 'ethos --show' || cmd === 'help') {
             setActiveComponent(cmd);
         } else {
             setLines((prev) => [
@@ -83,7 +98,6 @@ export default function TerminalHero() {
             ]);
             setActiveComponent(null);
         }
-
         setInput('');
     };
 
@@ -128,10 +142,8 @@ export default function TerminalHero() {
                                 </motion.div>
                             ))}
                         </AnimatePresence>
-                        {activeComponent === 'help' && <Help />}
+                        {activeComponent === helpCommand.command && <Help />}
                     </div>
-
-
 
                     {isIntroDone && (
                         <form onSubmit={handleInput} className="flex items-center p-4 border-t border-green-600">
@@ -148,7 +160,7 @@ export default function TerminalHero() {
                     )}
                 </div>
             </section>
-            {activeComponent === 'ethos --show' && <SkillsIcons />}
+            {activeComponent === ethosCommand.command && <SkillsIcons />}
         </>
     );
 }
