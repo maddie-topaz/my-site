@@ -32,8 +32,7 @@ const helpCommand = {
 
 const experienceCommand = {
   command: "experience --show",
-  description:
-    "View a curated list of my past projects",
+  description: "View a curated list of my past projects",
 }
 
 const contactCommand = {

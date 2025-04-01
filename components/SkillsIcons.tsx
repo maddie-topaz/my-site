@@ -105,7 +105,7 @@ const EthosSection = ({ ethos, title }: { ethos: typeof developerEthos; title: s
           {ethos.map((skill, index) => (
             <motion.div
               key={index}
-              className="card bg-base-200 w-96 shadow-xl cursor-pointer"
+              className="card bg-base-200 w-96 cursor-pointer shadow-xl"
               initial="hidden"
               whileInView="visible"
               whileHover="hover"

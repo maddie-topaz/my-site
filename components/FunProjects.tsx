@@ -1,25 +1,25 @@
-"use client";
+"use client"
 
-import { motion } from "framer-motion";
-import { FaGithub } from "react-icons/fa";
+import { motion } from "framer-motion"
+import { FaGithub } from "react-icons/fa"
 
 const funProjects = [
   {
     title: "CLI Mood Generator",
     description: "A terminal tool that suggests synthwave playlists based on your mood.",
-    link: "https://github.com/yourname/mood-cli"
+    link: "https://github.com/yourname/mood-cli",
   },
   {
     title: "ASCII Animator",
     description: "Render animated waveforms in ASCII. Because why not.",
-    link: "https://github.com/yourname/ascii-animator"
+    link: "https://github.com/yourname/ascii-animator",
   },
   {
     title: "Synthwave Sticker Picker",
     description: "Randomly selects one of your 80s-style glitter sticker concepts with die-cut preview.",
-    link: "https://github.com/yourname/sticker-picker"
-  }
-];
+    link: "https://github.com/yourname/sticker-picker",
+  },
+]
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -28,14 +28,14 @@ const fadeInUp = {
     y: 0,
     transition: { delay, duration: 0.6, ease: "easeOut" },
   }),
-};
+}
 
 const FunProjects = () => {
   return (
-    <section className="py-20 bg-base-200 dark:bg-base-300 text-center">
-      <div className="container mx-auto px-4 max-w-4xl">
+    <section className="bg-base-200 dark:bg-base-300 py-20 text-center">
+      <div className="container mx-auto max-w-4xl px-4">
         <motion.h2
-          className="text-4xl font-bold mb-6 dark:text-white"
+          className="mb-6 text-4xl font-bold dark:text-white"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -45,7 +45,7 @@ const FunProjects = () => {
         </motion.h2>
 
         <motion.p
-          className="text-lg text-gray-700 dark:text-gray-300 mb-12"
+          className="mb-12 text-lg text-gray-700 dark:text-gray-300"
           initial="hidden"
           whileInView="visible"
           custom={0.1}
@@ -55,19 +55,19 @@ const FunProjects = () => {
           Experimental tools, weird CLI utilities, and synthwave side quests.
         </motion.p>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid gap-8 md:grid-cols-2">
           {funProjects.map((project, idx) => (
             <motion.div
               key={project.title}
-              className="bg-base-100 dark:bg-black p-6 rounded-xl shadow-md hover:shadow-lg text-left"
+              className="bg-base-100 rounded-xl p-6 text-left shadow-md hover:shadow-lg dark:bg-black"
               initial="hidden"
               whileInView="visible"
               custom={0.2 + idx * 0.1}
               variants={fadeInUp}
               viewport={{ once: true }}
             >
-              <h3 className="text-xl font-semibold mb-2 dark:text-white">{project.title}</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">{project.description}</p>
+              <h3 className="mb-2 text-xl font-semibold dark:text-white">{project.title}</h3>
+              <p className="mb-4 text-sm text-gray-600 dark:text-gray-400">{project.description}</p>
               <a
                 href={project.link}
                 target="_blank"
@@ -81,7 +81,7 @@ const FunProjects = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default FunProjects;
+export default FunProjects

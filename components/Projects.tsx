@@ -1,15 +1,15 @@
 "use client"
 
 import Image from "next/image"
+import { SiAmazon, SiAmazondynamodb, SiNodedotjs, SiReact, SiTypescript } from "react-icons/si"
 import { Button } from "components/Button/Button"
-import { SiAmazon, SiTypescript, SiNodedotjs, SiAmazondynamodb, SiReact } from "react-icons/si"
 
 const projects = [
   {
-    id: "chumba-notifications",
-    title: "From Signup to Ping: Real-Time Notifications & Verification Systems at Chumba",
+    id: "chumba-phone-verify",
+    title: "Seamless Phone Verification for Chumba Casino",
     description:
-      "Led the design and implementation of a scalable notification system and phone verification flow to improve user engagement and platform trust. Built with AWS, feature flags, and real-time event triggers.",
+      "Built a secure and frictionless phone verification system to enhance user trust and boost verified signups.",
     image: "/images/chumba.webp",
     tech: [SiAmazon, SiTypescript, SiNodedotjs],
   },
@@ -39,19 +39,19 @@ export const Projects = () => {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map(({ id, image, description, title, tech }) => (
             <div key={id} className="card bg-base-100 shadow-xl transition-transform duration-300 hover:scale-[1.02]">
-              <figure className="bg-base-200 relative h-48 overflow-hidden">
-                <Image 
-                  src={image} 
-                  alt={title} 
-                  fill 
-                  className="object-cover transition-opacity duration-300 hover:opacity-90" 
+              <figure className="bg-base-200 relative h-[400px] overflow-hidden">
+                <Image
+                  src={image}
+                  alt={title}
+                  fill
+                  className="object-cover transition-opacity duration-300 hover:opacity-90"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </figure>
               <div className="card-body p-6">
                 <h3 className="card-title text-lg font-semibold">{title}</h3>
-                <p className="mt-2 text-sm text-gray-400 dark:text-gray-300 line-clamp-3">{description}</p>
-                <div className="flex gap-2 mt-4">
+                <p className="mt-2 line-clamp-3 text-sm text-gray-400 dark:text-gray-300">{description}</p>
+                <div className="mt-4 flex gap-2">
                   {tech.map((Icon, index) => (
                     <Icon key={index} className="h-5 w-5 text-gray-500 dark:text-gray-300" />
                   ))}

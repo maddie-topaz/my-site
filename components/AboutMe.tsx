@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion"
 import { BsDiagram3 } from "react-icons/bs"
-import { FiMonitor, FiTool } from "react-icons/fi"
+import { FiLayers, FiMonitor, FiTool } from "react-icons/fi"
+import { LuBrain } from "react-icons/lu"
 import { SiAmazon, SiDocker, SiNodedotjs, SiPostgresql, SiReact, SiTypescript } from "react-icons/si"
 import { TbTestPipe } from "react-icons/tb"
 
@@ -41,9 +42,11 @@ const skillItems = [
     category: "Practices",
     skills: [
       { name: "Test-Driven Development (TDD)", icon: TbTestPipe },
+      { name: "Building with AI in the Loop", icon: LuBrain },
       { name: "CI/CD Pipelines", icon: BsDiagram3 },
       { name: "Infrastructure as Code (IaC)", icon: FiTool },
       { name: "Observability & Monitoring", icon: FiMonitor },
+      { name: "End-to-End Ownership", icon: FiLayers },
     ],
   },
 ]
@@ -53,7 +56,7 @@ export const AboutMe = () => {
     <section id="about" className="bg-base-300 py-8 sm:py-16">
       <div className="mx-auto max-w-screen-xl px-4 lg:px-6">
         <motion.h2
-          className="mb-8 text-center text-3xl font-bold dark:text-white"
+          className="mb-8 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-center text-3xl font-bold text-transparent"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -64,33 +67,90 @@ export const AboutMe = () => {
 
         <div className="grid gap-12 md:grid-cols-2">
           {/* Text Content */}
-          <div>
-            {[
-              `I'm Maddie — a software engineer with a background in full-stack development, cloud architecture, and real-time graphics programming. I always wanted to be a programmer, but for a long time I assumed you had to be a maths genius to make it in tech. I started in business admin, until I found myself constantly peeking over at the programming coursework. A tech lecturer noticed, handed me a brochure, and suggested I switch. I did — and I haven’t looked back since.`,
-              `Since then, I’ve worked across the stack — from designing OpenGL rendering engines to building experimentation platforms and disaster recovery systems at Atlassian. I’ve led end-to-end feature development for high-traffic products like Chumba Casino and built systems to safeguard petabytes of user-generated content in AWS.`,
-              `Over time, my passion has gravitated toward developer experience, tooling, and DevOps. Books like *Accelerate* and *The Phoenix Project* didn’t just teach me about delivery practices — they helped me rethink what great engineering looks like. I began to see software delivery as a living system: shaped by feedback, guided by data, and deeply influenced by the tools we adopt. I stopped seeing culture as a starting point and started seeing it as something we create through the systems we build together.`,
-              `Today, I build with a platform mindset and a DevOps heart — focused on clarity, resilience, and full-stack responsibility from infrastructure to interface. My core stack includes TypeScript, Node.js, React, PostgreSQL, AWS, Docker, and Pulumi. Whether I’m building experimentation frameworks, automation pipelines, or UI tooling, I care deeply about enabling teams to ship software with confidence and purpose.`,
-            ].map((text, i) => (
-              <motion.p
-                key={i}
-                className="mb-6 leading-relaxed text-gray-400 dark:text-gray-100"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                custom={i * 0.1}
-                variants={fadeInUp}
+          <div className="max-w-prose">
+            <motion.h3 className="mt-0 mb-2 text-lg font-semibold text-white">From Curiosity to Code</motion.h3>
+            <motion.p
+              className="mb-5 leading-relaxed text-gray-400 dark:text-gray-100"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={0.0}
+              variants={fadeInUp}
+            >
+              I'm Maddie — a software engineer with a background in full-stack development, cloud architecture, and
+              real-time graphics programming. I always wanted to be a programmer, but for a long time I assumed you had
+              to be a maths genius to make it in tech. I started in business admin, until I found myself constantly
+              peeking over at the programming coursework. A tech lecturer noticed, handed me a brochure, and suggested I
+              switch. I did — and I haven’t looked back since.
+            </motion.p>
+
+            <motion.h3 className="mt-6 mb-2 text-lg font-semibold text-white">Engineering at Scale</motion.h3>
+            <motion.p
+              className="mb-5 leading-relaxed text-gray-400 dark:text-gray-100"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={0.1}
+              variants={fadeInUp}
+            >
+              Since then, I’ve worked across the stack — from designing{" "}
+              <span className="font-medium text-blue-400">OpenGL</span> rendering engines to building experimentation
+              platforms and disaster recovery systems at <span className="font-medium text-blue-400">Atlassian</span>.
+              I’ve led end-to-end feature development for high-traffic products like{" "}
+              <span className="font-medium text-blue-400">Chumba Casino</span> and built systems to safeguard{" "}
+              <span className="font-medium text-blue-400">petabytes</span> of user-generated content in{" "}
+              <span className="font-medium text-blue-400">AWS</span>.
+            </motion.p>
+
+            <motion.h3 className="mt-6 mb-2 text-lg font-semibold text-white">How I Build</motion.h3>
+            <motion.p
+              className="mb-5 leading-relaxed text-gray-400 dark:text-gray-100"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={0.2}
+              variants={fadeInUp}
+            >
+              Today, I build with a <span className="font-medium text-blue-400">platform mindset</span> and a{" "}
+              <span className="font-medium text-blue-400">DevOps heart</span> — focused on clarity, resilience, and
+              full-stack responsibility from infrastructure to interface. My core stack includes{" "}
+              <span className="font-medium text-blue-400">TypeScript</span>,{" "}
+              <span className="font-medium text-blue-400">Node.js</span>,{" "}
+              <span className="font-medium text-blue-400">React</span>,{" "}
+              <span className="font-medium text-blue-400">PostgreSQL</span>,{" "}
+              <span className="font-medium text-blue-400">AWS</span>,{" "}
+              <span className="font-medium text-blue-400">Docker</span>, and{" "}
+              <span className="font-medium text-blue-400">Pulumi</span>.
+            </motion.p>
+
+            <motion.p
+              className="mb-6 border-l-4 border-blue-500 pl-4 text-gray-300 italic"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={0.3}
+              variants={fadeInUp}
+            >
+              Over time, my passion has gravitated toward developer experience, tooling, and DevOps. Books like{" "}
+              <a
+                href="https://itrevolution.com/accelerate"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 underline hover:text-blue-600"
               >
-                {text.includes("*") ? (
-                  <span
-                    dangerouslySetInnerHTML={{
-                      __html: text.replace(/\*(.*?)\*/g, "<em>$1</em>"),
-                    }}
-                  />
-                ) : (
-                  text
-                )}
-              </motion.p>
-            ))}
+                Accelerate
+              </a>{" "}
+              and{" "}
+              <a
+                href="https://itrevolution.com/the-phoenix-project"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 underline hover:text-blue-600"
+              >
+                The Phoenix Project
+              </a>{" "}
+              didn’t just teach me about delivery practices — they helped me rethink what great engineering looks like.
+            </motion.p>
           </div>
 
           {/* Skills Section */}
@@ -121,22 +181,18 @@ export const AboutMe = () => {
                   <h4 className="mb-3 text-xs font-semibold tracking-wide text-gray-500 uppercase dark:text-gray-400">
                     {group.category}
                   </h4>
-                  <div
-                    className={
-                      group.category === "Practices" ? "grid grid-cols-1 gap-6" : "grid grid-cols-2 gap-x-6 gap-y-6"
-                    }
-                  >
+                  <div className={"grid grid-cols-2 gap-x-6 gap-y-6"}>
                     {group.skills.map(({ name, icon: Icon }, i) => (
                       <motion.div
                         key={name}
-                        className="mb-4 flex items-center gap-3 transition-opacity duration-200 hover:opacity-80"
+                        className="hover:bg-base-100/20 mb-4 flex items-center gap-3 rounded-lg px-2 py-2 transition-all duration-300 hover:scale-105 hover:shadow-md"
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true }}
                         custom={(groupIdx + i) * 0.1}
                         variants={fadeInUp}
                       >
-                        <Icon className="text-3xl text-blue-600 dark:text-blue-300" />
+                        <Icon className="text-3xl text-blue-600 transition-transform duration-300 dark:text-blue-300" />
                         <span className="text-sm text-gray-400 dark:text-gray-100">{name}</span>
                       </motion.div>
                     ))}
