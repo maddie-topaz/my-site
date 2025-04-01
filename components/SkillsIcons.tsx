@@ -30,8 +30,9 @@ const deliveryEthos = [
 ];
 
 const EthosSection = ({ ethos, title }: { ethos: typeof developerEthos; title: string }) => {
+  const isPractices = title === "Developer Ethos";
   return (
-    <section className="py-16 bg-base-100 bg-black">
+    <section className="py-16 bg-base-100">
       <div className="container mx-auto px-4">
         <motion.h2
           className="text-3xl font-bold text-center mb-12"
@@ -46,7 +47,7 @@ const EthosSection = ({ ethos, title }: { ethos: typeof developerEthos; title: s
           {ethos.map((skill, index) => (
             <motion.div
               key={index}
-              className="card w-96 bg-base-100 shadow-xl"
+              className="card w-96 bg-base-200 shadow-xl"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}

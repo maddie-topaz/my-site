@@ -57,7 +57,7 @@ const skillItems = [
 
 export const AboutMe = () => {
   return (
-    <section id="about" className="dark:bg-gray-900 py-8 sm:py-16">
+    <section id="about" className="bg-base-300 py-8 sm:py-16">
       <div className="mx-auto max-w-screen-xl px-4 lg:px-6">
         <motion.h2
           className="mb-8 text-3xl font-bold text-center dark:text-white"
