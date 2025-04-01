@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import React, { useEffect, useState } from "react"
 import { SkillsIcons } from "components/SkillsIcons"
 
-export function Help() {
+function Help() {
   return (
     <div className="mt-4 text-green-300">
       Available commands:
