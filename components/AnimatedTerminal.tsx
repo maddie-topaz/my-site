@@ -3,15 +3,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-const btaglines = [
-  "Building scalable systems",
-  "Shipping without friction",
-  "Creating elegant solutions",
-  "Optimizing developer experience",
-  "Builds that don’t break",
-  "Engineer by trade, problem solver by instinct",
-];
-
 const taglines = [
  "$ git commit -m 'automate everything'",
  "$ deploy --env=production --safe",
