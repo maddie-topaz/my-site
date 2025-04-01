@@ -3,16 +3,28 @@
 import { Button } from "components/Button/Button"
 import { AnimatedTerminal } from "components/AnimatedTerminal";
 import { SkillsIcons } from "components/SkillsIcons";
+import { AboutMe } from "components/AboutMe";
 
 export default function Web() {
   return (
     <div className="flex flex-col min-h-screen bg-base-100">
       {/* Hero Section */}
-      <section className="hero min-h-screen bg-base-200">
-        <div className="hero-content text-center">
-          <div className="max-w-2xl">
-            <h1 className="text-5xl font-bold">Hi 👋 I'm Maddie </h1>
+      <section className="hero min-h-screen bg-base-200 px-4">
+        <div className="hero-content flex-col lg:flex-row-reverse gap-12 lg:gap-24">
+          <div className="w-full lg:w-1/2 flex justify-center">
             <AnimatedTerminal />
+          </div>
+          <div className="w-full lg:w-1/2 text-center lg:text-left">
+            <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
+              <span className="text-primary">Hi</span> 👋 I'm Maddie
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 font-medium text-primary-content animate-fade-in-up opacity-0">
+              Full-stack engineer with a <span className="font-bold">platform mindset</span> and a <span className="font-bold">DevOps heart</span>.
+            </p>
+            <div className="flex gap-4 justify-center lg:justify-start">
+              <button className="btn btn-primary btn-lg">View Projects</button>
+              <button className="btn btn-outline btn-lg">Contact Me</button>
+            </div>
           </div>
         </div>
       </section>
@@ -20,32 +32,8 @@ export default function Web() {
       {/* Skills Icons Section */}
       <SkillsIcons />
 
-      {/* About Section */ }
-      <section id="about" className="dark:bg-gray-900 py-8 sm:py-16">
-        <div className="mx-auto max-w-(--breakpoint-xl) px-4 lg:px-6">
-          <h2 className="mb-8 text-3xl font-bold text-center dark:text-white">About Me</h2>
-          <div className="grid gap-8 md:grid-cols-2">
-            <div>
-              <p className="text-gray-500 dark:text-gray-400 mb-4">
-                I'm a passionate engineer with 5+ years of experience building web applications.
-              </p>
-              <p className="text-gray-500 dark:text-gray-400">
-                My expertise includes React, Node.js, and cloud infrastructure.
-              </p>
-            </div>
-            <div>
-              <h3 className="mb-4 text-xl font-bold dark:text-white">Skills</h3>
-              <div className="flex flex-wrap gap-2">
-                {['JavaScript', 'TypeScript', 'React', 'Node.js', 'AWS', 'Docker'].map((skill) => (
-                  <span key={skill} className="px-3 py-1 text-sm bg-blue-100 text-blue-800 rounded-full dark:bg-blue-900 dark:text-blue-200">
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* About Section */}
+      <AboutMe />
 
       {/* Projects Section */}
       <section id="projects" className="py-16 bg-base-100">

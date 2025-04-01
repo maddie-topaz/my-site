@@ -5,20 +5,17 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { SkillsIcons } from 'components/SkillsIcons';
 
 export function Help() {
-    const commands = [helpCommand, ethosCommand];
-    
     return (
         <div className="mt-4 text-green-300">
             Available commands:
             <ul className="list-disc list-inside mt-1">
-                {commands.map((cmd, index) => (
+                {allCommands.map((cmd, index) => (
                     <li key={index}>
                         <kbd className="kbd kbd-sm text-green-400 bg-black border-green-500 border">
                             {cmd.command}
                         </kbd> — {cmd.description}
                     </li>
                 ))}
-                <li><kbd className="kbd kbd-sm text-green-400 bg-black border-green-500 border">clear</kbd> — Clear the terminal</li>
             </ul>
         </div>
     );
@@ -34,7 +31,36 @@ const helpCommand = {
     description: 'Show available commands',
 }
 
-type Command = typeof ethosCommand.command | typeof helpCommand.command;
+const experienceCommand = {
+    command: 'experience --show',
+    description: 'View a curated list of my past projects — complete with tech stacks, key features, and what I learned along the way.',
+}
+
+const contactCommand = {
+    command: 'contact',
+    description: 'Get in touch with me',
+}
+
+const aboutMeCommand = {
+    command: 'about',
+    description: 'Learn more about me', 
+}
+
+const clearCommand = {
+    command: 'clear',
+    description: 'Clear the terminal',
+}
+
+const allCommands = [
+    helpCommand,
+    ethosCommand,
+    experienceCommand,
+    contactCommand,
+    aboutMeCommand,
+    clearCommand
+];
+
+type Command = typeof ethosCommand.command | typeof helpCommand.command | typeof experienceCommand.command | typeof contactCommand.command | typeof aboutMeCommand.command | typeof clearCommand.command;
 
 export default function TerminalHero() {
     const [typedLine, setTypedLine] = useState('');

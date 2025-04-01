@@ -3,12 +3,32 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-const taglines = [
+const btaglines = [
   "Building scalable systems",
   "Shipping without friction",
   "Creating elegant solutions",
   "Optimizing developer experience",
+  "Builds that don’t break",
+  "Engineer by trade, problem solver by instinct",
 ];
+
+const taglines = [
+ "$ git commit -m 'automate everything'",
+ "$ deploy --env=production --safe",
+ "# Monitoring is mindfulness for machines.",
+ "✔ Tests: 213 passed, 0 failed",
+ "# DevOps is culture, not config.",
+ "$ rm -rf manual-tasks",
+ "$ nuke clickops --from orbit",
+ "$ docker-compose up -d",
+ "types !== suggestions; types === contracts",
+ "🚧 red → green → refactor",
+ "small units. strong guarantees.",
+ "📈 metrics > intuition",
+ "$ secure && scale && serve",
+ "$ ./migrate.sh --safe --no-downtime",
+ "$ mkdir -p /systems/composable",
+]
 
 const TYPING_SPEED = 60;
 const DELETING_SPEED = 40;
@@ -48,14 +68,14 @@ export const AnimatedTerminal = () => {
   }, [displayedText, isDeleting, taglineIndex]);
 
   return (
-    <div className="py-6">
+    <div className="py-6 w-full">
       <motion.div
-        className="mockup-code bg-neutral-900 text-green-400 text-left p-4 max-w-md mx-auto border-2 border-neutral-700 rounded-lg"
+        className="mockup-code bg-neutral-900 text-green-400 text-left p-4 w-[600px] mx-auto border-2 border-neutral-700 rounded-lg"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <pre data-prefix="$" className="text-pink-500">
+        <pre className="text-pink-500 pl-4">
           <motion.span
             className="text-lg inline-block font-mono"
             key={taglineIndex}
