@@ -23,6 +23,27 @@ const projects = [
     description:
       'Built a disaster recovery pipeline in AWS to ensure backup integrity across S3, Lambda, and DynamoDB for millions of assets, with observability and alerting baked in.',
     image: '/images/notifications.png'
+  },
+  {
+    id: 'ms3d',
+    title: 'Real-Time 3D Rendering Engine',
+    description:
+      'Real-Time 3D Rendering Engine',
+    image: '/images/notifications.png'
+  },
+  {
+    id: 'aa',
+    title: 'Real-Time 3D Rendering Engine',
+    description:
+      'Real-Time 3D Rendering Engine',
+    image: '/images/notifications.png'
+  },
+  {
+    id: 'ab',
+    title: 'Real-Time 3D Rendering Engine',
+    description:
+      'Real-Time 3D Rendering Engine',
+    image: '/images/notifications.png'
   }
 ];
 

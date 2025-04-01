@@ -15,8 +15,18 @@ export const Hero = () => {
             Full-stack engineer with a <span className="font-bold">platform mindset</span> and a <span className="font-bold">DevOps heart</span>.
           </p>
           <div className="flex gap-4 justify-center lg:justify-start">
-            <button className="btn btn-primary btn-lg">View Projects</button>
-            <button className="btn btn-outline btn-lg">Contact Me</button>
+            <button 
+  className="btn btn-primary btn-lg" 
+  onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+>
+  View Projects
+</button>
+            <button 
+  className="btn btn-outline btn-lg" 
+  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+>
+  Contact Me
+</button>
           </div>
         </div>
       </div>
