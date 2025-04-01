@@ -99,7 +99,7 @@ export default function TerminalHero() {
     for (let i = 0; i < introLines.length; i++) {
       await new Promise((res) => {
         setTimeout(() => {
-          setLines((prev) => [...prev, introLines[i]])
+          setLines((prev) => [...prev, introLines[i] as string])
           res(true)
         }, 500)
       })
