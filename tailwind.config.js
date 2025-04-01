@@ -3,7 +3,6 @@ const defaultTheme = require("tailwindcss/defaultTheme")
 import daisyui from "daisyui"
 const typography = require("@tailwindcss/typography")
 
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: "class",
@@ -18,13 +17,13 @@ module.exports = {
   theme: {
     extend: {
       keyframes: {
-        'fade-in-up': {
-          '0%': { opacity: '0', transform: 'translateY(0.5rem)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
+        "fade-in-up": {
+          "0%": { opacity: "0", transform: "translateY(0.5rem)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
       animation: {
-        'fade-in-up': 'fade-in-up 0.8s ease-out forwards',
+        "fade-in-up": "fade-in-up 0.8s ease-out forwards",
       },
       colors: {
         primary: {
@@ -119,8 +118,8 @@ module.exports = {
     prefix: "", // prefix for daisyUI classnames (components, modifiers and responsive class names. Not colors)
     logs: true, // Shows info about daisyUI version and used config in the console when building your CSS
     themeRoot: ":root", // The element that receives theme color CSS variables
-  future: {
-    hoverOnlyWhenSupported: true,
+    future: {
+      hoverOnlyWhenSupported: true,
+    },
   },
-}
 }

@@ -17,7 +17,7 @@ const config: NextConfig = {
     { source: "/ping", destination: "/api/health" },
   ],
   images: {
-    domains: ['stackoverflow.com'],
+    domains: ["stackoverflow.com"],
   },
 }
 

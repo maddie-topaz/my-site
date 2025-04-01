@@ -1,11 +1,11 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import { Dialog } from "@headlessui/react";
-import { HiOutlineMail } from "react-icons/hi";
+import { Dialog } from "@headlessui/react"
+import { useState } from "react"
+import { HiOutlineMail } from "react-icons/hi"
 
 export const ContactFormModal = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <>
@@ -17,48 +17,36 @@ export const ContactFormModal = () => {
         <HiOutlineMail className="h-8 w-8 text-gray-700 dark:text-gray-200" />
       </button>
 
-      <Dialog
-        open={isOpen}
-        onClose={() => setIsOpen(false)}
-        className="fixed z-50 inset-0 overflow-y-auto"
-      >
-        <div className="flex items-center justify-center min-h-screen px-4">
-          <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm" />
+      <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="fixed inset-0 z-50 overflow-y-auto">
+        <div className="flex min-h-screen items-center justify-center px-4">
+          <div className="bg-opacity-50 fixed inset-0 bg-black backdrop-blur-sm" />
 
-          <div className="relative bg-base-100 dark:bg-gray-900 text-gray-900 dark:text-white rounded-lg shadow-xl p-8 w-full max-w-lg z-50">
-            <Dialog.Title className="text-2xl font-bold mb-4">Contact Me</Dialog.Title>
-            <form
-              method="POST"
-              action="https://formspree.io/f/your-form-id"
-              className="space-y-4"
-            >
+          <div className="bg-base-100 relative z-50 w-full max-w-lg rounded-lg p-8 text-gray-900 shadow-xl dark:bg-gray-900 dark:text-white">
+            <Dialog.Title className="mb-4 text-2xl font-bold">Contact Me</Dialog.Title>
+            <form method="POST" action="https://formspree.io/f/your-form-id" className="space-y-4">
               <input
                 type="text"
                 name="name"
                 placeholder="Your Name"
                 required
-                className="w-full px-4 py-2 border rounded bg-base-200 dark:bg-base-300"
+                className="bg-base-200 dark:bg-base-300 w-full rounded border px-4 py-2"
               />
               <input
                 type="email"
                 name="email"
                 placeholder="Your Email"
                 required
-                className="w-full px-4 py-2 border rounded bg-base-200 dark:bg-base-300"
+                className="bg-base-200 dark:bg-base-300 w-full rounded border px-4 py-2"
               />
               <textarea
                 name="message"
                 rows={4}
                 placeholder="Your Message"
                 required
-                className="w-full px-4 py-2 border rounded bg-base-200 dark:bg-base-300"
+                className="bg-base-200 dark:bg-base-300 w-full rounded border px-4 py-2"
               />
               <div className="flex justify-end gap-4">
-                <button
-                  type="button"
-                  className="btn btn-ghost"
-                  onClick={() => setIsOpen(false)}
-                >
+                <button type="button" className="btn btn-ghost" onClick={() => setIsOpen(false)}>
                   Cancel
                 </button>
                 <button type="submit" className="btn btn-primary">
@@ -70,5 +58,5 @@ export const ContactFormModal = () => {
         </div>
       </Dialog>
     </>
-  );
-};
+  )
+}

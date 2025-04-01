@@ -1,15 +1,14 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import { FaLinkedin } from "react-icons/fa";
-import { ContactFormModal } from "./ContactFormModal";
-import { motion } from "framer-motion";
+import { motion } from "framer-motion"
+import { FaLinkedin } from "react-icons/fa"
+import { ContactFormModal } from "./ContactFormModal"
 
 interface SocialButtonProps {
-  href?: string;
-  icon: React.ReactNode;
-  ariaLabel: string;
-  onClick?: () => void;
+  href?: string
+  icon: React.ReactNode
+  ariaLabel: string
+  onClick?: () => void
 }
 
 const fadeInUp = {
@@ -19,34 +18,28 @@ const fadeInUp = {
     y: 0,
     transition: { delay, duration: 0.6, ease: "easeOut" },
   }),
-};
+}
 
 const SocialButton = ({ href, icon, ariaLabel, onClick }: SocialButtonProps) => {
-  const baseClass = "btn btn-circle btn-ghost hover:bg-base-300";
+  const baseClass = "btn btn-circle btn-ghost hover:bg-base-300"
 
   return href ? (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={baseClass}
-      aria-label={ariaLabel}
-    >
+    <a href={href} target="_blank" rel="noopener noreferrer" className={baseClass} aria-label={ariaLabel}>
       {icon}
     </a>
   ) : (
     <button onClick={onClick} className={baseClass} aria-label={ariaLabel}>
       {icon}
     </button>
-  );
-};
+  )
+}
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-20 bg-base-200 dark:bg-black text-center">
-      <div className="container mx-auto px-4 max-w-2xl">
+    <section id="contact" className="bg-base-200 py-20 text-center dark:bg-black">
+      <div className="container mx-auto max-w-2xl px-4">
         <motion.h2
-          className="text-4xl font-bold mb-6 dark:text-white"
+          className="mb-6 text-4xl font-bold dark:text-white"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -56,7 +49,7 @@ const Contact = () => {
         </motion.h2>
 
         <motion.p
-          className="text-lg text-gray-400 dark:text-gray-400 leading-relaxed mb-10"
+          className="mb-10 text-lg leading-relaxed text-gray-400 dark:text-gray-400"
           initial="hidden"
           whileInView="visible"
           custom={0.1}
@@ -79,12 +72,11 @@ const Contact = () => {
             icon={<FaLinkedin className="h-8 w-8 text-gray-700 dark:text-gray-200" />}
             ariaLabel="LinkedIn"
           />
-           <ContactFormModal />
+          <ContactFormModal />
         </motion.div>
-
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact

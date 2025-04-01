@@ -1,14 +1,14 @@
-"use client";
-import { SkillsIcons } from "components/SkillsIcons";
-import { AboutMe } from "components/AboutMe";
-import { Projects } from "components/Projects";
-import { Hero } from "components/Hero";
-import Contact from "components/Contact";
-import { DeveloperPresenceSection } from "components/StackOverflowCard";
+"use client"
+import { AboutMe } from "components/AboutMe"
+import Contact from "components/Contact"
+import { Hero } from "components/Hero"
+import { Projects } from "components/Projects"
+import { SkillsIcons } from "components/SkillsIcons"
+import { DeveloperPresenceSection } from "components/StackOverflowCard"
 
 export default function Web() {
   return (
-    <div className="flex flex-col min-h-screen bg-base-100">
+    <div className="bg-base-100 flex min-h-screen flex-col">
       <Hero />
       <AboutMe />
       <SkillsIcons />

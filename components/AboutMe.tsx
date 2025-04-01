@@ -1,17 +1,10 @@
-"use client";
+"use client"
 
-import {
-  SiTypescript,
-  SiReact,
-  SiNodedotjs,
-  SiAmazon,
-  SiDocker,
-  SiPostgresql,
-} from "react-icons/si";
-import { FiMonitor, FiTool } from "react-icons/fi";
-import { BsDiagram3 } from "react-icons/bs";
-import { TbTestPipe } from "react-icons/tb";
-import { motion } from "framer-motion";
+import { motion } from "framer-motion"
+import { BsDiagram3 } from "react-icons/bs"
+import { FiMonitor, FiTool } from "react-icons/fi"
+import { SiAmazon, SiDocker, SiNodedotjs, SiPostgresql, SiReact, SiTypescript } from "react-icons/si"
+import { TbTestPipe } from "react-icons/tb"
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -20,7 +13,7 @@ const fadeInUp = {
     y: 0,
     transition: { delay, duration: 0.6, ease: "easeOut" },
   }),
-};
+}
 
 const skillItems = [
   {
@@ -53,14 +46,14 @@ const skillItems = [
       { name: "Observability & Monitoring", icon: FiMonitor },
     ],
   },
-];
+]
 
 export const AboutMe = () => {
   return (
     <section id="about" className="bg-base-300 py-8 sm:py-16">
       <div className="mx-auto max-w-screen-xl px-4 lg:px-6">
         <motion.h2
-          className="mb-8 text-3xl font-bold text-center dark:text-white"
+          className="mb-8 text-center text-3xl font-bold dark:text-white"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -80,7 +73,7 @@ export const AboutMe = () => {
             ].map((text, i) => (
               <motion.p
                 key={i}
-                className="text-gray-400 dark:text-gray-100 leading-relaxed mb-6"
+                className="mb-6 leading-relaxed text-gray-400 dark:text-gray-100"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
@@ -112,7 +105,7 @@ export const AboutMe = () => {
               Technical Stack
             </motion.h3>
             <motion.p
-              className="text-gray-400 dark:text-gray-200 mb-6 text-sm"
+              className="mb-6 text-sm text-gray-400 dark:text-gray-200"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -125,14 +118,18 @@ export const AboutMe = () => {
             <div className="space-y-6">
               {skillItems.map((group, groupIdx) => (
                 <div key={group.category} className="mb-6">
-                  <h4 className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-3">
+                  <h4 className="mb-3 text-xs font-semibold tracking-wide text-gray-500 uppercase dark:text-gray-400">
                     {group.category}
                   </h4>
-                  <div className={group.category === 'Practices' ? 'grid grid-cols-1 gap-6' : 'grid grid-cols-2 gap-x-6 gap-y-6'}>
+                  <div
+                    className={
+                      group.category === "Practices" ? "grid grid-cols-1 gap-6" : "grid grid-cols-2 gap-x-6 gap-y-6"
+                    }
+                  >
                     {group.skills.map(({ name, icon: Icon }, i) => (
                       <motion.div
                         key={name}
-                        className="flex items-center gap-3 hover:opacity-80 transition-opacity duration-200 mb-4"
+                        className="mb-4 flex items-center gap-3 transition-opacity duration-200 hover:opacity-80"
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true }}
@@ -151,5 +148,5 @@ export const AboutMe = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
