@@ -1,24 +1,87 @@
-import React from 'react';
+"use client";
+
+import { useState } from "react";
+import { FaLinkedin } from "react-icons/fa";
+import { ContactFormModal } from "./ContactFormModal";
+import { motion } from "framer-motion";
+
+interface SocialButtonProps {
+  href?: string;
+  icon: React.ReactNode;
+  ariaLabel: string;
+  onClick?: () => void;
+}
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (delay = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay, duration: 0.6, ease: "easeOut" },
+  }),
+};
+
+const SocialButton = ({ href, icon, ariaLabel, onClick }: SocialButtonProps) => {
+  const baseClass = "btn btn-circle btn-ghost hover:bg-base-300";
+
+  return href ? (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={baseClass}
+      aria-label={ariaLabel}
+    >
+      {icon}
+    </a>
+  ) : (
+    <button onClick={onClick} className={baseClass} aria-label={ariaLabel}>
+      {icon}
+    </button>
+  );
+};
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-16 bg-base-200">
-      <div className="container mx-auto px-4">
-        <div className="text-center">
-          <h2 className="text-4xl font-bold mb-8">Contact Me</h2>
-          <div className="flex justify-center gap-6">
-            <a href="https://linkedin.com" className="btn btn-circle btn-ghost">
-              <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-              </svg>
-            </a>
-            <a href="mailto:example@email.com" className="btn btn-circle btn-ghost">
-              <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-            </a>
-          </div>
-        </div>
+    <section id="contact" className="py-20 bg-base-200 dark:bg-black text-center">
+      <div className="container mx-auto px-4 max-w-2xl">
+        <motion.h2
+          className="text-4xl font-bold mb-6 dark:text-white"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+        >
+          Contact Me
+        </motion.h2>
+
+        <motion.p
+          className="text-lg text-gray-400 dark:text-gray-400 leading-relaxed mb-10"
+          initial="hidden"
+          whileInView="visible"
+          custom={0.1}
+          variants={fadeInUp}
+          viewport={{ once: true }}
+        >
+          Want to work together, chat dev tools, or just say hi? I’m always open to thoughtful messages.
+        </motion.p>
+
+        <motion.div
+          className="flex justify-center gap-6"
+          initial="hidden"
+          whileInView="visible"
+          custom={0.2}
+          variants={fadeInUp}
+          viewport={{ once: true }}
+        >
+          <SocialButton
+            href="https://www.linkedin.com/in/maddisen-topaz-sw-developer/"
+            icon={<FaLinkedin className="h-8 w-8 text-gray-700 dark:text-gray-200" />}
+            ariaLabel="LinkedIn"
+          />
+           <ContactFormModal />
+        </motion.div>
+
       </div>
     </section>
   );
