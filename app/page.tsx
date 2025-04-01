@@ -5,6 +5,7 @@ import { Hero } from "components/Hero"
 import { Projects } from "components/Projects"
 import { SkillsIcons } from "components/SkillsIcons"
 import { DeveloperPresenceSection } from "components/StackOverflowCard"
+import FunProjects from "components/FunProjects"
 
 export default function Web() {
   return (
@@ -13,6 +14,7 @@ export default function Web() {
       <AboutMe />
       <SkillsIcons />
       <Projects />
+      <FunProjects /> 
       <DeveloperPresenceSection />
       <Contact />
     </div>

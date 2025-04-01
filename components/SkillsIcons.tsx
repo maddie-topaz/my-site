@@ -11,6 +11,14 @@ const fadeInUp = {
   }),
 }
 
+const hoverCard = {
+  hover: {
+    scale: 1.03,
+    rotate: 0.2,
+    transition: { type: "spring", stiffness: 300 },
+  },
+}
+
 const developerEthos = [
   {
     icon: "🧩",
@@ -87,27 +95,38 @@ const EthosSection = ({ ethos, title }: { ethos: typeof developerEthos; title: s
         >
           {title}
         </motion.h2>
-        <div className="flex flex-wrap justify-center gap-8">
+        <motion.div
+          className="flex flex-wrap justify-center gap-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+        >
           {ethos.map((skill, index) => (
             <motion.div
               key={index}
-              className="card bg-base-200 w-96 shadow-xl"
+              className="card bg-base-200 w-96 shadow-xl cursor-pointer"
               initial="hidden"
               whileInView="visible"
+              whileHover="hover"
               viewport={{ once: true }}
               custom={index * 0.1}
-              variants={fadeInUp}
+              variants={{ ...fadeInUp, ...hoverCard }}
             >
               <div className="card-body items-center text-center">
-                <div className="bg-base-200 mb-4 flex h-24 w-24 items-center justify-center rounded-full text-4xl">
+                <motion.div
+                  className="bg-base-200 mb-4 flex h-24 w-24 items-center justify-center rounded-full text-4xl"
+                  whileHover={{ rotate: 8 }}
+                  transition={{ type: "spring", stiffness: 200 }}
+                >
                   {skill.icon}
-                </div>
+                </motion.div>
                 <h3 className="text-xl font-semibold text-white">{skill.title}</h3>
                 <p className="mb-4 text-base text-gray-400">{skill.description}</p>
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )
