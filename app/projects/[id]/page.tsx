@@ -25,9 +25,20 @@ export default function ChumbaCaseStudy() {
             Securing Access at Scale
           </h1>
           <p className="mx-auto max-w-2xl text-xl text-gray-400">
-            Integrating secure, low-friction phone verification with Twilio into Chumba Casino's login flows to reduce
-            fraud and enhance identity assurance.
+            A case study on scaling secure access with real-world identity checks — featuring Twilio integration, KYC readiness,
+            and fraud prevention mechanisms for Chumba Casino.
           </p>
+
+          {/* Table of Contents */}
+          <div className="mt-6 text-sm text-gray-500">
+            <a href="#background" className="mx-2 hover:underline">Background</a>|
+            <a href="#goals" className="mx-2 hover:underline">Goals</a>|
+            <a href="#how-it-works" className="mx-2 hover:underline">How It Works</a>|
+            <a href="#architecture" className="mx-2 hover:underline">Architecture</a>|
+            <a href="#implementation" className="mx-2 hover:underline">Implementation</a>|
+            <a href="#outcomes" className="mx-2 hover:underline">Outcomes</a>
+          </div>
+
           <div className="mt-6 flex justify-center gap-4 text-2xl text-white">
             <SiReact title="React" />
             <SiNodedotjs title="Node.js" />
@@ -37,8 +48,28 @@ export default function ChumbaCaseStudy() {
           </div>
         </motion.div>
 
+        {/* Background & Challenges Section */}
+        <motion.div
+          id="background"
+          className="mt-24"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          custom={0.05}
+          variants={fadeInUp}
+        >
+          <h2 className="mb-4 text-center text-2xl font-bold text-white">🧨 Background & Challenges</h2>
+          <p className="mx-auto max-w-3xl text-center text-gray-400">
+            Chumba Casino faced increasing challenges around account fraud, duplicate signups, and inconsistent verification
+            across multiple login pathways like Facebook OAuth and email/password. To comply with evolving KYC regulations
+            and reduce friction for legitimate users, we set out to build a secure, scalable phone verification system powered
+            by Twilio.
+          </p>
+        </motion.div>
+
         {/* Project Goals Section */}
         <motion.div
+          id="goals"
           className="mt-24"
           initial="hidden"
           whileInView="visible"
@@ -47,31 +78,34 @@ export default function ChumbaCaseStudy() {
           variants={fadeInUp}
         >
           <h2 className="mb-4 text-center text-2xl font-bold text-white">🎯 Project Goals</h2>
+          <p className="mx-auto mb-8 max-w-2xl text-center text-gray-400">
+            We focused on six strategic goals to enhance identity assurance, reduce abuse, and prepare for future engagement opportunities.
+          </p>
           <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
             <GoalCard
               icon={<FaUserLock />}
               title="Prevent Duplicates"
-              desc="Blocked repeated account creation to maintain fair promotional use."
+              desc="Block repeat account creation to maintain fair promotional use."
             />
             <GoalCard
               icon={<FaUserShield />}
               title="Reduce Fraud"
-              desc="Minimized abusive behaviors and improved platform integrity."
+              desc="Minimize abusive behaviors and improve platform integrity."
             />
             <GoalCard
               icon={<FaMobileAlt />}
               title="Capture Mobile Numbers"
-              desc="Enabled future marketing engagement through SMS campaigns."
+              desc="Enable future marketing engagement through SMS campaigns."
             />
             <GoalCard
               icon={<FaUserCheck />}
               title="Strengthen Trust"
-              desc="Increased identity confidence across login types."
+              desc="Increase identity confidence across login types."
             />
             <GoalCard
               icon={<FaFingerprint />}
               title="KYC Compliance"
-              desc="Enhanced verification standards to support regulatory requirements."
+              desc="Enhance verification standards to support regulatory requirements."
             />
             <GoalCard
               icon={<FaRobot />}
@@ -83,6 +117,7 @@ export default function ChumbaCaseStudy() {
 
         {/* How It Works Section */}
         <motion.div
+          id="how-it-works"
           className="mt-24 grid items-center gap-16 md:grid-cols-2"
           initial="hidden"
           whileInView="visible"
@@ -100,16 +135,20 @@ export default function ChumbaCaseStudy() {
           <div className="space-y-6">
             <h2 className="mb-4 text-2xl font-bold text-white">⚙️ How It Works</h2>
             <p className="mx-auto max-w-3xl text-gray-400">
-              When a user logs in, they are prompted to verify their phone number via Twilio. A secure OTP is delivered
-              via SMS and validated through a Lambda function. Verification results are stored in DynamoDB, and
-              observability hooks trigger real-time alerts in case of delivery or validation failure. Once verified, the
-              user gains access and their mobile number is retained for marketing and compliance purposes.
+              During account sign-up, users must verify their phone number via a One-Time Password (OTP) sent through Twilio’s Verify API over SMS.
+              Twilio securely generates and manages the OTP, eliminating the need for manual code storage or validation.
+              The backend, built with Node.js, simply forwards the user-submitted code to Twilio for verification.
+              All verification attempts and outcomes are recorded in a PostgreSQL database.
+              The system includes real-time observability—repeat delivery failures or multiple invalid OTP submissions trigger alerts to ensure timely investigation.
+              Once verified, users are granted access to the platform, and their mobile number is securely retained for marketing and compliance purposes.
+              This flow is tightly integrated into a React-based frontend for a seamless and secure onboarding experience.
             </p>
           </div>
         </motion.div>
 
         {/* Architecture Section */}
         <motion.div
+          id="architecture"
           className="mt-24 text-center"
           initial="hidden"
           whileInView="visible"
@@ -134,6 +173,7 @@ export default function ChumbaCaseStudy() {
 
         {/* Problem and Implementation Section */}
         <motion.div
+          id="implementation"
           className="mt-24"
           initial="hidden"
           whileInView="visible"
@@ -168,6 +208,7 @@ export default function ChumbaCaseStudy() {
 
         {/* Outcomes Section */}
         <motion.div
+          id="outcomes"
           className="mt-24"
           initial="hidden"
           whileInView="visible"
@@ -224,4 +265,4 @@ function GoalCard({ icon, title, desc }: { icon: React.ReactNode; title: string;
       </div>
     </div>
   )
-}
+}  
