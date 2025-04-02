@@ -168,7 +168,7 @@ export default function ChumbaCaseStudy() {
               ].map((step, index) => (
                 <li key={index} className="step items-center">
                   <div className="flex flex-col items-center space-y-2 text-center">
-                    <div className="bg-primary rounded-full p-4 text-2xl text-white shadow-md">{step.icon}</div>
+                    <div className="bg-base-200 rounded-full p-4 text-2xl text-white shadow-md">{step.icon}</div>
                     <h3 className="text-sm font-bold text-white">{step.title}</h3>
                     <p className="max-w-[160px] text-xs text-gray-400">{step.desc}</p>
                   </div>
@@ -233,47 +233,46 @@ export default function ChumbaCaseStudy() {
                 desc="Integrated Twilio for secure, reliable phone number verification with minimal latency and high deliverability."
               />
               <FeatureCard
-                title="🔐 Secure Token Lifecycle"
-                desc="Redesigned the token generation and invalidation process to prevent reuse and ensure synchronization across all login methods."
-              />
-              <FeatureCard
-                title="⚙️ State Machine Refactor"
-                desc="Introduced an explicit state machine to model the user verification lifecycle, ensuring predictable transitions and better debugging."
-              />
-              <FeatureCard
-                title="🧪 Parallel Verification Flow Testing"
-                desc="Created automated tests to simulate concurrent login attempts using email, phone, and OAuth, ensuring robust conflict resolution."
+                title="🧪 Verification Flow Testing"
+                desc="Created automated tests to simulate login attempts using email, phone, and OAuth, ensuring robust user login flows."
               />
             </div>
           </div>
         </motion.div>
 
-        {/* Outcomes */}
+        {/*Outcomes*/}
         <motion.div
           id="outcomes"
-          className="mt-24"
+          className="mt-24 px-4"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           custom={0.3}
           variants={fadeInUp}
         >
-          <h2 className="mb-4 text-center text-2xl font-bold text-white">🚀 Outcomes & Reflections</h2>
-          <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2">
-            <div className="bg-base-200 rounded-lg p-6 text-left shadow">
-              <h3 className="text-xl font-bold text-white">✅ Improved Authentication Flow</h3>
-              <p className="text-gray-400">
-                Streamlined and unified the login experience across all user types with consistent verification
-                behavior.
-              </p>
-            </div>
-            <div className="bg-base-200 rounded-lg p-6 text-left shadow">
-              <h3 className="text-xl font-bold text-white">🔍 Stronger Identity Assurance</h3>
-              <p className="text-gray-400">
-                Enabled phone verification to support KYC compliance, reduce account fraud, and secure valuable
-                marketing contact data.
-              </p>
-            </div>
+          <h2 className="mb-16 text-center text-3xl font-semibold text-white">🚀 Outcomes & Reflections</h2>
+
+          <div className="mx-auto grid max-w-4xl grid-cols-1 gap-12 sm:grid-cols-2">
+            {[
+              {
+                icon: "✅",
+                title: "Improved Authentication Flow",
+                desc: "Unified the login experience across all user types with consistent verification behavior.",
+              },
+              {
+                icon: "🔍",
+                title: "Stronger Identity Assurance",
+                desc: "Enabled phone verification to support KYC compliance and secure key user data.",
+              },
+            ].map(({ icon, title, desc }) => (
+              <div key={title} className="flex flex-col items-center text-center sm:items-start sm:text-left">
+                <div className="mask mask-hexagon from-primary mb-4 flex h-20 w-20 items-center justify-center bg-gradient-to-br to-purple-700 text-3xl text-white ring-2 shadow-lg ring-white/10">
+                  {icon}
+                </div>
+                <h3 className="mb-1 text-lg font-semibold text-white">{title}</h3>
+                <p className="text-sm text-gray-400">{desc}</p>
+              </div>
+            ))}
           </div>
         </motion.div>
 
@@ -300,7 +299,7 @@ function FeatureCard({ title, desc }: { title: string; desc: string }) {
 function GoalCard({ icon, title, desc }: { icon: React.ReactNode; title: string; desc: string }) {
   return (
     <div className="bg-base-200 flex items-center gap-4 rounded-lg p-6 shadow">
-      <div className="text-primary flex-shrink-0 text-4xl">{icon}</div>
+      <div className="flex-shrink-0 text-4xl text-gray-600">{icon}</div>
       <div>
         <h3 className="text-lg font-bold text-white">{title}</h3>
         <p className="mt-1 text-sm text-gray-400">{desc}</p>
