@@ -81,7 +81,7 @@ export default function ChumbaCaseStudy() {
           <p className="mx-auto mb-8 max-w-2xl text-center text-gray-400">
             We focused on six strategic goals to enhance identity assurance, reduce abuse, and prepare for future engagement opportunities.
           </p>
-          <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
+          <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-3">
             <GoalCard
               icon={<FaUserLock />}
               title="Prevent Duplicates"
@@ -265,4 +265,4 @@ function GoalCard({ icon, title, desc }: { icon: React.ReactNode; title: string;
       </div>
     </div>
   )
-}  
+}
