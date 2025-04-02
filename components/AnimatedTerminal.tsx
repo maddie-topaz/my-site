@@ -5,20 +5,16 @@ import { useEffect, useState } from "react"
 
 const taglines = [
   "$ git commit -m 'automate everything'",
-  "$ deploy --env=production --safe",
-  "# Monitoring is mindfulness for machines.",
-  "✔ Tests: 213 passed, 0 failed",
-  "# DevOps is culture, not config.",
-  "$ rm -rf manual-tasks",
   "$ nuke clickops --from orbit",
-  "$ docker-compose up -d",
-  "types !== suggestions; types === contracts",
+  "$ deploy --env=production --safe",
+  "✔ Tests: 213 passed, 0 failed",
+  "$ rm -rf manual-tasks",
+  "types !== suggestions; types === contracts;",
   "🚧 red → green → refactor",
-  "small units. strong guarantees.",
-  "📈 metrics > intuition",
   "$ secure && scale && serve",
   "$ ./migrate.sh --safe --no-downtime",
   "$ mkdir -p /systems/composable",
+  "📈 metrics > intuition",
 ]
 
 const TYPING_SPEED = 60
