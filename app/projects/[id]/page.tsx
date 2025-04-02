@@ -2,8 +2,21 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { FaFingerprint, FaMobileAlt, FaRobot, FaUserCheck, FaUserLock, FaUserShield } from "react-icons/fa"
-import { SiAmazon, SiNodedotjs, SiPostgresql, SiReact, SiTwilio } from "react-icons/si"
+import {
+  FaFingerprint,
+  FaMobileAlt,
+  FaRobot,
+  FaUserCheck,
+  FaUserLock,
+  FaUserShield,
+} from "react-icons/fa"
+import {
+  SiAmazon,
+  SiNodedotjs,
+  SiPostgresql,
+  SiReact,
+  SiTwilio,
+} from "react-icons/si"
 import { Button } from "components/Button/Button"
 
 const fadeInUp = {
@@ -29,7 +42,6 @@ export default function ChumbaCaseStudy() {
             and fraud prevention mechanisms for Chumba Casino.
           </p>
 
-          {/* Table of Contents */}
           <div className="mt-6 text-sm text-gray-500">
             <a href="#background" className="mx-2 hover:underline">Background</a>|
             <a href="#goals" className="mx-2 hover:underline">Goals</a>|
@@ -48,7 +60,7 @@ export default function ChumbaCaseStudy() {
           </div>
         </motion.div>
 
-        {/* Background & Challenges Section */}
+        {/* Background */}
         <motion.div
           id="background"
           className="mt-24"
@@ -67,7 +79,7 @@ export default function ChumbaCaseStudy() {
           </p>
         </motion.div>
 
-        {/* Project Goals Section */}
+        {/* Project Goals - Updated */}
         <motion.div
           id="goals"
           className="mt-24"
@@ -77,76 +89,100 @@ export default function ChumbaCaseStudy() {
           custom={0.1}
           variants={fadeInUp}
         >
-          <h2 className="mb-4 text-center text-2xl font-bold text-white">🎯 Project Goals</h2>
-          <p className="mx-auto mb-8 max-w-2xl text-center text-gray-400">
-            We focused on six strategic goals to enhance identity assurance, reduce abuse, and prepare for future engagement opportunities.
+          <h2 className="mb-6 text-center text-2xl font-bold text-white">🎯 Project Goals</h2>
+          <p className="mx-auto mb-12 max-w-2xl text-center text-gray-400">
+            Six strategic goals to enhance trust, security, and user experience at scale.
           </p>
-          <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-3">
-            <GoalCard
-              icon={<FaUserLock />}
-              title="Prevent Duplicates"
-              desc="Block repeat account creation to maintain fair promotional use."
-            />
-            <GoalCard
-              icon={<FaUserShield />}
-              title="Reduce Fraud"
-              desc="Minimize abusive behaviors and improve platform integrity."
-            />
-            <GoalCard
-              icon={<FaMobileAlt />}
-              title="Capture Mobile Numbers"
-              desc="Enable future marketing engagement through SMS campaigns."
-            />
-            <GoalCard
-              icon={<FaUserCheck />}
-              title="Strengthen Trust"
-              desc="Increase identity confidence across login types."
-            />
-            <GoalCard
-              icon={<FaFingerprint />}
-              title="KYC Compliance"
-              desc="Enhance verification standards to support regulatory requirements."
-            />
-            <GoalCard
-              icon={<FaRobot />}
-              title="Block Bots"
-              desc="Prevent automated signups and scripted abuse with real-world identity checks."
-            />
+          <div className="mx-auto grid max-w-4xl grid-cols-2 gap-8 sm:grid-cols-3 md:gap-10">
+            {[
+              { icon: <FaUserLock />, label: "Prevent Duplicates" },
+              { icon: <FaUserShield />, label: "Reduce Fraud" },
+              { icon: <FaMobileAlt />, label: "Capture Numbers" },
+              { icon: <FaUserCheck />, label: "Strengthen Trust" },
+              { icon: <FaFingerprint />, label: "KYC Compliance" },
+              { icon: <FaRobot />, label: "Block Bots" },
+            ].map((goal, i) => (
+              <motion.div
+                key={goal.label}
+                className="flex flex-col items-center text-center"
+                custom={i * 0.05}
+                variants={fadeInUp}
+              >
+                <div className="bg-primary text-white flex h-16 w-16 items-center justify-center rounded-full text-2xl shadow-lg">
+                  {goal.icon}
+                </div>
+                <p className="mt-3 text-sm font-semibold text-white">{goal.label}</p>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
 
-        {/* How It Works Section */}
+        {/* How It Works - Steps Timeline using DaisyUI */}
         <motion.div
           id="how-it-works"
-          className="mt-24 grid items-center gap-16 md:grid-cols-2"
+          className="mt-24"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           custom={0.15}
           variants={fadeInUp}
         >
-          <Image
-            src="/images/phone-verify.png"
-            alt="Phone Verification"
-            width={500}
-            height={500}
-            className="rounded-xl"
-          />
-          <div className="space-y-6">
-            <h2 className="mb-4 text-2xl font-bold text-white">⚙️ How It Works</h2>
-            <p className="mx-auto max-w-3xl text-gray-400">
-              During account sign-up, users must verify their phone number via a One-Time Password (OTP) sent through Twilio’s Verify API over SMS.
-              Twilio securely generates and manages the OTP, eliminating the need for manual code storage or validation.
-              The backend, built with Node.js, simply forwards the user-submitted code to Twilio for verification.
-              All verification attempts and outcomes are recorded in a PostgreSQL database.
-              The system includes real-time observability—repeat delivery failures or multiple invalid OTP submissions trigger alerts to ensure timely investigation.
-              Once verified, users are granted access to the platform, and their mobile number is securely retained for marketing and compliance purposes.
-              This flow is tightly integrated into a React-based frontend for a seamless and secure onboarding experience.
-            </p>
+          <h2 className="mb-6 text-center text-2xl font-bold text-white">⚙️ How It Works</h2>
+          <p className="mx-auto mb-16 max-w-3xl text-center text-gray-400">
+            A step-by-step walkthrough of how users verify their identity using a secure SMS-based flow.
+          </p>
+
+          <div className="flex justify-center px-4">
+            <ul className="steps steps-horizontal gap-4">
+              {[
+                {
+                  title: "Enter Phone",
+                  desc: "User provides their mobile number during signup.",
+                  icon: <FaMobileAlt />,
+                },
+                {
+                  title: "OTP Sent",
+                  desc: "Twilio delivers the one-time password via SMS.",
+                  icon: <SiTwilio />,
+                },
+                {
+                  title: "Submit Code",
+                  desc: "User enters the code and Twilio validates it.",
+                  icon: <FaFingerprint />,
+                },
+                {
+                  title: "Verified",
+                  desc: "Results are logged for compliance and future use.",
+                  icon: <SiPostgresql />,
+                },
+              ].map((step, index) => (
+                <motion.li
+                  key={index}
+                  className="step items-center"
+                  custom={index * 0.1}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={fadeInUp}
+                  data-content=""
+                >
+                  <div className="flex flex-col items-center text-center space-y-2">
+                    <div className="bg-primary text-white p-4 rounded-full text-2xl shadow-md">
+                      {step.icon}
+                    </div>
+                    <h3 className="text-sm font-bold text-white">{step.title}</h3>
+                    <p className="text-xs text-gray-400 max-w-[160px]">{step.desc}</p>
+                  </div>
+                </motion.li>
+              ))}
+            </ul>
           </div>
         </motion.div>
 
-        {/* Architecture Section */}
+
+
+
+        {/* Architecture */}
         <motion.div
           id="architecture"
           className="mt-24 text-center"
@@ -171,7 +207,7 @@ export default function ChumbaCaseStudy() {
           </div>
         </motion.div>
 
-        {/* Problem and Implementation Section */}
+        {/* Implementation */}
         <motion.div
           id="implementation"
           className="mt-24"
@@ -206,7 +242,7 @@ export default function ChumbaCaseStudy() {
           </div>
         </motion.div>
 
-        {/* Outcomes Section */}
+        {/* Outcomes */}
         <motion.div
           id="outcomes"
           className="mt-24"
@@ -251,18 +287,6 @@ function FeatureCard({ title, desc }: { title: string; desc: string }) {
     <div className="bg-neutral rounded-xl p-4 shadow">
       <h3 className="font-semibold text-white">{title}</h3>
       <p className="text-gray-400">{desc}</p>
-    </div>
-  )
-}
-
-function GoalCard({ icon, title, desc }: { icon: React.ReactNode; title: string; desc: string }) {
-  return (
-    <div className="bg-base-200 flex items-center gap-4 rounded-lg p-6 shadow">
-      <div className="text-primary flex-shrink-0 text-4xl">{icon}</div>
-      <div>
-        <h3 className="text-lg font-bold text-white">{title}</h3>
-        <p className="mt-1 text-sm text-gray-400">{desc}</p>
-      </div>
     </div>
   )
 }
