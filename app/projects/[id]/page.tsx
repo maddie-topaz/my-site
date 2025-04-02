@@ -21,7 +21,7 @@ export default function ChumbaCaseStudy() {
       <div className="container mx-auto max-w-screen-xl px-4">
         {/* Hero Section */}
         <motion.div className="space-y-6 text-center" initial="hidden" whileInView="visible" variants={fadeInUp}>
-          <h1 className="bg-gradient-to-r from-pink-500 to-yellow-400 bg-clip-text text-5xl font-extrabold text-transparent">
+          <h1 className="bg-gradient-to-r from-pink-500 to-yellow-400 bg-clip-text text-5xl leading-normal font-extrabold text-transparent">
             Securing Access at Scale
           </h1>
           <p className="mx-auto max-w-2xl text-xl text-gray-400">
@@ -47,7 +47,7 @@ export default function ChumbaCaseStudy() {
             </a>
             |
             <a href="#implementation" className="mx-2 hover:underline">
-              Implementation
+              Integration Challenges
             </a>
             |
             <a href="#outcomes" className="mx-2 hover:underline">
@@ -212,7 +212,7 @@ export default function ChumbaCaseStudy() {
           variants={fadeInUp}
         >
           <div className="space-y-6 text-center">
-            <h2 className="text-2xl font-semibold text-white">🔧 Integration Challenges & Implementation</h2>
+            <h2 className="text-2xl font-semibold text-white">🔧 Integration Challenges </h2>
             <p className="text-base text-gray-400">
               The integration of phone verification into Chumba Casino's existing auth system posed significant
               complexity due to multiple existing login flows — including Facebook OAuth and standard email
@@ -221,11 +221,11 @@ export default function ChumbaCaseStudy() {
             </p>
             <div className="grid gap-6 text-left md:grid-cols-2">
               <FeatureCard
-                title="🧠 Logic Consolidation"
+                title="🧠 Logic Complexity"
                 desc="Centralized all user verification checks into a single function to handle mixed verification states across login flows."
               />
               <FeatureCard
-                title="🕸️ Branch Complexity Reduction"
+                title="🕸️ Branch Complexity "
                 desc="Reduced branching and mutation complexity by reworking how login flows interacted with verification flags in the database."
               />
               <FeatureCard
@@ -240,7 +240,7 @@ export default function ChumbaCaseStudy() {
           </div>
         </motion.div>
 
-        {/*Outcomes*/}
+        {/* Outcomes */}
         <motion.div
           id="outcomes"
           className="mt-24 px-4"
@@ -252,7 +252,7 @@ export default function ChumbaCaseStudy() {
         >
           <h2 className="mb-16 text-center text-3xl font-semibold text-white">🚀 Outcomes & Reflections</h2>
 
-          <div className="mx-auto grid max-w-4xl grid-cols-1 gap-12 sm:grid-cols-2">
+          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 icon: "✅",
@@ -264,21 +264,65 @@ export default function ChumbaCaseStudy() {
                 title: "Stronger Identity Assurance",
                 desc: "Enabled phone verification to support KYC compliance and secure key user data.",
               },
-            ].map(({ icon, title, desc }) => (
-              <div key={title} className="flex flex-col items-center text-center sm:items-start sm:text-left">
-                <div className="mask mask-hexagon from-primary mb-4 flex h-20 w-20 items-center justify-center bg-gradient-to-br to-purple-700 text-3xl text-white ring-2 shadow-lg ring-white/10">
+              {
+                icon: "📉",
+                title: "Fraud Rate Reduction",
+                desc: "Noticed a significant drop in duplicate and bot signups post-deployment.",
+              },
+              {
+                icon: "📈",
+                title: "Increased Verification Coverage",
+                desc: "Achieved high opt-in rates for phone number collection across login types.",
+              },
+              {
+                icon: "📊",
+                title: "Compliance Audit Readiness",
+                desc: "System architecture now supports fast reporting and audit logging for regulatory needs.",
+              },
+              {
+                icon: "🔁",
+                title: "Seamless Multi-Flow Handling",
+                desc: "Auth logic now smoothly supports Facebook, Email, and Phone logins without edge case regressions.",
+              },
+              {
+                icon: "🧪",
+                title: "Robust Test Coverage",
+                desc: "Test suite ensures safe iteration across auth pathways with near-zero regressions.",
+              },
+              {
+                icon: "📞",
+                title: "Resilient SMS Delivery",
+                desc: "Integrated fallback and retry logic to improve Twilio delivery success rates.",
+              },
+              {
+                icon: "🔧",
+                title: "Simplified DevOps Maintenance",
+                desc: "Unified verification logic made future iterations easier and less error-prone.",
+              },
+            ].map(({ icon, title, desc }, index) => (
+              <motion.div
+                key={title}
+                custom={index * 0.1}
+                variants={fadeInUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="group bg-base-200 flex flex-col items-center rounded-xl p-6 text-center shadow transition hover:shadow-lg"
+              >
+                <div className="from-primary to-secondary relative mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br text-2xl text-white shadow-md group-hover:scale-110 group-hover:shadow-xl">
                   {icon}
+                  <div className="absolute inset-0 rounded-full border-4 border-white/20 transition-all duration-300 group-hover:border-white/40"></div>
                 </div>
-                <h3 className="mb-1 text-lg font-semibold text-white">{title}</h3>
+                <h3 className="mb-1 text-lg font-bold text-white">{title}</h3>
                 <p className="text-sm text-gray-400">{desc}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </motion.div>
 
         {/* CTA */}
         <div className="mt-24 text-center">
-          <Button href="/projects" className="btn btn-primary">
+          <Button href="/#projects" className="btn btn-primary">
             ← Back to Projects
           </Button>
         </div>
@@ -290,8 +334,13 @@ export default function ChumbaCaseStudy() {
 function FeatureCard({ title, desc }: { title: string; desc: string }) {
   return (
     <div className="bg-neutral rounded-xl p-4 shadow">
-      <h3 className="font-semibold text-white">{title}</h3>
-      <p className="text-gray-400">{desc}</p>
+      <div className="mb-4 border-b border-gray-700 pb-4">
+        <h3 className="font-semibold text-white">{title}</h3>
+      </div>
+      <div>
+        <h3 className="font-semibold text-white">Solution:</h3>
+        <p className="text-gray-400">{desc}</p>
+      </div>
     </div>
   )
 }
