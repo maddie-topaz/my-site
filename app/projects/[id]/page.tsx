@@ -2,21 +2,8 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import {
-  FaFingerprint,
-  FaMobileAlt,
-  FaRobot,
-  FaUserCheck,
-  FaUserLock,
-  FaUserShield,
-} from "react-icons/fa"
-import {
-  SiAmazon,
-  SiNodedotjs,
-  SiPostgresql,
-  SiReact,
-  SiTwilio,
-} from "react-icons/si"
+import { FaFingerprint, FaMobileAlt, FaRobot, FaUserCheck, FaUserLock, FaUserShield } from "react-icons/fa"
+import { SiAmazon, SiNodedotjs, SiPostgresql, SiReact, SiTwilio } from "react-icons/si"
 import { Button } from "components/Button/Button"
 
 const fadeInUp = {
@@ -38,17 +25,34 @@ export default function ChumbaCaseStudy() {
             Securing Access at Scale
           </h1>
           <p className="mx-auto max-w-2xl text-xl text-gray-400">
-            A case study on scaling secure access with real-world identity checks — featuring Twilio integration, KYC readiness,
-            and fraud prevention mechanisms for Chumba Casino.
+            A case study on scaling secure access with real-world identity checks — featuring Twilio integration, KYC
+            readiness, and fraud prevention mechanisms for Chumba Casino.
           </p>
 
           <div className="mt-6 text-sm text-gray-500">
-            <a href="#background" className="mx-2 hover:underline">Background</a>|
-            <a href="#goals" className="mx-2 hover:underline">Goals</a>|
-            <a href="#how-it-works" className="mx-2 hover:underline">How It Works</a>|
-            <a href="#architecture" className="mx-2 hover:underline">Architecture</a>|
-            <a href="#implementation" className="mx-2 hover:underline">Implementation</a>|
-            <a href="#outcomes" className="mx-2 hover:underline">Outcomes</a>
+            <a href="#background" className="mx-2 hover:underline">
+              Background
+            </a>
+            |
+            <a href="#goals" className="mx-2 hover:underline">
+              Goals
+            </a>
+            |
+            <a href="#how-it-works" className="mx-2 hover:underline">
+              How It Works
+            </a>
+            |
+            <a href="#architecture" className="mx-2 hover:underline">
+              Architecture
+            </a>
+            |
+            <a href="#implementation" className="mx-2 hover:underline">
+              Implementation
+            </a>
+            |
+            <a href="#outcomes" className="mx-2 hover:underline">
+              Outcomes
+            </a>
           </div>
 
           <div className="mt-6 flex justify-center gap-4 text-2xl text-white">
@@ -72,16 +76,15 @@ export default function ChumbaCaseStudy() {
         >
           <h2 className="mb-4 text-center text-2xl font-bold text-white">🧨 Background & Challenges</h2>
           <p className="mx-auto max-w-3xl text-center text-gray-400">
-            Chumba Casino faced increasing challenges around account fraud, duplicate signups, and inconsistent verification
-            across multiple login pathways like Facebook OAuth and email/password. To comply with evolving KYC regulations
-            and reduce friction for legitimate users, we set out to build a secure, scalable phone verification system powered
-            by Twilio.
+            Chumba Casino faced increasing challenges around account fraud, duplicate signups, and inconsistent
+            verification across multiple login pathways like Facebook OAuth and email/password. To comply with evolving
+            KYC regulations and reduce friction for legitimate users, we set out to build a secure, scalable phone
+            verification system powered by Twilio.
           </p>
         </motion.div>
 
-        {/* Project Goals - Updated */}
+        {/* Project Goals Section */}
         <motion.div
-          id="goals"
           className="mt-24"
           initial="hidden"
           whileInView="visible"
@@ -89,31 +92,38 @@ export default function ChumbaCaseStudy() {
           custom={0.1}
           variants={fadeInUp}
         >
-          <h2 className="mb-6 text-center text-2xl font-bold text-white">🎯 Project Goals</h2>
-          <p className="mx-auto mb-12 max-w-2xl text-center text-gray-400">
-            Six strategic goals to enhance trust, security, and user experience at scale.
-          </p>
-          <div className="mx-auto grid max-w-4xl grid-cols-2 gap-8 sm:grid-cols-3 md:gap-10">
-            {[
-              { icon: <FaUserLock />, label: "Prevent Duplicates" },
-              { icon: <FaUserShield />, label: "Reduce Fraud" },
-              { icon: <FaMobileAlt />, label: "Capture Numbers" },
-              { icon: <FaUserCheck />, label: "Strengthen Trust" },
-              { icon: <FaFingerprint />, label: "KYC Compliance" },
-              { icon: <FaRobot />, label: "Block Bots" },
-            ].map((goal, i) => (
-              <motion.div
-                key={goal.label}
-                className="flex flex-col items-center text-center"
-                custom={i * 0.05}
-                variants={fadeInUp}
-              >
-                <div className="bg-primary text-white flex h-16 w-16 items-center justify-center rounded-full text-2xl shadow-lg">
-                  {goal.icon}
-                </div>
-                <p className="mt-3 text-sm font-semibold text-white">{goal.label}</p>
-              </motion.div>
-            ))}
+          <h2 className="mb-4 text-center text-2xl font-bold text-white">🎯 Project Goals</h2>
+          <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
+            <GoalCard
+              icon={<FaUserLock />}
+              title="Prevent Duplicates"
+              desc="Blocked repeated account creation to maintain fair promotional use."
+            />
+            <GoalCard
+              icon={<FaUserShield />}
+              title="Reduce Fraud"
+              desc="Minimized abusive behaviors and improved platform integrity."
+            />
+            <GoalCard
+              icon={<FaMobileAlt />}
+              title="Capture Mobile Numbers"
+              desc="Enabled future marketing engagement through SMS campaigns."
+            />
+            <GoalCard
+              icon={<FaUserCheck />}
+              title="Strengthen Trust"
+              desc="Increased identity confidence across login types."
+            />
+            <GoalCard
+              icon={<FaFingerprint />}
+              title="KYC Compliance"
+              desc="Enhanced verification standards to support regulatory requirements."
+            />
+            <GoalCard
+              icon={<FaRobot />}
+              title="Block Bots"
+              desc="Prevent automated signups and scripted abuse with real-world identity checks."
+            />
           </div>
         </motion.div>
 
@@ -133,10 +143,10 @@ export default function ChumbaCaseStudy() {
           </p>
 
           <div className="flex justify-center px-4">
-            <ul className="steps steps-horizontal gap-4">
+            <ul className="steps steps-horizontal [--step-line:theme(colors.gray.900)]">
               {[
                 {
-                  title: "Enter Phone",
+                  title: "Enter Phone Number",
                   desc: "User provides their mobile number during signup.",
                   icon: <FaMobileAlt />,
                 },
@@ -156,31 +166,17 @@ export default function ChumbaCaseStudy() {
                   icon: <SiPostgresql />,
                 },
               ].map((step, index) => (
-                <motion.li
-                  key={index}
-                  className="step items-center"
-                  custom={index * 0.1}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={fadeInUp}
-                  data-content=""
-                >
-                  <div className="flex flex-col items-center text-center space-y-2">
-                    <div className="bg-primary text-white p-4 rounded-full text-2xl shadow-md">
-                      {step.icon}
-                    </div>
+                <li key={index} className="step items-center">
+                  <div className="flex flex-col items-center space-y-2 text-center">
+                    <div className="bg-primary rounded-full p-4 text-2xl text-white shadow-md">{step.icon}</div>
                     <h3 className="text-sm font-bold text-white">{step.title}</h3>
-                    <p className="text-xs text-gray-400 max-w-[160px]">{step.desc}</p>
+                    <p className="max-w-[160px] text-xs text-gray-400">{step.desc}</p>
                   </div>
-                </motion.li>
+                </li>
               ))}
             </ul>
           </div>
         </motion.div>
-
-
-
 
         {/* Architecture */}
         <motion.div
@@ -193,9 +189,7 @@ export default function ChumbaCaseStudy() {
           variants={fadeInUp}
         >
           <h2 className="mb-4 text-2xl font-bold text-white">🧩 Architecture Diagram</h2>
-          <p className="mb-6 text-gray-400">
-            Visual overview of service orchestration, API flows, and observability hooks.
-          </p>
+          <p className="mb-6 text-gray-400">Visual overview of service orchestration and API flows.</p>
           <div className="bg-base-200 relative mx-auto h-[600px] w-full max-w-5xl overflow-hidden rounded-xl">
             <Image
               src="/images/pv-diagram.png"
@@ -217,7 +211,7 @@ export default function ChumbaCaseStudy() {
           custom={0.25}
           variants={fadeInUp}
         >
-          <div className="space-y-6">
+          <div className="space-y-6 text-center">
             <h2 className="text-2xl font-semibold text-white">🔧 Integration Challenges & Implementation</h2>
             <p className="text-base text-gray-400">
               The integration of phone verification into Chumba Casino's existing auth system posed significant
@@ -237,6 +231,18 @@ export default function ChumbaCaseStudy() {
               <FeatureCard
                 title="📞 Twilio Integration"
                 desc="Integrated Twilio for secure, reliable phone number verification with minimal latency and high deliverability."
+              />
+              <FeatureCard
+                title="🔐 Secure Token Lifecycle"
+                desc="Redesigned the token generation and invalidation process to prevent reuse and ensure synchronization across all login methods."
+              />
+              <FeatureCard
+                title="⚙️ State Machine Refactor"
+                desc="Introduced an explicit state machine to model the user verification lifecycle, ensuring predictable transitions and better debugging."
+              />
+              <FeatureCard
+                title="🧪 Parallel Verification Flow Testing"
+                desc="Created automated tests to simulate concurrent login attempts using email, phone, and OAuth, ensuring robust conflict resolution."
               />
             </div>
           </div>
@@ -287,6 +293,18 @@ function FeatureCard({ title, desc }: { title: string; desc: string }) {
     <div className="bg-neutral rounded-xl p-4 shadow">
       <h3 className="font-semibold text-white">{title}</h3>
       <p className="text-gray-400">{desc}</p>
+    </div>
+  )
+}
+
+function GoalCard({ icon, title, desc }: { icon: React.ReactNode; title: string; desc: string }) {
+  return (
+    <div className="bg-base-200 flex items-center gap-4 rounded-lg p-6 shadow">
+      <div className="text-primary flex-shrink-0 text-4xl">{icon}</div>
+      <div>
+        <h3 className="text-lg font-bold text-white">{title}</h3>
+        <p className="mt-1 text-sm text-gray-400">{desc}</p>
+      </div>
     </div>
   )
 }
