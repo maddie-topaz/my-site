@@ -2,7 +2,16 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { FaFingerprint, FaMobileAlt, FaRobot, FaUserCheck, FaUserLock, FaUserShield } from "react-icons/fa"
+import {
+  FaExclamationTriangle,
+  FaFingerprint,
+  FaMobileAlt,
+  FaRobot,
+  FaUserCheck,
+  FaUserLock,
+  FaUserShield,
+  FaWrench,
+} from "react-icons/fa"
 import { SiAmazon, SiNodedotjs, SiPostgresql, SiReact, SiTwilio } from "react-icons/si"
 import { Button } from "components/Button/Button"
 
@@ -342,12 +351,18 @@ function FeatureCard({ title, problem, solution }: { title: string; problem: str
       <h3 className="border-b border-gray-700 pb-2 font-semibold text-white">{title}</h3>
 
       <div className="bg-base-200 rounded p-3">
-        <p className="mb-1 text-xs font-bold text-pink-300 uppercase">The Challenge</p>
+        <p className="mb-1 flex items-center gap-2 text-xs font-bold text-pink-300 uppercase">
+          <FaExclamationTriangle className="text-pink-400" />
+          The Challenge
+        </p>
         <p className="text-gray-400">{problem}</p>
       </div>
 
       <div className="bg-base-300 rounded p-3">
-        <p className="mb-1 text-xs font-bold text-green-300 uppercase">The Fix</p>
+        <p className="mb-1 flex items-center gap-2 text-xs font-bold text-green-300 uppercase">
+          <FaWrench className="text-green-400" />
+          The Fix
+        </p>
         <p className="text-gray-400">{solution}</p>
       </div>
     </div>
