@@ -222,19 +222,24 @@ export default function ChumbaCaseStudy() {
             <div className="grid gap-6 text-left md:grid-cols-2">
               <FeatureCard
                 title="🧠 Logic Complexity"
-                desc="Centralized all user verification checks into a single function to handle mixed verification states across login flows."
+                problem="The existing verification logic was tightly coupled with login flow logic, making it challenging to refactor and maintain."
+                solution="Centralized all user verification checks into a single function to handle mixed verification states across login flows."
               />
               <FeatureCard
                 title="🕸️ Branch Complexity "
-                desc="Reduced branching and mutation complexity by reworking how login flows interacted with verification flags in the database."
+                problem="Feature flags, multiple login flows, and canary release logic introduced excessive branching and database mutation paths, making the system brittle and hard to maintain."
+                solution=" Consolidated login flow variants and isolated feature flag logic to reduce conditional complexity and mutation overhead across environments."
+              />
+
+              <FeatureCard
+                title="🧬 Database Mutation "
+                problem="Email verification logic prematurely set database flags indicating the user was fully verified, leading to inconsistent auth states and security edge cases."
+                solution="Introduced explicit verification stages and restructured mutation logic to reflect true verification status across flows."
               />
               <FeatureCard
-                title="📞 Twilio Integration"
-                desc="Integrated Twilio for secure, reliable phone number verification with minimal latency and high deliverability."
-              />
-              <FeatureCard
-                title="🧪 Verification Flow Testing"
-                desc="Created automated tests to simulate login attempts using email, phone, and OAuth, ensuring robust user login flows."
+                title="📞 Phone Verify Servive Integration"
+                problem="No service was integrated for PV, and there was no team-wide clarity on how to implement it or which service to use."
+                solution="Integrated Twilio for secure, reliable phone number verification with minimal latency and high deliverability."
               />
             </div>
           </div>
@@ -250,7 +255,7 @@ export default function ChumbaCaseStudy() {
           custom={0.3}
           variants={fadeInUp}
         >
-          <h2 className="mb-16 text-center text-3xl font-semibold text-white">🚀 Outcomes & Reflections</h2>
+          <h2 className="mb-16 text-center text-3xl font-semibold text-white">🚀 Outcomes </h2>
 
           <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {[
@@ -331,15 +336,19 @@ export default function ChumbaCaseStudy() {
   )
 }
 
-function FeatureCard({ title, desc }: { title: string; desc: string }) {
+function FeatureCard({ title, problem, solution }: { title: string; problem: string; solution: string }) {
   return (
-    <div className="bg-neutral rounded-xl p-4 shadow">
-      <div className="mb-4 border-b border-gray-700 pb-4">
-        <h3 className="font-semibold text-white">{title}</h3>
+    <div className="bg-neutral space-y-4 rounded-xl p-4 shadow">
+      <h3 className="border-b border-gray-700 pb-2 font-semibold text-white">{title}</h3>
+
+      <div className="bg-base-200 rounded p-3">
+        <p className="mb-1 text-xs font-bold text-pink-300 uppercase">The Challenge</p>
+        <p className="text-gray-400">{problem}</p>
       </div>
-      <div>
-        <h3 className="font-semibold text-white">Solution:</h3>
-        <p className="text-gray-400">{desc}</p>
+
+      <div className="bg-base-300 rounded p-3">
+        <p className="mb-1 text-xs font-bold text-green-300 uppercase">The Fix</p>
+        <p className="text-gray-400">{solution}</p>
       </div>
     </div>
   )
