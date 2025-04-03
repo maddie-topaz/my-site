@@ -4,7 +4,7 @@ export const Hero = () => {
   return (
     <section className="hero bg-base-200 min-h-screen px-4">
       <div className="hero-content flex-col gap-12 lg:flex-row-reverse lg:gap-24">
-        <div className="flex w-full justify-center lg:w-1/2">
+        <div className="order-2 flex w-full justify-center lg:order-none lg:w-1/2">
           <AnimatedTerminal />
         </div>
         <div className="w-full text-center lg:w-1/2 lg:text-left">

@@ -57,12 +57,12 @@ export const AnimatedTerminal = () => {
   return (
     <div className="w-full py-6">
       <motion.div
-        className="mockup-code mx-auto w-[600px] rounded-lg border-2 border-neutral-700 bg-neutral-900 p-4 text-left text-green-400"
+        className="mockup-code mx-auto w-full rounded-lg border-2 border-neutral-700 bg-neutral-900 p-4 text-left text-green-400 sm:w-[300px] md:w-[500px]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <pre className="pl-4 text-pink-500">
+        <pre className="overflow-hidden pl-4 break-words whitespace-pre-wrap text-pink-500">
           <motion.span
             className="inline-block font-mono text-lg"
             key={taglineIndex}
