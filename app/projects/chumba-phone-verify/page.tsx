@@ -3,17 +3,16 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import {
-  FaExclamationTriangle,
   FaFingerprint,
   FaMobileAlt,
   FaRobot,
   FaUserCheck,
   FaUserLock,
   FaUserShield,
-  FaWrench,
 } from "react-icons/fa"
 import { SiAmazon, SiNodedotjs, SiPostgresql, SiReact, SiTwilio } from "react-icons/si"
 import { Button } from "components/Button/Button"
+import { FeatureCard } from "components/FeatureCard"
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -31,10 +30,11 @@ export default function ChumbaCaseStudy() {
         {/* Hero Section */}
         <motion.div className="space-y-6 text-center" initial="hidden" whileInView="visible" variants={fadeInUp}>
           <h1 className="bg-gradient-to-r from-pink-500 to-yellow-400 bg-clip-text text-5xl leading-normal font-extrabold text-transparent">
-            Securing Access at Scale
+            Text. Verify. Play:
+            Securing Signups at Chumba Casino
           </h1>
           <p className="mx-auto max-w-2xl text-xl text-gray-400">
-            A case study on scaling secure access with real-world identity checks — featuring Twilio integration, KYC
+            Scaling secure access with real-world identity checks — featuring Twilio integration, KYC
             readiness, and fraud prevention mechanisms for Chumba Casino.
           </p>
 
@@ -223,32 +223,31 @@ export default function ChumbaCaseStudy() {
           <div className="space-y-6 text-center">
             <h2 className="text-2xl font-semibold text-white">🔧 Integration Challenges </h2>
             <p className="text-base text-gray-400">
-              The integration of phone verification into Chumba Casino's existing auth system posed significant
+              The integration of phone verification into Chumba Casino's existing authentication system posed significant
               complexity due to multiple existing login flows — including Facebook OAuth and standard email
               verification. A complete overhaul of the existing verification logic was required to avoid conflicts
               between phone and email verification states.
             </p>
-            <div className="grid gap-6 text-left md:grid-cols-2">
+            <div className="grid gap-6 text-left">
               <FeatureCard
-                title="🧠 Logic Complexity"
-                problem="The existing verification logic was tightly coupled with login flow logic, making it challenging to refactor and maintain."
-                solution="Centralized all user verification checks into a single function to handle mixed verification states across login flows."
+                title="📞 Phone Verify Service Integration"
+                problem="The product lacked a phone verification solution and proof of concept. Implementation was blocked by unclear ownership and no agreed-upon service provider."
+                solution="Took ownership of the verification flow, proposed and implemented Twilio SMS as the provider, and documented the approach to unblock engineering and improve team clarity."
               />
               <FeatureCard
-                title="🕸️ Branch Complexity "
-                problem="Feature flags, multiple login flows, and canary release logic introduced excessive branching and database mutation paths, making the system brittle and hard to maintain."
-                solution=" Consolidated login flow variants and isolated feature flag logic to reduce conditional complexity and mutation overhead across environments."
-              />
-
-              <FeatureCard
-                title="🧬 Database Mutation "
-                problem="Email verification logic prematurely set database flags indicating the user was fully verified, leading to inconsistent auth states and security edge cases."
-                solution="Introduced explicit verification stages and restructured mutation logic to reflect true verification status across flows."
+                title="🪢 UI/Logic Coupling"
+                problem="The existing verification logic was tightly coupled with login flow UI, making it challenging to integrate and maintain additional verification logic."
+                solution="Uncoupled verification logic from UI components by centralizing all user verification checks into a single utility function to handle mixed verification states across login flows, as well as canary rollout/feature flag states for controlled exposure of changes."
               />
               <FeatureCard
-                title="📞 Phone Verify Servive Integration"
-                problem="No service was integrated for PV, and there was no team-wide clarity on how to implement it or which service to use."
-                solution="Integrated Twilio for secure, reliable phone number verification with minimal latency and high deliverability."
+                title="🕸️ Branch Complexity"
+                problem="Feature flags, multiple login flows, canary release logic and feature flagging introduced a large amount of branching, making the system brittle and hard to maintain."
+                solution="Reduced branching complexity by introducing dedicated utility functions for feature flag evaluation and login state handling, improving code clarity and maintainability across environments."
+              />
+              <FeatureCard
+                title="🧬 Database Mutation"
+                problem="Email verification logic prematurely set database flags indicating the user was fully verified, leading to inconsistent authentication states and security edge cases."
+                solution="Extracted verification logic into a centralized utility function and deprecated unreliable flags, ensuring that user verification status accurately reflects completed steps across all flows."
               />
             </div>
           </div>
@@ -267,12 +266,7 @@ export default function ChumbaCaseStudy() {
           <h2 className="mb-16 text-center text-3xl font-semibold text-white">🚀 Outcomes </h2>
 
           <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                icon: "✅",
-                title: "Improved Authentication Flow",
-                desc: "Unified the login experience across all user types with consistent verification behavior.",
-              },
+            {[              
               {
                 icon: "🔍",
                 title: "Stronger Identity Assurance",
@@ -287,32 +281,22 @@ export default function ChumbaCaseStudy() {
                 icon: "📈",
                 title: "Increased Verification Coverage",
                 desc: "Achieved high opt-in rates for phone number collection across login types.",
-              },
-              {
-                icon: "📊",
-                title: "Compliance Audit Readiness",
-                desc: "System architecture now supports fast reporting and audit logging for regulatory needs.",
-              },
+              },              
               {
                 icon: "🔁",
                 title: "Seamless Multi-Flow Handling",
-                desc: "Auth logic now smoothly supports Facebook, Email, and Phone logins without edge case regressions.",
+                desc: "Authentication logic now smoothly supports Facebook, Email, and Phone logins without edge case regressions.",
               },
               {
                 icon: "🧪",
                 title: "Robust Test Coverage",
-                desc: "Test suite ensures safe iteration across auth pathways with near-zero regressions.",
+                desc: "Test suite ensures safe iteration across authentication pathways with near-zero regressions.",
               },
               {
                 icon: "📞",
                 title: "Resilient SMS Delivery",
                 desc: "Integrated fallback and retry logic to improve Twilio delivery success rates.",
-              },
-              {
-                icon: "🔧",
-                title: "Simplified DevOps Maintenance",
-                desc: "Unified verification logic made future iterations easier and less error-prone.",
-              },
+              },   
             ].map(({ icon, title, desc }, index) => (
               <motion.div
                 key={title}
@@ -342,30 +326,6 @@ export default function ChumbaCaseStudy() {
         </div>
       </div>
     </section>
-  )
-}
-
-function FeatureCard({ title, problem, solution }: { title: string; problem: string; solution: string }) {
-  return (
-    <div className="bg-neutral space-y-4 rounded-xl p-4 shadow">
-      <h3 className="border-b border-gray-700 pb-2 font-semibold text-white">{title}</h3>
-
-      <div className="bg-base-200 rounded p-3">
-        <p className="mb-1 flex items-center gap-2 text-xs font-bold text-pink-300 uppercase">
-          <FaExclamationTriangle className="text-pink-400" />
-          The Challenge
-        </p>
-        <p className="text-gray-400">{problem}</p>
-      </div>
-
-      <div className="bg-base-300 rounded p-3">
-        <p className="mb-1 flex items-center gap-2 text-xs font-bold text-green-300 uppercase">
-          <FaWrench className="text-green-400" />
-          The Fix
-        </p>
-        <p className="text-gray-400">{solution}</p>
-      </div>
-    </div>
   )
 }
 
