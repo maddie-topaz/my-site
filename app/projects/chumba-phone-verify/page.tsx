@@ -2,14 +2,7 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import {
-  FaFingerprint,
-  FaMobileAlt,
-  FaRobot,
-  FaUserCheck,
-  FaUserLock,
-  FaUserShield,
-} from "react-icons/fa"
+import { FaFingerprint, FaMobileAlt, FaRobot, FaUserCheck, FaUserLock, FaUserShield } from "react-icons/fa"
 import { SiAmazon, SiNodedotjs, SiPostgresql, SiReact, SiTwilio } from "react-icons/si"
 import { Button } from "components/Button/Button"
 import { FeatureCard } from "components/FeatureCard"
@@ -30,12 +23,11 @@ export default function ChumbaCaseStudy() {
         {/* Hero Section */}
         <motion.div className="space-y-6 text-center" initial="hidden" whileInView="visible" variants={fadeInUp}>
           <h1 className="bg-gradient-to-r from-pink-500 to-yellow-400 bg-clip-text text-5xl leading-normal font-extrabold text-transparent">
-            Text. Verify. Play:
-            Securing Signups at Chumba Casino
+            Text. Verify. Play: Securing Signups at Chumba Casino
           </h1>
           <p className="mx-auto max-w-2xl text-xl text-gray-400">
-            Scaling secure access with real-world identity checks — featuring Twilio integration, KYC
-            readiness, and fraud prevention mechanisms for Chumba Casino.
+            Scaling secure access with real-world identity checks — featuring Twilio integration, KYC readiness, and
+            fraud prevention mechanisms for Chumba Casino.
           </p>
 
           <div className="mt-6 text-sm text-gray-500">
@@ -223,8 +215,8 @@ export default function ChumbaCaseStudy() {
           <div className="space-y-6 text-center">
             <h2 className="text-2xl font-semibold text-white">🔧 Integration Challenges </h2>
             <p className="text-base text-gray-400">
-              The integration of phone verification into Chumba Casino's existing authentication system posed significant
-              complexity due to multiple existing login flows — including Facebook OAuth and standard email
+              The integration of phone verification into Chumba Casino's existing authentication system posed
+              significant complexity due to multiple existing login flows — including Facebook OAuth and standard email
               verification. A complete overhaul of the existing verification logic was required to avoid conflicts
               between phone and email verification states.
             </p>
@@ -266,7 +258,7 @@ export default function ChumbaCaseStudy() {
           <h2 className="mb-16 text-center text-3xl font-semibold text-white">🚀 Outcomes </h2>
 
           <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {[              
+            {[
               {
                 icon: "🔍",
                 title: "Stronger Identity Assurance",
@@ -281,7 +273,7 @@ export default function ChumbaCaseStudy() {
                 icon: "📈",
                 title: "Increased Verification Coverage",
                 desc: "Achieved high opt-in rates for phone number collection across login types.",
-              },              
+              },
               {
                 icon: "🔁",
                 title: "Seamless Multi-Flow Handling",
@@ -296,7 +288,7 @@ export default function ChumbaCaseStudy() {
                 icon: "📞",
                 title: "Resilient SMS Delivery",
                 desc: "Integrated fallback and retry logic to improve Twilio delivery success rates.",
-              },   
+              },
             ].map(({ icon, title, desc }, index) => (
               <motion.div
                 key={title}
