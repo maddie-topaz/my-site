@@ -1,94 +1,9 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { FaChartBar, FaCheckCircle, FaCode, FaComments, FaEye, FaLightbulb, FaSlidersH } from "react-icons/fa"
 import { SiNodedotjs, SiReact, SiTypescript } from "react-icons/si"
+import { experimentTimelineSteps } from "components/ExperimentTimeline"
 import { FeatureCard } from "components/FeatureCard"
-
-const steps = [
-  {
-    title: "Define A Hypothesis",
-    desc: (
-      <div>
-        <p className="text-sm text-gray-400">
-          Clearly define what you want to learn. Formulate a{" "}
-          <span className="font-medium text-blue-400">testable hypothesis</span> with a measurable outcome that helps
-          you decide what success or failure looks like.
-        </p>
-        <br />
-        <p className="text-sm text-gray-400">
-          🔍 Example Scenario
-          <br />
-          You’re working on a SaaS app and want to test whether changing the primary CTA button from “Start Free Trial”
-          to “Get Started Now” improves sign-up conversion.
-        </p>
-      </div>
-    ),
-    icon: <FaLightbulb />,
-  },
-  {
-    title: "Create Experiment",
-    desc: (
-      <p className="text-sm text-gray-400">
-        Set up your experiment using <span className="font-medium text-blue-400">Statsig</span>. Define control and
-        variant groups, target the appropriate user segments, and identify the key metrics you'll analyze.
-      </p>
-    ),
-    icon: <FaSlidersH />,
-  },
-  {
-    title: "Instrument in Code",
-    desc: (
-      <p className="text-sm text-gray-400">
-        Use Statsig's SDK to integrate the experiment. Call{" "}
-        <code className="bg-base-200 rounded px-1 py-0.5 text-blue-400">{"getExperiment()"}</code> or{" "}
-        <code className="bg-base-200 rounded px-1 py-0.5 text-blue-400">{"getConfig()"}</code> to control logic in your
-        product based on user assignment.
-      </p>
-    ),
-    icon: <FaCode />,
-  },
-  {
-    title: "Track Metrics",
-    desc: (
-      <p className="text-sm text-gray-400">
-        Ensure all <span className="font-medium text-blue-400">exposure events</span> and relevant metrics are properly
-        logged. This provides the data needed to evaluate your experiment's impact.
-      </p>
-    ),
-    icon: <FaChartBar />,
-  },
-  {
-    title: "Monitor Results",
-    desc: (
-      <p className="text-sm text-gray-400">
-        Use Statsig's dashboard to watch experiment performance. Compare metrics between variants, look for{" "}
-        <span className="font-medium text-blue-400">significant differences</span>, and assess impact.
-      </p>
-    ),
-    icon: <FaEye />,
-  },
-  {
-    title: "Make a Decision",
-    desc: (
-      <p className="text-sm text-gray-400">
-        Interpret the results. Decide whether to ship the change, roll it back, or iterate. Back your decision with{" "}
-        <span className="font-medium text-blue-400">data from the experiment</span>.
-      </p>
-    ),
-    icon: <FaCheckCircle />,
-  },
-  {
-    title: "Share Learnings",
-    desc: (
-      <p className="text-sm text-gray-400">
-        Document the experiment's outcomes, insights, and decisions. Share findings with your team to support{" "}
-        <span className="font-medium text-blue-400">collective learning</span> and future initiatives.
-      </p>
-    ),
-    icon: <FaComments />,
-  },
-]
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -173,8 +88,8 @@ export default function StatsigCaseStudy() {
           </div>
         </motion.div>
 
-        {/* Timeline */}
         <section className="bg-base-100 py-20 text-gray-800 dark:bg-black dark:text-gray-100">
+          <h2 className="mb-6 text-center text-2xl font-bold text-white">⚙️ How It Works</h2>
           <motion.section
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -183,7 +98,7 @@ export default function StatsigCaseStudy() {
             className="bg-base-100 py-20 text-gray-800 dark:bg-black dark:text-gray-100"
           >
             <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical text-white">
-              {steps.map((step, index) => (
+              {experimentTimelineSteps.map((step, index) => (
                 <li key={index}>
                   {index !== 0 && <hr />}
                   <div className="timeline-middle">
@@ -197,7 +112,7 @@ export default function StatsigCaseStudy() {
                     <div className="text-lg font-black">{step.title}</div>
                     {typeof step.desc === "string" ? <p className="text-sm text-gray-400">{step.desc}</p> : step.desc}
                   </div>
-                  {index !== steps.length - 1 && <hr />}
+                  {index !== experimentTimelineSteps.length - 1 && <hr />}
                 </li>
               ))}
             </ul>
