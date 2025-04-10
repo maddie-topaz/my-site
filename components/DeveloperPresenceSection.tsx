@@ -95,7 +95,7 @@ export const DeveloperPresenceSection = () => {
           >
             <FaTerminal className="mx-auto mb-3 text-4xl" style={{ color: "#00ff87" }} />
             <a
-              href={"DEV_PORTFOLIO_URL"}
+              href={"/terminal"}
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm font-medium text-blue-500 hover:underline"
