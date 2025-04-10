@@ -1,8 +1,19 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { FaChartLine, FaCubes, FaFlask, FaHandsHelping, FaRocket, FaToolbox } from "react-icons/fa"
+import {
+  FaChartLine,
+  FaCubes,
+  FaDatabase,
+  FaFlask,
+  FaHandsHelping,
+  FaRocket,
+  FaSeedling,
+  FaToolbox,
+} from "react-icons/fa"
 import { SiNodedotjs, SiReact, SiTypescript } from "react-icons/si"
+import { TbArrowMerge } from "react-icons/tb"
+import { Button } from "components/Button/Button"
 import { experimentTimelineSteps } from "components/ExperimentTimeline"
 import { GoalCard } from "components/GoalCard"
 
@@ -139,6 +150,17 @@ export default function StatsigCaseStudy() {
           </div>
         </motion.div>
 
+        {/*  Moving to Statsig */}
+        <motion.div className="bg-base-100 mt-12 text-gray-800 dark:bg-black dark:text-gray-100">
+          <h2 className="mb-6 text-center text-2xl font-bold text-white">🚚 The Move to Statsig</h2>
+          <p className="text-center text-sm text-gray-400">
+            To meet our goals around experimentation, we adopted Statsig—giving us a fast, reliable way to launch
+            experiments with confidence.
+          </p>
+
+          <br />
+        </motion.div>
+
         {/*  How It Works */}
         <motion.div className="bg-base-100 mt-12 text-gray-800 dark:bg-black dark:text-gray-100">
           <h2 className="mb-6 text-center text-2xl font-bold text-white">⚙️ How It Works</h2>
@@ -181,25 +203,30 @@ export default function StatsigCaseStudy() {
             <motion.div className="card bg-base-200 rounded-2xl p-8 shadow-lg" custom={0.2} variants={fadeInUp}>
               <h3 className="mb-4 text-xl font-bold text-indigo-300">Statsig Node.js Wrapper</h3>
               <p className="mb-4 text-gray-400">
-                While Statsig offers robust SDKs for multiple platforms, we developed internal wrappers to ensure
-                consistent integration across our services. These wrappers enabled seamless support for our Traits and
-                Attributes Platform (TAP), standardized rollout logic, and provided a unified developer experience
-                across teams.
+                While Statsig provides robust SDKs for multiple platforms, we chose to develop our own internal wrappers
+                to ensure consistent and scalable integration across ourS services.
+              </p>
+              <p className="mb-4 text-gray-400">
+                By building these wrappers, we were able to embed native support for our internal Traits and Attributes
+                Platform (TAP), allowing both sidecar-based and API-based trait resolution to integrate seamlessly into
+                the experiment workflow. It also enabled us to enforce standardized evaluation logic across teams,
+                reducing duplication and potential misconfigurations.
+              </p>
+              <p className="mb-4 text-gray-400">
+                Furthermore, the wrappers offered a clean developer interface with utility functions such as
+                buildStatsigUser, checkGate, and getExperiment, streamlining adoption and ensuring a unified developer
+                experience regardless of the service or team implementing Statsig.
               </p>
 
               <div className="join join-vertical w-full space-y-4">
                 {/* Support for Traits */}
                 <div className="collapse-arrow bg-base-100 collapse text-gray-400">
                   <input type="checkbox" />
-                  <div className="collapse-title text-xl font-medium">Support for Traits</div>
+                  <div className="collapse-title text-xl font-medium">
+                    <FaDatabase className="mr-2 inline-block h-5 w-5 text-indigo-400" />
+                    Traits
+                  </div>
                   <div className="collapse-content space-y-4">
-                    <p>
-                      It supports both sidecar-based and API-based TAP trait retrieval methods with graceful fallback
-                      logic. For developer ergonomics, I introduced helper methods like
-                      <code className="font-mono text-xs text-white"> buildStatsigUser</code>,
-                      <code className="font-mono text-xs text-white"> checkGate</code>, and
-                      <code className="font-mono text-xs text-white"> getExperiment</code>.
-                    </p>
                     <p>
                       In Statsig, the <code className="font-mono text-xs text-white">StatsigUser</code> object includes
                       traits for targeting:
@@ -224,13 +251,23 @@ export default function StatsigCaseStudy() {
                         <strong>organization</strong>: Org or team context
                       </li>
                     </ul>
+                    <p>
+                      The wrappers support both sidecar-based and API-based TAP trait retrieval methods with graceful
+                      fallback logic. For developer ergonomics, I introduced helper methods like
+                      <code className="font-mono text-xs text-white"> buildStatsigUser</code>,
+                      <code className="font-mono text-xs text-white"> checkGate</code>, and
+                      <code className="font-mono text-xs text-white"> getExperiment</code>.
+                    </p>
                   </div>
                 </div>
 
                 {/* Support for Bootstrapping */}
                 <div className="collapse-arrow bg-base-100 collapse text-gray-400">
                   <input type="checkbox" />
-                  <div className="collapse-title text-xl font-medium">Support for Bootstrapping</div>
+                  <div className="collapse-title text-xl font-medium">
+                    <FaSeedling className="mr-2 inline-block h-5 w-5 text-indigo-400" />
+                    Bootstrapping
+                  </div>
                   <div className="collapse-content space-y-4">
                     <p>
                       Bootstrapping allows initializing Statsig with pre-evaluated flags before a network call. It
@@ -247,7 +284,10 @@ export default function StatsigCaseStudy() {
                 {/* Trait Merging */}
                 <div className="collapse-arrow bg-base-100 collapse text-gray-400">
                   <input type="checkbox" />
-                  <div className="collapse-title text-xl font-medium">Trait Merging</div>
+                  <div className="collapse-title text-xl font-medium">
+                    <TbArrowMerge className="mr-2 inline-block h-5 w-5 text-indigo-400" />
+                    Trait Merging
+                  </div>
                   <div className="collapse-content space-y-4">
                     <p>
                       Trait merging combines traits from multiple sources—auth, runtime, and environment—into a single
@@ -259,27 +299,13 @@ export default function StatsigCaseStudy() {
                       <li>Cleaner structure, less boilerplate, and fewer runtime errors</li>
                     </ul>
                     <p>
-                      The wrapper resolves merge conflicts deterministically and provides lifecycle methods like
+                      The wrappers also resolve merge conflicts deterministically and provides lifecycle methods like
                       <code className="font-mono text-xs text-white"> initializeStatsig()</code> and
                       <code className="font-mono text-xs text-white"> shutdownStatsig()</code>.
                     </p>
                   </div>
                 </div>
               </div>
-            </motion.div>
-
-            {/* Analytics Integration */}
-            <motion.div className="card bg-base-200 rounded-2xl p-8 shadow-lg" custom={0.4} variants={fadeInUp}>
-              <h3 className="mb-4 text-xl font-bold text-indigo-300">Analytics Integration</h3>
-              <p className="mb-4 text-gray-400">
-                Analytics were tightly integrated throughout the feature flag lifecycle. I automated event tracking to
-                capture flag exposure and usage metrics without manual tagging. This data feeds into dashboards that
-                monitor experiment performance in real time.
-              </p>
-              <p className="text-gray-400">
-                Custom metrics were introduced for deeper insights, and I built automated reporting pipelines to
-                generate statistical summaries — enabling fast, data-driven decision-making for product experiments.
-              </p>
             </motion.div>
           </div>
         </motion.div>
@@ -298,19 +324,19 @@ export default function StatsigCaseStudy() {
           <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                icon: "⚡",
-                title: "Development Speed",
-                desc: "50% reduction in feature deployment time with controlled rollouts",
+                icon: "🧭",
+                title: "Data-Driven Culture",
+                desc: "Empowered product teams to make release decisions based on experiment outcomes rather than intuition",
               },
               {
-                icon: "🛡️",
-                title: "Risk Reduction",
-                desc: "90% decrease in rollback incidents through gradual releases",
+                icon: "📉",
+                title: "Reduced Experiment Setup Errors",
+                desc: "Cut experiment configuration errors by 70%",
               },
               {
                 icon: "👥",
                 title: "Developer Adoption",
-                desc: "100+ teams actively using the platform for feature releases",
+                desc: "100+ teams actively using the platform for experimentation",
               },
               {
                 icon: "🔄",
@@ -318,14 +344,14 @@ export default function StatsigCaseStudy() {
                 desc: "3x increase in the number of concurrent experiments run",
               },
               {
-                icon: "📊",
-                title: "Improved Observability",
-                desc: "Unified trait handling and logging improved debuggability and transparency",
+                icon: "⏱️",
+                title: "Time to Insight",
+                desc: "Faster time to insight, enabling teams to iterate faster and make more informed decisions",
               },
               {
                 icon: "📊",
-                title: "Improved XXX",
-                desc: "Unified trait handling and logging improved debuggability and transparency",
+                title: "Simplified Experiment Setup",
+                desc: "Significantly reduced experiment setup time by 80%",
               },
             ].map(({ icon, title, desc }, index) => (
               <motion.div
@@ -347,6 +373,12 @@ export default function StatsigCaseStudy() {
             ))}
           </div>
         </motion.div>
+      </div>
+      {/* CTA */}
+      <div className="mt-24 text-center">
+        <Button href="/#projects" className="btn btn-primary">
+          ← Back to Projects
+        </Button>
       </div>
     </section>
   )

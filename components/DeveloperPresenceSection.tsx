@@ -4,10 +4,9 @@ import { motion } from "framer-motion"
 import { FaGithub, FaTerminal } from "react-icons/fa"
 import { SiStackoverflow } from "react-icons/si"
 
-const STACK_OVERFLOW_USER_ID = "YOUR_USER_ID"
+const STACK_OVERFLOW_USER_ID = "10019394"
 const STACK_OVERFLOW_PROFILE_URL = `https://stackoverflow.com/users/${STACK_OVERFLOW_USER_ID}`
-const GITHUB_URL = "https://github.com/YOUR_GITHUB_USERNAME"
-const DEV_PORTFOLIO_URL = "https://yourdomain.com/dev"
+const GITHUB_URL = "https://github.com/missmilo"
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -52,7 +51,7 @@ export const DeveloperPresenceSection = () => {
             custom={0.2}
             variants={fadeInUp}
             viewport={{ once: true }}
-            className="bg-base-200 dark:bg-base-300 rounded-xl p-6 shadow-md transition duration-300 hover:shadow-lg"
+            className="bg-base-200 dark:bg-base-300 rounded-xl p-6 shadow-md transition-transform duration-300 hover:scale-[1.02]"
           >
             <SiStackoverflow className="mx-auto mb-3 text-4xl text-orange-500 dark:text-orange-400" />
             <a
@@ -72,7 +71,7 @@ export const DeveloperPresenceSection = () => {
             custom={0.3}
             variants={fadeInUp}
             viewport={{ once: true }}
-            className="bg-base-200 dark:bg-base-300 rounded-xl p-6 shadow-md transition duration-300 hover:shadow-lg"
+            className="bg-base-200 dark:bg-base-300 rounded-xl p-6 shadow-md transition-transform duration-300 hover:scale-[1.02]"
           >
             <FaGithub className="mx-auto mb-3 text-4xl" style={{ color: "#8257e5" }} />
             <a
@@ -92,11 +91,11 @@ export const DeveloperPresenceSection = () => {
             custom={0.4}
             variants={fadeInUp}
             viewport={{ once: true }}
-            className="bg-base-200 dark:bg-base-300 rounded-xl p-6 shadow-md transition duration-300 hover:shadow-lg"
+            className="bg-base-200 dark:bg-base-300 rounded-xl p-6 shadow-md transition-transform duration-300 hover:scale-[1.02]"
           >
             <FaTerminal className="mx-auto mb-3 text-4xl" style={{ color: "#00ff87" }} />
             <a
-              href={DEV_PORTFOLIO_URL}
+              href={"DEV_PORTFOLIO_URL"}
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm font-medium text-blue-500 hover:underline"
