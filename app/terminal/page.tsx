@@ -2,10 +2,10 @@
 
 import { AnimatePresence, motion } from "framer-motion"
 import React, { useEffect, useState } from "react"
-import { SkillsIcons } from "components/SkillsIcons"
 import { AboutMe } from "components/AboutMe"
-import { Projects } from "components/Projects"
 import FunProjects from "components/FunProjects"
+import { Projects } from "components/Projects"
+import { SkillsIcons } from "components/SkillsIcons"
 
 function Help() {
   return (
@@ -116,7 +116,7 @@ export default function TerminalHero() {
 
   const handleInput = (e: React.FormEvent) => {
     e.preventDefault()
-    
+
     setLines((prev) => [...prev, `> ${input}`])
 
     allCommands.forEach((cmd) => {
@@ -127,7 +127,7 @@ export default function TerminalHero() {
         setLines((prev) => [...prev, `Command not recognized: '${cmd}'`, 'Try typing "help".', ""])
         setActiveComponent(null)
       }
-    })   
+    })
     setInput("")
   }
 
@@ -193,8 +193,8 @@ export default function TerminalHero() {
       {activeComponent === ethosCommand.command && <SkillsIcons />}
       {activeComponent === aboutMeCommand.command && <AboutMe />}
       {activeComponent === clearCommand.command && setLines([])}
-      {activeComponent === experienceCommand.command && <Projects/>}
-      {activeComponent === funProjectsCommand.command && <FunProjects/>}
+      {activeComponent === experienceCommand.command && <Projects />}
+      {activeComponent === funProjectsCommand.command && <FunProjects />}
     </>
   )
 }
