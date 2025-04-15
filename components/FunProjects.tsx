@@ -22,13 +22,13 @@ const funProjects = [
     gh: "https://github.com/missmilo/Lemon-Engine",
     yt: "https://www.youtube.com/embed/OhkzZtGIYBA",
   },
-  {
+  /*{
     title: "Spotify Music Analyzer",
     description:
       "A site integrated with the Spotify API and Lyrics Genius API that allows users to search for songs and view their track analysis.",
     gh: "https://github.com/missmilo/music-trends-subscription",
     yt: "www.youtube.com/embed/OhkzZtGIYBA",
-  },
+  },*/
 ]
 
 const fadeInUp = {
@@ -66,7 +66,7 @@ const FunProjects = () => {
           engineering detours.
         </motion.p>
 
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-8 md:grid-cols-3">
           {funProjects.map((project, idx) => (
             <motion.div
               key={project.title}

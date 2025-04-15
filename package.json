@@ -24,6 +24,7 @@
   "dependencies": {
     "@headlessui/react": "^2.2.0",
     "@next/bundle-analyzer": "^15.1.6",
+    "@pixi/react": "^8.0.1",
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-checkbox": "^1.0.4",
     "@radix-ui/react-dialog": "^1.0.5",
@@ -54,6 +55,7 @@
     "motion": "^12.6.2",
     "next": "15.1.6",
     "next-themes": "^0.4.6",
+    "pixi.js": "^8.2.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",

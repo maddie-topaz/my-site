@@ -3,6 +3,9 @@
 import { AnimatePresence, motion } from "framer-motion"
 import React, { useEffect, useState } from "react"
 import { SkillsIcons } from "components/SkillsIcons"
+import { AboutMe } from "components/AboutMe"
+import { Projects } from "components/Projects"
+import FunProjects from "components/FunProjects"
 
 function Help() {
   return (
@@ -48,6 +51,11 @@ const aboutMeCommand = {
 const clearCommand = {
   command: "clear",
   description: "Clear the terminal",
+}
+
+const funProjectsCommand = {
+  command: "funprojects",
+  description: "View my late night engineering detours",
 }
 
 const allCommands = [helpCommand, ethosCommand, experienceCommand, contactCommand, aboutMeCommand, clearCommand]
@@ -108,15 +116,18 @@ export default function TerminalHero() {
 
   const handleInput = (e: React.FormEvent) => {
     e.preventDefault()
-    const cmd = input.trim().toLowerCase() as Command
+    
     setLines((prev) => [...prev, `> ${input}`])
 
-    if (cmd === "ethos --show" || cmd === "help") {
-      setActiveComponent(cmd)
-    } else {
-      setLines((prev) => [...prev, `Command not recognized: '${cmd}'`, 'Try typing "help".', ""])
-      setActiveComponent(null)
-    }
+    allCommands.forEach((cmd) => {
+      if (cmd.command === input) {
+        const cleanCmd = input.trim().toLowerCase() as Command
+        setActiveComponent(cleanCmd)
+      } else {
+        setLines((prev) => [...prev, `Command not recognized: '${cmd}'`, 'Try typing "help".', ""])
+        setActiveComponent(null)
+      }
+    })   
     setInput("")
   }
 
@@ -179,7 +190,11 @@ export default function TerminalHero() {
           )}
         </div>
       </section>
-      {activeComponent == ethosCommand.command && <SkillsIcons />}
+      {activeComponent === ethosCommand.command && <SkillsIcons />}
+      {activeComponent === aboutMeCommand.command && <AboutMe />}
+      {activeComponent === clearCommand.command && setLines([])}
+      {activeComponent === experienceCommand.command && <Projects/>}
+      {activeComponent === funProjectsCommand.command && <FunProjects/>}
     </>
   )
 }
