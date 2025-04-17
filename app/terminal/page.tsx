@@ -75,6 +75,13 @@ export default function TerminalHero() {
   const [isIntroDone, setIsIntroDone] = useState(false)
   const [activeComponent, setActiveComponent] = useState<Command | null>(null)
 
+  useEffect(() => {
+    if (activeComponent === clearCommand.command) {
+      setLines([])
+      setActiveComponent(null)
+    }
+  }, [activeComponent])
+
   const fullText = "> yarn maddie-dev --launch"
   const introLines = [
     "📦 Installing portfolio dependencies...",
@@ -119,15 +126,13 @@ export default function TerminalHero() {
 
     setLines((prev) => [...prev, `> ${input}`])
 
-    allCommands.forEach((cmd) => {
-      if (cmd.command === input) {
-        const cleanCmd = input.trim().toLowerCase() as Command
-        setActiveComponent(cleanCmd)
-      } else {
-        setLines((prev) => [...prev, `Command not recognized: '${cmd}'`, 'Try typing "help".', ""])
-        setActiveComponent(null)
-      }
-    })
+    const matchedCommand = allCommands.find((cmd) => cmd.command === input)
+    if (matchedCommand) {
+      setActiveComponent(matchedCommand.command as Command)
+    } else {
+      setLines((prev) => [...prev, `Command not recognized: '${input}'`, 'Try typing "help".', ""])
+      setActiveComponent(null)
+    }
     setInput("")
   }
 
@@ -192,7 +197,6 @@ export default function TerminalHero() {
       </section>
       {activeComponent === ethosCommand.command && <SkillsIcons />}
       {activeComponent === aboutMeCommand.command && <AboutMe />}
-      {activeComponent === clearCommand.command && setLines([])}
       {activeComponent === experienceCommand.command && <Projects />}
       {activeComponent === funProjectsCommand.command && <FunProjects />}
     </>
