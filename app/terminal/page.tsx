@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion"
 import React, { useEffect, useState } from "react"
 import { AboutMe } from "components/AboutMe"
+import Contact from "components/Contact"
 import FunProjects from "components/FunProjects"
 import { Projects } from "components/Projects"
 import { SkillsIcons } from "components/SkillsIcons"
@@ -199,6 +200,7 @@ export default function TerminalHero() {
       {activeComponent === aboutMeCommand.command && <AboutMe />}
       {activeComponent === experienceCommand.command && <Projects />}
       {activeComponent === funProjectsCommand.command && <FunProjects />}
+      {activeComponent === contactCommand.command && <Contact />}
     </>
   )
 }
