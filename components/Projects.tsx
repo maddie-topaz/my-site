@@ -16,8 +16,7 @@ const projects = [
   {
     id: "atlassian-experiments",
     title: "Experimentation at Scale: Rolling out the Statsig Platform At Atlassian",
-    description:
-      "Built and published Node.js packages to standardize Statsig integration across backend services. Enabled safer, faster experimentation with feature flags, robust analytics tagging, and platform-wide consistency.",
+    description: "Built and published Node.js packages to standardize Statsig integration across Atlassian services.",
     image: "/images/statsig.png",
     tech: [SiTypescript, SiNodedotjs, SiReact],
   },
