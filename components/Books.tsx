@@ -95,7 +95,7 @@ export const BookshelfWithBoard = () => {
   }
 
   return (
-    <section className="bg-base-100 border-base-300 relative border-t py-16 dark:border-gray-800 dark:bg-black">
+    <section className="bg-base-200 border-base-300 relative border-t py-16 dark:border-gray-800 dark:bg-black">
       <div className="container mx-auto px-4">
         <h2 className="mb-8 text-center text-4xl font-bold dark:text-white">Bookshelf</h2>
 

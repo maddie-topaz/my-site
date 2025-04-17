@@ -35,7 +35,7 @@ const SocialButton = ({ href, icon, ariaLabel, onClick }: SocialButtonProps) => 
 
 const Contact = () => {
   return (
-    <section id="contact" className="bg-base-200 py-20 text-center dark:bg-black">
+    <section id="contact" className="bg-base-100 py-20 text-center dark:bg-black">
       <div className="container mx-auto max-w-2xl px-4">
         <motion.h2
           className="mb-6 text-4xl font-bold dark:text-white"
