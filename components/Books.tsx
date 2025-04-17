@@ -67,6 +67,19 @@ const books = [
     author: "Sam Newman",
     cover: "/images/microservices.jpg",
   },
+  {
+    id: "delicate-art",
+    title: "The (Delicate) Art of Bureaucracy",
+    author: "Mark Schwartz",
+    cover: "/images/delicate.jpg",
+    status: "Favorite",
+  },
+  {
+    id: "grokking-algorithms",
+    title: "Grokking Algorithms: An Illustrated Guide for Programmers and Other Curious People",
+    author: "Aditya Y. Bhargava",
+    cover: "/images/grokking.jpg",
+  },
 ]
 
 export const BookshelfWithBoard = () => {
@@ -131,18 +144,11 @@ export const BookshelfWithBoard = () => {
         {/* Scrollable Bookshelf */}
         <div
           ref={shelfRef}
-          className="scrollbar-hide cursor-grab snap-x snap-mandatory overflow-x-auto scroll-smooth pb-6 [-ms-overflow-style:none] [scrollbar-width:none] active:cursor-grabbing [&::-webkit-scrollbar]:hidden"
+          className="scrollbar-hide cursor-grab snap-x snap-mandatory overflow-x-auto scroll-smooth pb-10 [-ms-overflow-style:none] [scrollbar-width:none] active:cursor-grabbing [&::-webkit-scrollbar]:hidden"
         >
           <div className="inline-flex gap-6 px-2">
-            {books.map((book, index) => (
-              <motion.div
-                key={book.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="relative h-[216px] w-36 flex-shrink-0 transform cursor-pointer snap-start transition duration-300 hover:-translate-y-2"
-              >
+            {books.map((book) => (
+              <div key={book.id} className="relative h-[216px] w-36 flex-shrink-0 cursor-pointer snap-start">
                 <div className="h-full w-full overflow-hidden rounded-sm border bg-white shadow-lg dark:border-gray-600 dark:bg-gray-800">
                   <Image
                     src={book.cover}
@@ -152,7 +158,7 @@ export const BookshelfWithBoard = () => {
                     className="h-full w-full object-cover"
                   />
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
