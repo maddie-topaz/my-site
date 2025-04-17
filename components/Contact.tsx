@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion"
 import { FaLinkedin } from "react-icons/fa"
-import { ContactFormModal } from "./ContactFormModal"
 
 interface SocialButtonProps {
   href?: string
@@ -72,7 +71,6 @@ const Contact = () => {
             icon={<FaLinkedin className="h-8 w-8 text-gray-700 dark:text-gray-200" />}
             ariaLabel="LinkedIn"
           />
-          <ContactFormModal />
         </motion.div>
       </div>
     </section>
