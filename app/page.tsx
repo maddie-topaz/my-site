@@ -1,5 +1,6 @@
 "use client"
 import { AboutMe } from "components/AboutMe"
+import { BookshelfWithBoard } from "components/Books"
 import Contact from "components/Contact"
 import { DeveloperPresenceSection } from "components/DeveloperPresenceSection"
 import FunProjects from "components/FunProjects"
@@ -16,6 +17,7 @@ export default function Web() {
       <Projects />
       <FunProjects />
       <DeveloperPresenceSection />
+      <BookshelfWithBoard />
       <Contact />
     </div>
   )
