@@ -55,11 +55,19 @@ const clearCommand = {
 }
 
 const funProjectsCommand = {
-  command: "funprojects",
+  command: "developer detours --show",
   description: "View my late night engineering detours",
 }
 
-const allCommands = [helpCommand, ethosCommand, experienceCommand, contactCommand, aboutMeCommand, clearCommand]
+const allCommands = [
+  helpCommand,
+  ethosCommand,
+  experienceCommand,
+  contactCommand,
+  aboutMeCommand,
+  clearCommand,
+  funProjectsCommand,
+]
 
 type Command =
   | typeof ethosCommand.command
@@ -68,6 +76,7 @@ type Command =
   | typeof contactCommand.command
   | typeof aboutMeCommand.command
   | typeof clearCommand.command
+  | typeof funProjectsCommand.command
 
 export default function TerminalHero() {
   const [typedLine, setTypedLine] = useState("")
