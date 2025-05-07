@@ -48,10 +48,10 @@ const operationsEthos = [
       "DevOps isn’t a separate phase — it’s embedded into everything I build. From CI/CD pipelines to IAC, I automate the full delivery lifecycle — deployment, testing, monitoring, and analytics — to enable rapid, resilient, and fault-tolerant software delivery.",
   },
   {
-    icon: "🔄",
-    title: "Feedback-Driven Development",
+    icon: "🛠️",
+    title: "Built to Last, Built to Adapt",
     description:
-      "I build iteratively — testing assumptions early, learning fast, and refining features based on real feedback, not guesswork.",
+      "I design cloud systems that are built to scale, stay reliable under pressure, stay secure by design, and optimize performance and cost — all guided by the AWS Well-Architected Framework.",
   },
   {
     icon: "🩺",
@@ -69,10 +69,10 @@ const deliveryEthos = [
       "I guide features from discovery to delivery, focusing on solving the right problems, not just shipping code. I lead features with a focus on delivering measurable business and user outcomes — not just checking off tasks.",
   },
   {
-    icon: "🛠️",
-    title: "Built to Last, Built to Adapt",
+    icon: "🔄",
+    title: "Feedback-Driven Development",
     description:
-      "I design cloud systems that are built to scale, stay reliable under pressure, stay secure by design, and optimize performance and cost — all guided by the AWS Well-Architected Framework.",
+      "I build iteratively — testing assumptions early, learning fast, and refining features based on real feedback, not guesswork.",
   },
   {
     icon: "⛓️",
