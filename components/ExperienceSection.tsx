@@ -232,7 +232,7 @@ export const ExperienceSection = () => {
       </motion.h2>
 
       <motion.p
-        className="mt-6 mb-12 text-lg text-gray-400 dark:text-gray-300"
+        className="mt-6 mb-12 text-lg text-gray-400 dark:text-gray-300 pl-5 pr-5 text-center"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
