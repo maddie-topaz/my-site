@@ -84,15 +84,15 @@ export const ExperienceSection = () => {
       date: "Mar 2024 - May 2025",
       title: "Personal Sabbatical – Self-directed",
       description: (
-        <div className="space-y-4 leading-relaxed text-gray-300">
+        <div className="space-y-4 leading-relaxed text-gray-400">
           <p>
-            <span className="font-semibold text-white">Following a personal loss</span>, I took intentional time away
+            <span className="font-semibold">Following a personal loss</span>, I took intentional time away
             from work to travel and reconnect with life.
           </p>
           <p>
-            I visited Nepal, hiking to <span className="font-bold">Everest Base Camp</span> — a high-altitude journey
+            I visited Nepal, hiking to <span className="font-bold text-gray-300">Everest Base Camp</span> — a high-altitude journey
             through remote Himalayan villages, suspension bridges, and snow-covered trails. Later, I continued to Europe
-            and walked the <span className="font-bold">French Camino de Santiago</span>, a 780 km pilgrimage from
+            and walked the <span className="font-bold text-gray-300">French Camino de Santiago</span>, a 780 km pilgrimage from
             Saint-Jean-Pied-de-Port in France to Santiago de Compostela in Spain.
           </p>
           <p>
