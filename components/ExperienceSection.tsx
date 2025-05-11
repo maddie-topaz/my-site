@@ -35,11 +35,13 @@ type Experience = {
     name: string
     link: string
   }
-  tech?: ReactElement[]
+  tech?: IconWithTitle[]
   footer?: ReactElement
 }
 
-const TechIcons = ({ icons }: { icons?: ReactElement[] }) => {
+type IconWithTitle = ReactElement<{ title?: string }>
+
+const TechIcons = ({ icons }: { icons?: IconWithTitle[] }) => {
   if (!icons || icons.length === 0) return null
   return (
     <div className="mt-2 flex flex-wrap gap-2">
