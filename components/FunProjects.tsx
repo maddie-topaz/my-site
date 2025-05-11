@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { FaBox, FaGithub, FaYoutube } from "react-icons/fa"
+import { FaBookOpen, FaBox, FaGithub, FaYoutube } from "react-icons/fa"
 
 const funProjects = [
   {
@@ -11,12 +11,14 @@ const funProjects = [
     gh: "https://github.com/missmilo/tetris",
     yt: "https://www.youtube.com/embed/BFX26GQ9bAE",
     image: "/images/tetris.png", // Add image path here
+    report: "/resources/TetrisReport.pdf",
   },
   {
     title: "Fennex: A 2D Monogame Platformer",
     description: "A simple 2D platformer made using the Monogame API Version 3.6 and Visual Studio 2015.",
     gh: "https://github.com/yourname/ascii-animator",
     yt: "https://www.youtube.com/embed/BqbTJuIhbj0",
+    report: "/resources/FennexReport.pdf",
   },
   {
     title: "OpenGL Graphics Engine",
@@ -94,6 +96,18 @@ const FunProjects = () => {
               </div>
 
               <div className="mt-auto space-y-2">
+                {project.report && (
+                  <p>
+                    <a
+                      href={project.report}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm text-blue-500 hover:underline"
+                    >
+                      <FaBookOpen /> Read the Report
+                    </a>
+                  </p>
+                )}
                 {project.gh && (
                   <p>
                     <a
