@@ -5,15 +5,20 @@ import {
   SiAmazondynamodb,
   SiAwslambda,
   SiC,
+  SiCesium,
   SiCplusplus,
+  SiCypress,
+  SiDjango,
   SiDocker,
   SiGit,
   SiGoogleanalytics,
   SiGraphql,
   SiJest,
+  SiMonogame,
   SiNodedotjs,
   SiOpengl,
   SiPostgresql,
+  SiPrometheus,
   SiPulumi,
   SiReact,
   SiRedux,
@@ -23,6 +28,7 @@ import {
   SiSubversion,
   SiTailwindcss,
   SiTypescript,
+  SiUnity,
   SiWordpress,
 } from "react-icons/si"
 
@@ -56,43 +62,48 @@ const TechIcons = ({ icons }: { icons?: IconWithTitle[] }) => {
 
 export const ExperienceSection = () => {
   const experiences: Experience[] = [
-    /*{
+    {
       date: "May 2025 – Current",
-      title: "Elastik – Senior Software Engineer",
-      image: "/images/elastik.png",
+      title: "FTP Solutions – Full Stack Software Engineer",
+      image: "/images/ftp1.png",
       description: (
         <div>
-          <h1>Hello</h1>
+          <p className="text-gray-400">
+            At FTP Solutions, I contribute to the development of the Agricultural IMS (Integrated Monitoring System) — a
+            vendor-agnostic, real-time monitoring platform used in mining and agriculture. IMS consolidates data from
+            diverse third-party systems into a single intuitive interface, offering customers a comprehensive
+            operational overview across large-scale, remote environments.
+          </p>
         </div>
       ),
       tech: [
         <SiAmazon title="AWS" />,
-        <SiAwsamplify title="AWS Amplify" />,
-        <SiAmazondynamodb title="DynamoDB" />,
-        <SiGraphql title="GraphQL" />,
-        <SiAwslambda title="AWS Lambda" />,
-        <SiNodedotjs title="NodeJS" />,
+        <SiDocker title="Docker" />,
+        <SiDjango title="Django" />,
+        <SiPostgresql title="PostgreSQL" />,
+        <SiPrometheus title="Prometheus" />,
+        <SiCypress title="Cypress" />,
+        <SiCesium title="CesiumJS" />,
         <SiTypescript title="TypeScript" />,
         <SiReact title="React" />,
-        <SiTailwindcss title="Tailwind" />,
-        <SiRedux title="Redux" />,
         <SiJest title="Jest" />,
-        <SiGit title="Git" />
+        <SiGit title="Git" />,
       ],
-    },*/
+    },
     {
       date: "Mar 2024 - May 2025",
       title: "Personal Sabbatical – Self-directed",
       description: (
         <div className="space-y-4 leading-relaxed text-gray-400">
           <p>
-            <span className="font-semibold">Following a personal loss</span>, I took intentional time away
-            from work to travel and reconnect with life.
+            <span className="font-semibold">Following a personal loss</span>, I took intentional time away from work to
+            travel and reconnect with life.
           </p>
           <p>
-            I visited Nepal, hiking to <span className="font-bold text-gray-300">Everest Base Camp</span> — a high-altitude journey
-            through remote Himalayan villages, suspension bridges, and snow-covered trails. Later, I continued to Europe
-            and walked the <span className="font-bold text-gray-300">French Camino de Santiago</span>, a 780 km pilgrimage from
+            I visited Nepal, hiking to <span className="font-bold text-gray-300">Everest Base Camp</span> — a
+            high-altitude journey through remote Himalayan villages, suspension bridges, and snow-covered trails. Later,
+            I continued to Europe and walked the{" "}
+            <span className="font-bold text-gray-300">French Camino de Santiago</span>, a 780 km pilgrimage from
             Saint-Jean-Pied-de-Port in France to Santiago de Compostela in Spain.
           </p>
           <p>
@@ -191,6 +202,20 @@ export const ExperienceSection = () => {
         <SiJest title="Jest" />,
         <SiGit title="Git" />,
       ],
+      footer: (
+        <div className="space-y-2 text-sm">
+          <div>
+            <h4 className="mb-2 font-semibold">Certifications</h4>
+            <span>AWS Certified Solutions Architect – Associate</span>
+            <span className="block text-gray-400 italic">Awarded in 2020</span>
+          </div>
+          <p className="text-gray-400">
+            Effectively demonstrate knowledge of how to architect and deploy secure and robust applications on AWS
+            technologies and define solutions using architectural design principles of the AWS Well-Architected
+            Framework.
+          </p>
+        </div>
+      ),
     },
     {
       date: "Nov 2017 – Feb 2019",
@@ -217,6 +242,53 @@ export const ExperienceSection = () => {
         <SiSubversion title="Subversion" />,
       ],
     },
+    {
+      date: "Feb 2013 – Nov 2017",
+      title: "Murdoch University – Bachelor of Science (Games Technology)",
+      image: "/images/murdoch.png",
+      description: (
+        <div>
+          <p className="text-gray-400">
+            Gained hands-on experience in C++, OpenGL, and object-oriented programming, focusing on game development and
+            performance-critical applications. Built a custom rendering engine, applying advanced real-time graphics
+            techniques, multi-threading, and memory management. Developed strong foundations in data structures,
+            algorithms, and software engineering principles.
+          </p>
+        </div>
+      ),
+      tech: [
+        <SiC title="C" />,
+        <SiCplusplus title="C++" />,
+        <SiOpengl title="OpenGL" />,
+        <SiSharp title="C#" />,
+        <SiUnity title="Unity" />,
+        <SiMonogame title="Monogame" />,
+        <SiGit title="Git" />,
+      ],
+      footer: (
+        <div className="space-y-2 text-sm">
+          <h4 className="mb-2 font-semibold">Awards & Recognition</h4>
+          <div className="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-2">
+            <div>
+              <span className="block font-medium">IEEE WA Section University Student Award</span>
+              <span className="block text-gray-400">
+                Best Research Project in ICT219 <em>Intelligent Systems</em>
+              </span>
+            </div>
+            <div>
+              <span className="block font-medium">Industry Selected Games Design and Programming Prize</span>
+              <span className="block text-gray-400">
+                Best Project in ICT290 <em>Games Design and Programming</em>
+              </span>
+            </div>
+            <div>
+              <span className="block font-medium">Murdoch Senate Scholarship</span>
+              <span className="block text-gray-400">Awarded in 2015 for academic merit</span>
+            </div>
+          </div>
+        </div>
+      ),
+    },
   ]
 
   return (
@@ -232,7 +304,7 @@ export const ExperienceSection = () => {
       </motion.h2>
 
       <motion.p
-        className="mt-6 mb-12 text-lg text-gray-400 dark:text-gray-300 pl-5 pr-5 text-center"
+        className="mt-6 mb-12 pr-5 pl-5 text-center text-lg text-gray-400 dark:text-gray-300"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -250,19 +322,23 @@ export const ExperienceSection = () => {
 
       {experiences.map((exp, index) => (
         <div key={index} className="w-full max-w-7xl px-4">
-          <div className="card md:card-side bg-base-100 flex w-full flex-col shadow-sm">
-            <figure className="h-64 w-full shrink-0 md:h-auto md:w-64">
+          <div className="card md:card-side bg-base-100 w-full shadow-sm">
+            <figure className="h-72 w-full shrink-0 md:h-auto md:w-72">
               <img src={exp.image} alt={exp.title} className="h-full w-full object-cover" />
             </figure>
-            <div className="card-body p-4 md:p-6">
-              <div className="mb-3">
-                <div className="text-md text-base-content font-bold">{exp.title}</div>
-                <time className="block text-sm text-gray-500">{exp.date}</time>
+
+            <div className="flex flex-1 flex-col">
+              <div className="card-body p-4 md:p-6">
+                <div className="mb-3">
+                  <div className="text-md text-base-content font-bold">{exp.title}</div>
+                  <time className="block text-sm text-gray-500">{exp.date}</time>
+                </div>
+                {exp.description}
+                <TechIcons icons={exp.tech} />
               </div>
-              {exp.description}
-              <TechIcons icons={exp.tech} />
+
+              {exp.footer && <div className="border-base-300 border-t p-4 md:p-6">{exp.footer}</div>}
             </div>
-            {exp.footer && <div className="card-footer bg-base-100 border-t-0 p-4 md:p-6">{exp.footer}</div>}
           </div>
         </div>
       ))}
