@@ -24,19 +24,19 @@ const developerEthos = [
     icon: "🧩",
     title: "Composability over Complexity",
     description:
-      "I favor modular, composable design — breaking problems down into reusable, testable parts to reduce complexity and increase clarity.",
+      "I favor modular, composable design. Breaking problems down into reusable, testable parts to reduce complexity.",
   },
   {
     icon: "🔐",
     title: "Types That Tell the Truth",
     description:
-      "I treat types as clear contracts — building predictable, resilient systems through type-safe code that boosts maintainability, developer experience, and early bug detection.",
+      "I treat types as clear contracts. Type safe code boosts maintainability, developer experience, and early bug detection.",
   },
   {
     icon: "🧪",
     title: "Test with Purpose, Ship with Confidence",
     description:
-      "I use TDD to drive clarity, ensure stability, and enable fearless iteration — letting tests shape design and catch issues before they reach production.",
+      "I use TDD to enable fearless iteration, using tests to shape design and catch issues early, before they reach production.",
   },
 ]
 

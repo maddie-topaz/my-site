@@ -77,11 +77,11 @@ export const AboutMe = () => {
               custom={0.0}
               variants={fadeInUp}
             >
-              I'm Maddie — a software engineer with a background in full-stack development, cloud architecture, and
-              real-time graphics programming. I always wanted to be a programmer, but for a long time I assumed you had
+              I'm Maddie, a software engineer with a background in full stack development, cloud architecture, and
+              real time graphics programming. I always wanted to be a programmer, but for a long time I assumed you had
               to be a maths genius to make it in tech. I started in business admin, until I found myself constantly
               peeking over at the programming coursework. A tech lecturer noticed, handed me a brochure, and suggested I
-              switch. I did — and I haven’t looked back since.
+              switch. I did, and I haven’t looked back since.
             </motion.p>
 
             <motion.h3 className="mt-6 mb-2 text-lg font-semibold text-white">Engineering at Scale</motion.h3>
@@ -93,12 +93,12 @@ export const AboutMe = () => {
               custom={0.1}
               variants={fadeInUp}
             >
-              Since then, I’ve worked across the stack — from designing{" "}
+              Since then, I’ve worked across the stack from designing{" "}
               <span className="font-medium text-blue-400">OpenGL</span> rendering engines to building experimentation
               platforms and disaster recovery systems at <span className="font-medium text-blue-400">Atlassian</span>.
-              I’ve led end-to-end feature development for high-traffic products like{" "}
+              I’ve led end to end feature development for high-traffic products like{" "}
               <span className="font-medium text-blue-400">Chumba Casino</span> and built systems to safeguard{" "}
-              <span className="font-medium text-blue-400">petabytes</span> of user-generated content in{" "}
+              <span className="font-medium text-blue-400">petabytes</span> of user generated content in{" "}
               <span className="font-medium text-blue-400">AWS</span>.
             </motion.p>
 
@@ -112,8 +112,8 @@ export const AboutMe = () => {
               variants={fadeInUp}
             >
               Today, I build with a <span className="font-medium text-blue-400">platform mindset</span> and a{" "}
-              <span className="font-medium text-blue-400">DevOps heart</span> — focused on clarity, resilience, and
-              full-stack responsibility from infrastructure to interface. My core stack includes{" "}
+              <span className="font-medium text-blue-400">DevOps heart</span> focused on clarity, resilience, and
+              full stack responsibility from infrastructure to interface. My core stack includes{" "}
               <span className="font-medium text-blue-400">TypeScript</span>,{" "}
               <span className="font-medium text-blue-400">Node.js</span>,{" "}
               <span className="font-medium text-blue-400">React</span>,{" "}
@@ -149,7 +149,7 @@ export const AboutMe = () => {
               >
                 The Phoenix Project
               </a>{" "}
-              didn’t just teach me about delivery practices — they helped me rethink what great engineering looks like.
+              didn’t just teach me about delivery practices, they helped me rethink what great engineering looks like.
             </motion.p>
           </div>
 

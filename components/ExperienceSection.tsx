@@ -69,10 +69,9 @@ export const ExperienceSection = () => {
       description: (
         <div>
           <p className="text-gray-400">
-            At FTP Solutions, I contribute to the development of the Agricultural IMS (Integrated Monitoring System) — a
-            vendor-agnostic, real-time monitoring platform used in mining and agriculture. IMS consolidates data from
-            diverse third-party systems into a single intuitive interface, offering customers a comprehensive
-            operational overview across large-scale, remote environments.
+            At FTP Solutions, I work on Faarm, a real time monitoring platform for all things agriculture.
+            Faarm combines third party data ingestion from monitoring devices into a single pane of glass,
+            giving farmers a clear view of their operations, even in the most remote environments.
           </p>
         </div>
       ),
@@ -82,6 +81,8 @@ export const ExperienceSection = () => {
         <SiDjango title="Django" />,
         <SiPostgresql title="PostgreSQL" />,
         <SiPrometheus title="Prometheus" />,
+        <SiAwslambda title="AWS Lambda" />,
+        <SiPulumi title="Pulumi" />,
         <SiCypress title="Cypress" />,
         <SiCesium title="CesiumJS" />,
         <SiTypescript title="TypeScript" />,
@@ -100,8 +101,8 @@ export const ExperienceSection = () => {
             travel and reconnect with life.
           </p>
           <p>
-            I visited Nepal, hiking to <span className="font-bold text-gray-300">Everest Base Camp</span> — a
-            high-altitude journey through remote Himalayan villages, suspension bridges, and snow-covered trails. Later,
+            I visited Nepal, hiking to <span className="font-bold text-gray-300">Everest Base Camp</span>, a
+            high altitude journey through remote Himalayan villages, suspension bridges, and snow covered trails. Later,
             I continued to Europe and walked the{" "}
             <span className="font-bold text-gray-300">French Camino de Santiago</span>, a 780 km pilgrimage from
             Saint-Jean-Pied-de-Port in France to Santiago de Compostela in Spain.
@@ -131,7 +132,7 @@ export const ExperienceSection = () => {
             <h3 className="text-md font-bold text-gray-300">Measurement & Experimentation Platform (MEP)</h3>
             <p className="text-gray-400">
               I helped build scalable <span className="font-medium text-blue-400">experimentation tooling</span> that
-              enabled product teams to make <span className="font-medium text-blue-400">data-driven decisions</span>{" "}
+              enabled product teams to make <span className="font-medium text-blue-400">data driven decisions</span>{" "}
               across Atlassian. Integrating with <span className="font-medium text-blue-400">Statsig</span> and internal
               systems like Switcheroo, we streamlined the rollout, tracking, and analysis of feature flags and
               experiments across frontend and backend services.
@@ -144,7 +145,7 @@ export const ExperienceSection = () => {
               I led automation efforts for disaster recovery across AWS, securing over{" "}
               <span className="font-medium text-blue-400">20 petabytes</span> of media data and more than{" "}
               <span className="font-medium text-blue-400">20 billion objects</span> in Amazon S3. I developed automated
-              systems using AWS Lambda to enforce recovery settings such as point-in-time recovery and continuous
+              systems using AWS Lambda to enforce recovery settings such as point in time recovery and continuous
               backups for services like DynamoDB and RDS, remediating misconfigurations in real time.
             </p>
           </div>
@@ -174,16 +175,16 @@ export const ExperienceSection = () => {
       description: (
         <div>
           <p className="text-gray-400">
-            At VGW, I led end-to-end feature development for{" "}
-            <span className="font-medium text-blue-400">Chumba Casino</span>, a high-traffic social gaming platform
+            At VGW, I led end to end feature development for{" "}
+            <span className="font-medium text-blue-400">Chumba Casino</span>, a high traffic social gaming platform
             generating millions in daily revenue. My role required close collaboration with stakeholders and a strong
-            understanding of domain-driven design and{" "}
+            understanding of domain driven design and{" "}
             <span className="font-medium text-blue-400">microservice architecture</span>, supporting the company’s shift
             away from a monolithic system.
           </p>
           <p className="text-gray-400">
             I implemented key features such as <span className="font-medium text-blue-400">phone verification</span> to
-            improve platform security, and an <span className="font-medium text-blue-400">in-product messaging</span>{" "}
+            improve platform security, and an <span className="font-medium text-blue-400">in product messaging</span>{" "}
             system that empowered the marketing team to deliver targeted user notifications.
           </p>
         </div>
@@ -211,7 +212,7 @@ export const ExperienceSection = () => {
           </div>
           <p className="text-gray-400">
             Effectively demonstrate knowledge of how to architect and deploy secure and robust applications on AWS
-            technologies and define solutions using architectural design principles of the AWS Well-Architected
+            technologies and define solutions using architectural design principles of the AWS Well Architected
             Framework.
           </p>
         </div>
@@ -225,9 +226,9 @@ export const ExperienceSection = () => {
         <div>
           <p className="text-gray-400">
             At Hexagon Mining, I contributed to the{" "}
-            <span className="font-medium text-blue-400">in-house OpenGL rendering engine</span> powering the xViewer in
+            <span className="font-medium text-blue-400">in house OpenGL rendering engine</span> powering the xViewer in
             MinePlan 3D, a flagship geological modeling tool. I implemented multiple viewers to render different
-            geometry perspectives simultaneously — a feature that significantly improved usability for geologists and
+            geometry perspectives simultaneously, a feature that significantly improved usability for geologists and
             engineers. Alongside this, I collaborated with senior developers to{" "}
             <span className="font-medium text-blue-400">optimize rendering performance</span> and enhance the overall
             user experience.
@@ -249,9 +250,9 @@ export const ExperienceSection = () => {
       description: (
         <div>
           <p className="text-gray-400">
-            Gained hands-on experience in C++, OpenGL, and object-oriented programming, focusing on game development and
-            performance-critical applications. Built a custom rendering engine, applying advanced real-time graphics
-            techniques, multi-threading, and memory management. Developed strong foundations in data structures,
+            Gained hands on experience in C++, OpenGL, and object oriented programming, focusing on game development and
+            performance critical applications. Built a custom rendering engine, applying advanced real time graphics
+            techniques, multi threading, and memory management. Developed strong foundations in data structures,
             algorithms, and software engineering principles.
           </p>
         </div>
@@ -317,7 +318,7 @@ export const ExperienceSection = () => {
           },
         }}
       >
-        From building software to hiking across continents — here’s my journey so far.
+        From building software to hiking across continents, here’s my journey so far.
       </motion.p>
 
       {experiences.map((exp, index) => (
