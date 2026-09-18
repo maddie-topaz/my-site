@@ -10,13 +10,13 @@ import { SkillsIcons } from "components/SkillsIcons"
 
 function Help() {
   return (
-    <div className="mt-4 text-green-300">
+    <div className="mt-4">
       Available commands:
       <ul className="mt-1 list-inside list-disc">
         {allCommands.map((cmd, index) => (
           <li key={index}>
-            <kbd className="kbd kbd-sm border border-green-500 bg-black text-green-400">{cmd.command}</kbd> —{" "}
-            {cmd.description}
+            <kbd className="kbd kbd-sm hairline bg-base-100 text-success">{cmd.command}</kbd>{" "}
+            <span className="muted">{cmd.description}</span>
           </li>
         ))}
       </ul>
@@ -94,12 +94,12 @@ export default function TerminalHero() {
 
   const fullText = "> yarn maddie-dev --launch"
   const introLines = [
-    "📦 Installing portfolio dependencies...",
-    "⚙️ Initializing dev environment...",
-    "🔍 Fetching project highlights...",
-    "✨ Deploying to DOM...",
-    "✅ Site successfully launched! Welcome to Maddie's Portfolio!",
-    "💡Tip: type help to see a list of available commands.",
+    "[1/4] Installing portfolio dependencies...",
+    "[2/4] Initializing dev environment...",
+    "[3/4] Fetching project highlights...",
+    "[4/4] Deploying to DOM...",
+    "ok    Site launched. Welcome to Maddie's portfolio.",
+    "tip   Type help to see the available commands.",
   ]
 
   useEffect(() => {
@@ -148,16 +148,16 @@ export default function TerminalHero() {
 
   return (
     <>
-      <section className="flex h-screen w-screen items-center justify-center bg-black font-mono text-green-400">
-        <div className="daisyui-box w-full max-w-4xl rounded-lg border border-green-600 bg-black shadow-lg">
+      <section className="bg-base-100 text-success flex h-screen w-screen items-center justify-center px-6 font-mono text-sm">
+        <div className="panel w-full max-w-4xl overflow-hidden">
           {/* Terminal Header */}
-          <div className="flex items-center justify-between rounded-t-lg border-b border-green-600 bg-neutral-900 p-3">
+          <div className="hairline bg-base-200 flex items-center justify-between border-b p-3">
             <div className="flex space-x-2">
-              <div className="h-3 w-3 rounded-full bg-red-500" />
-              <div className="h-3 w-3 rounded-full bg-yellow-500" />
-              <div className="h-3 w-3 rounded-full bg-green-500" />
+              <div className="bg-base-300 h-3 w-3 rounded-full" />
+              <div className="bg-base-300 h-3 w-3 rounded-full" />
+              <div className="bg-base-300 h-3 w-3 rounded-full" />
             </div>
-            <span className="text-xs text-gray-300">maddie@portfolio: ~</span>
+            <span className="muted text-xs">maddie@portfolio: ~</span>
             <div className="w-6" />
           </div>
 
@@ -191,13 +191,13 @@ export default function TerminalHero() {
           </div>
 
           {isIntroDone && (
-            <form onSubmit={handleInput} className="flex items-center border-t border-green-600 p-4">
+            <form onSubmit={handleInput} className="hairline flex items-center border-t p-4">
               <span className="mr-2">&gt;</span>
               <input
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                className="flex-grow border-none bg-transparent text-green-400 placeholder-green-600 focus:outline-none"
+                className="text-success placeholder:muted flex-grow border-none bg-transparent focus:outline-none"
                 autoFocus
                 placeholder="Type a command..."
               />

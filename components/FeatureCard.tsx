@@ -2,26 +2,26 @@ import { FaExclamationTriangle, FaWrench } from "react-icons/fa"
 
 export function FeatureCard({ title, problem, solution }: { title: string; problem: string; solution: string }) {
   return (
-    <div className="collapse-arrow bg-neutral collapse rounded-xl shadow">
+    <div className="collapse-arrow panel collapse">
       <input type="checkbox" className="min-h-0" />
-      <div className="collapse-title p-4">
-        <h3 className="font-semibold text-white">{title}</h3>
+      <div className="collapse-title p-5">
+        <h3 className="font-semibold tracking-tight">{title}</h3>
       </div>
-      <div className="collapse-content space-y-4 px-4">
-        <div className="bg-base-200 rounded p-3">
-          <p className="mb-1 flex items-center gap-2 text-xs font-bold text-pink-300 uppercase">
-            <FaExclamationTriangle className="text-pink-400" />
-            The Challenge
+      <div className="collapse-content space-y-3 px-5">
+        <div className="bg-base-300/40 rounded-md p-4">
+          <p className="text-warning mb-1 flex items-center gap-2 font-mono text-[0.65rem] tracking-widest uppercase">
+            <FaExclamationTriangle aria-hidden />
+            The challenge
           </p>
-          <p className="text-gray-400">{problem}</p>
+          <p className="muted-strong text-sm leading-relaxed">{problem}</p>
         </div>
 
-        <div className="bg-base-300 rounded p-3">
-          <p className="mb-1 flex items-center gap-2 text-xs font-bold text-green-300 uppercase">
-            <FaWrench className="text-green-400" />
-            The Fix
+        <div className="bg-base-300/40 rounded-md p-4">
+          <p className="text-success mb-1 flex items-center gap-2 font-mono text-[0.65rem] tracking-widest uppercase">
+            <FaWrench aria-hidden />
+            The fix
           </p>
-          <p className="text-gray-400">{solution}</p>
+          <p className="muted-strong text-sm leading-relaxed">{solution}</p>
         </div>
       </div>
     </div>

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { FaBookOpen, FaBox, FaGithub, FaYoutube } from "react-icons/fa"
+import { SectionHeading } from "components/SectionHeading"
 
 const funProjects = [
   {
@@ -34,7 +35,7 @@ const funProjects = [
     yt: "www.youtube.com/embed/OhkzZtGIYBA",
   },*/
   {
-    title: "🚀 Rocketdata",
+    title: "Rocketdata",
     description:
       "Rocketdata is a modern, lightweight Node.js wrapper for NASA's public APIs. Easily fetch data from the Astronomy Picture of the Day (APOD), Mars Rover imagery, and more.",
     gh: "https://github.com/missmilo/rocketdata/blob/main/API.md",
@@ -52,104 +53,33 @@ const fadeInUp = {
   }),
 }
 
+const linkClass = "muted-strong hover:text-primary inline-flex items-center gap-2 text-sm transition-colors"
+
 const FunProjects = () => {
   return (
-    <section className="bg-base-200 dark:bg-base-300 py-20 text-center">
-      <div className="container mx-auto max-w-4xl px-4">
-        <motion.h2
-          className="mb-6 text-4xl font-bold dark:text-white"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-        >
-          Side Quests
-        </motion.h2>
-
-        <motion.p
-          className="mb-12 text-lg text-gray-400 dark:text-gray-300"
-          initial="hidden"
-          whileInView="visible"
-          custom={0.1}
-          variants={fadeInUp}
-          viewport={{ once: true }}
-        >
-          Graphics engines, rogue game ideas, the occasional computer vision rabbit hole and other late-night
-          engineering detours.
-        </motion.p>
+    <section id="side-projects" className="hairline border-t py-24 sm:py-32">
+      <div className="mx-auto max-w-6xl px-6">
+        <SectionHeading
+          eyebrow="05 / Side projects"
+          title="Side projects"
+          intro="Graphics engines, rogue game ideas, the occasional computer vision rabbit hole and other late-night engineering detours."
+        />
 
         <div className="grid gap-6 md:grid-cols-2">
           {funProjects.map((project, idx) => (
-            <motion.div
+            <motion.article
               key={project.title}
-              className="bg-base-100 flex h-full flex-col rounded-xl p-6 text-left shadow-md transition-transform duration-300 hover:scale-[1.02]"
+              className="panel panel-hover flex h-full flex-col overflow-hidden"
               initial="hidden"
               whileInView="visible"
-              custom={0.2 + idx * 0.1}
+              custom={idx * 0.08}
               variants={fadeInUp}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-40px" }}
             >
-              <h3 className="mb-2 text-xl font-semibold dark:text-white">{project.title}</h3>
-
-              <div className="mb-4 min-h-[6rem] flex-1">
-                <p className="text-sm text-gray-400 dark:text-gray-400">{project.description}</p>
-              </div>
-
-              <div className="mt-auto space-y-2">
-                {project.report && (
-                  <p>
-                    <a
-                      href={project.report}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm text-blue-500 hover:underline"
-                    >
-                      <FaBookOpen /> Read the Report
-                    </a>
-                  </p>
-                )}
-                {project.gh && (
-                  <p>
-                    <a
-                      href={project.gh}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm text-blue-500 hover:underline"
-                    >
-                      <FaGithub /> View on GitHub
-                    </a>
-                  </p>
-                )}
-                {project.yt && (
-                  <p>
-                    <a
-                      href={project.yt}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm text-blue-500 hover:underline"
-                    >
-                      <FaYoutube /> View on YouTube
-                    </a>
-                  </p>
-                )}
-                {project.npm && (
-                  <p>
-                    <a
-                      href={project.npm}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm text-blue-500 hover:underline"
-                    >
-                      <FaBox /> View on NPM
-                    </a>
-                  </p>
-                )}
-              </div>
-
               {project.yt ? (
-                <div className="mt-4">
+                <div className="hairline aspect-video w-full border-b">
                   <iframe
-                    className="h-48 w-full rounded-md"
+                    className="h-full w-full"
                     src={project.yt}
                     title={project.title}
                     frameBorder="0"
@@ -158,11 +88,39 @@ const FunProjects = () => {
                   ></iframe>
                 </div>
               ) : project.image ? (
-                <div className="relative mt-4 h-48 w-full overflow-hidden rounded-md">
+                <div className="hairline relative aspect-video w-full overflow-hidden border-b">
                   <Image src={project.image} alt={project.title} fill className="object-cover" />
                 </div>
               ) : null}
-            </motion.div>
+
+              <div className="flex flex-1 flex-col p-6 md:p-8">
+                <h3 className="text-lg font-semibold tracking-tight">{project.title}</h3>
+                <p className="muted mt-2 text-sm leading-relaxed">{project.description}</p>
+
+                <div className="mt-auto flex flex-wrap gap-x-6 gap-y-2 pt-6">
+                  {project.report && (
+                    <a href={project.report} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                      <FaBookOpen aria-hidden /> Report
+                    </a>
+                  )}
+                  {project.gh && (
+                    <a href={project.gh} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                      <FaGithub aria-hidden /> GitHub
+                    </a>
+                  )}
+                  {project.yt && (
+                    <a href={project.yt} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                      <FaYoutube aria-hidden /> YouTube
+                    </a>
+                  )}
+                  {project.npm && (
+                    <a href={project.npm} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                      <FaBox aria-hidden /> npm
+                    </a>
+                  )}
+                </div>
+              </div>
+            </motion.article>
           ))}
         </div>
       </div>

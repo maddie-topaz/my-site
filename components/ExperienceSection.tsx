@@ -1,3 +1,5 @@
+"use client"
+
 import { motion } from "framer-motion"
 import type { ReactElement } from "react"
 import {
@@ -31,6 +33,7 @@ import {
   SiUnity,
   SiWordpress,
 } from "react-icons/si"
+import { SectionHeading } from "components/SectionHeading"
 
 type Experience = {
   date: string
@@ -50,10 +53,10 @@ type IconWithTitle = ReactElement<{ title?: string }>
 const TechIcons = ({ icons }: { icons?: IconWithTitle[] }) => {
   if (!icons || icons.length === 0) return null
   return (
-    <div className="mt-2 flex flex-wrap gap-2">
+    <div className="mt-5 flex flex-wrap gap-3">
       {icons.map((icon, i) => (
         <span key={i} className="tooltip" data-tip={icon.props.title}>
-          <span className="text-primary text-xl">{icon}</span>
+          <span className="muted hover:text-primary text-lg transition-colors">{icon}</span>
         </span>
       ))}
     </div>
@@ -68,10 +71,10 @@ export const ExperienceSection = () => {
       image: "/images/ftp1.png",
       description: (
         <div>
-          <p className="text-gray-400">
-            At FTP Solutions, I work on Faarm, a real time monitoring platform for all things agriculture.
-            Faarm combines third party data ingestion from monitoring devices into a single pane of glass,
-            giving farmers a clear view of their operations, even in the most remote environments.
+          <p className="muted-strong">
+            At FTP Solutions, I work on Faarm, a real time monitoring platform for all things agriculture. Faarm
+            combines third party data ingestion from monitoring devices into a single pane of glass, giving farmers a
+            clear view of their operations, even in the most remote environments.
           </p>
         </div>
       ),
@@ -95,16 +98,16 @@ export const ExperienceSection = () => {
       date: "Mar 2024 - May 2025",
       title: "Personal Sabbatical – Self-directed",
       description: (
-        <div className="space-y-4 leading-relaxed text-gray-400">
+        <div className="muted-strong space-y-4 leading-relaxed">
           <p>
             <span className="font-semibold">Following a personal loss</span>, I took intentional time away from work to
             travel and reconnect with life.
           </p>
           <p>
-            I visited Nepal, hiking to <span className="font-bold text-gray-300">Everest Base Camp</span>, a
+            I visited Nepal, hiking to <span className="text-base-content font-semibold">Everest Base Camp</span>, a
             high altitude journey through remote Himalayan villages, suspension bridges, and snow covered trails. Later,
             I continued to Europe and walked the{" "}
-            <span className="font-bold text-gray-300">French Camino de Santiago</span>, a 780 km pilgrimage from
+            <span className="text-base-content font-semibold">French Camino de Santiago</span>, a 780 km pilgrimage from
             Saint-Jean-Pied-de-Port in France to Santiago de Compostela in Spain.
           </p>
           <p>
@@ -115,8 +118,8 @@ export const ExperienceSection = () => {
       ),
       footer: (
         <div>
-          <span className="text-gray-300 italic">
-            That’s me at Everest Base Camp — 5,364m above sea level and a long way from JavaScript.{" "}
+          <span className="muted italic">
+            That’s me at Everest Base Camp, 5,364m above sea level and a long way from JavaScript.
           </span>
         </div>
       ),
@@ -129,22 +132,22 @@ export const ExperienceSection = () => {
       description: (
         <div className="space-y-4">
           <div>
-            <h3 className="text-md font-bold text-gray-300">Measurement & Experimentation Platform (MEP)</h3>
-            <p className="text-gray-400">
-              I helped build scalable <span className="font-medium text-blue-400">experimentation tooling</span> that
-              enabled product teams to make <span className="font-medium text-blue-400">data driven decisions</span>{" "}
-              across Atlassian. Integrating with <span className="font-medium text-blue-400">Statsig</span> and internal
+            <h3 className="text-base font-semibold">Measurement & Experimentation Platform (MEP)</h3>
+            <p className="muted-strong">
+              I helped build scalable <span className="text-primary font-medium">experimentation tooling</span> that
+              enabled product teams to make <span className="text-primary font-medium">data driven decisions</span>{" "}
+              across Atlassian. Integrating with <span className="text-primary font-medium">Statsig</span> and internal
               systems like Switcheroo, we streamlined the rollout, tracking, and analysis of feature flags and
               experiments across frontend and backend services.
             </p>
           </div>
 
           <div>
-            <h2 className="text-md font-bold text-gray-300">Atlassian Disaster Recovery (ADR)</h2>
-            <p className="text-gray-400">
+            <h3 className="text-base font-semibold">Atlassian Disaster Recovery (ADR)</h3>
+            <p className="muted-strong">
               I led automation efforts for disaster recovery across AWS, securing over{" "}
-              <span className="font-medium text-blue-400">20 petabytes</span> of media data and more than{" "}
-              <span className="font-medium text-blue-400">20 billion objects</span> in Amazon S3. I developed automated
+              <span className="text-primary font-medium">20 petabytes</span> of media data and more than{" "}
+              <span className="text-primary font-medium">20 billion objects</span> in Amazon S3. I developed automated
               systems using AWS Lambda to enforce recovery settings such as point in time recovery and continuous
               backups for services like DynamoDB and RDS, remediating misconfigurations in real time.
             </p>
@@ -174,17 +177,17 @@ export const ExperienceSection = () => {
       image: "/images/vgw.jpg",
       description: (
         <div>
-          <p className="text-gray-400">
+          <p className="muted-strong">
             At VGW, I led end to end feature development for{" "}
-            <span className="font-medium text-blue-400">Chumba Casino</span>, a high traffic social gaming platform
+            <span className="text-primary font-medium">Chumba Casino</span>, a high traffic social gaming platform
             generating millions in daily revenue. My role required close collaboration with stakeholders and a strong
             understanding of domain driven design and{" "}
-            <span className="font-medium text-blue-400">microservice architecture</span>, supporting the company’s shift
+            <span className="text-primary font-medium">microservice architecture</span>, supporting the company’s shift
             away from a monolithic system.
           </p>
-          <p className="text-gray-400">
-            I implemented key features such as <span className="font-medium text-blue-400">phone verification</span> to
-            improve platform security, and an <span className="font-medium text-blue-400">in product messaging</span>{" "}
+          <p className="muted-strong">
+            I implemented key features such as <span className="text-primary font-medium">phone verification</span> to
+            improve platform security, and an <span className="text-primary font-medium">in product messaging</span>{" "}
             system that empowered the marketing team to deliver targeted user notifications.
           </p>
         </div>
@@ -206,11 +209,11 @@ export const ExperienceSection = () => {
       footer: (
         <div className="space-y-2 text-sm">
           <div>
-            <h4 className="mb-2 font-semibold">Certifications</h4>
+            <h4 className="eyebrow mb-3 text-[0.65rem]">Certifications</h4>
             <span>AWS Certified Solutions Architect – Associate</span>
-            <span className="block text-gray-400 italic">Awarded in 2020</span>
+            <span className="muted block italic">Awarded in 2020</span>
           </div>
-          <p className="text-gray-400">
+          <p className="muted-strong">
             Effectively demonstrate knowledge of how to architect and deploy secure and robust applications on AWS
             technologies and define solutions using architectural design principles of the AWS Well Architected
             Framework.
@@ -224,13 +227,13 @@ export const ExperienceSection = () => {
       image: "/images/hexagon_featured.webp",
       description: (
         <div>
-          <p className="text-gray-400">
+          <p className="muted-strong">
             At Hexagon Mining, I contributed to the{" "}
-            <span className="font-medium text-blue-400">in house OpenGL rendering engine</span> powering the xViewer in
+            <span className="text-primary font-medium">in house OpenGL rendering engine</span> powering the xViewer in
             MinePlan 3D, a flagship geological modeling tool. I implemented multiple viewers to render different
             geometry perspectives simultaneously, a feature that significantly improved usability for geologists and
             engineers. Alongside this, I collaborated with senior developers to{" "}
-            <span className="font-medium text-blue-400">optimize rendering performance</span> and enhance the overall
+            <span className="text-primary font-medium">optimize rendering performance</span> and enhance the overall
             user experience.
           </p>
         </div>
@@ -249,7 +252,7 @@ export const ExperienceSection = () => {
       image: "/images/murdoch.png",
       description: (
         <div>
-          <p className="text-gray-400">
+          <p className="muted-strong">
             Gained hands on experience in C++, OpenGL, and object oriented programming, focusing on game development and
             performance critical applications. Built a custom rendering engine, applying advanced real time graphics
             techniques, multi threading, and memory management. Developed strong foundations in data structures,
@@ -268,23 +271,23 @@ export const ExperienceSection = () => {
       ],
       footer: (
         <div className="space-y-2 text-sm">
-          <h4 className="mb-2 font-semibold">Awards & Recognition</h4>
+          <h4 className="eyebrow mb-3 text-[0.65rem]">Awards & Recognition</h4>
           <div className="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-2">
             <div>
               <span className="block font-medium">IEEE WA Section University Student Award</span>
-              <span className="block text-gray-400">
+              <span className="muted block">
                 Best Research Project in ICT219 <em>Intelligent Systems</em>
               </span>
             </div>
             <div>
               <span className="block font-medium">Industry Selected Games Design and Programming Prize</span>
-              <span className="block text-gray-400">
+              <span className="muted block">
                 Best Project in ICT290 <em>Games Design and Programming</em>
               </span>
             </div>
             <div>
               <span className="block font-medium">Murdoch Senate Scholarship</span>
-              <span className="block text-gray-400">Awarded in 2015 for academic merit</span>
+              <span className="muted block">Awarded in 2015 for academic merit</span>
             </div>
           </div>
         </div>
@@ -293,56 +296,47 @@ export const ExperienceSection = () => {
   ]
 
   return (
-    <section className="bg-base-200 flex flex-col items-center space-y-10 py-10">
-      <motion.h2
-        className="mb-2 text-4xl font-bold dark:text-white"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={fadeInUp}
-      >
-        Experience
-      </motion.h2>
+    <section id="experience" className="hairline border-t py-24 sm:py-32">
+      <div className="mx-auto max-w-6xl px-6">
+        <SectionHeading
+          eyebrow="02 / Experience"
+          title="Where I have worked"
+          intro="From building software to hiking across continents, here is the journey so far."
+        />
 
-      <motion.p
-        className="mt-6 mb-12 pr-5 pl-5 text-center text-lg text-gray-400 dark:text-gray-300"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={{
-          hidden: { opacity: 0, y: 20 },
-          visible: {
-            opacity: 1,
-            y: 0,
-            transition: { delay: 0.2, duration: 0.5 },
-          },
-        }}
-      >
-        From building software to hiking across continents, here’s my journey so far.
-      </motion.p>
+        <div className="space-y-6">
+          {experiences.map((exp, index) => (
+            <motion.article
+              key={index}
+              className="panel panel-hover overflow-hidden"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-60px" }}
+              custom={0.05}
+              variants={fadeInUp}
+            >
+              <div className="flex flex-col md:flex-row">
+                <figure className="hairline h-64 w-full shrink-0 border-b md:h-auto md:w-72 md:border-r md:border-b-0">
+                  <img src={exp.image} alt={exp.title} className="h-full w-full object-cover" />
+                </figure>
 
-      {experiences.map((exp, index) => (
-        <div key={index} className="w-full max-w-7xl px-4">
-          <div className="card md:card-side bg-base-100 w-full shadow-sm">
-            <figure className="h-72 w-full shrink-0 md:h-auto md:w-72">
-              <img src={exp.image} alt={exp.title} className="h-full w-full object-cover" />
-            </figure>
+                <div className="flex flex-1 flex-col">
+                  <div className="p-6 md:p-8">
+                    <div className="mb-4">
+                      <time className="text-secondary mb-1 block font-mono text-xs tracking-wide">{exp.date}</time>
+                      <h3 className="text-lg font-semibold tracking-tight">{exp.title}</h3>
+                    </div>
+                    {exp.description}
+                    <TechIcons icons={exp.tech} />
+                  </div>
 
-            <div className="flex flex-1 flex-col">
-              <div className="card-body p-4 md:p-6">
-                <div className="mb-3">
-                  <div className="text-md text-base-content font-bold">{exp.title}</div>
-                  <time className="block text-sm text-gray-500">{exp.date}</time>
+                  {exp.footer && <div className="hairline border-t p-6 md:p-8">{exp.footer}</div>}
                 </div>
-                {exp.description}
-                <TechIcons icons={exp.tech} />
               </div>
-
-              {exp.footer && <div className="border-base-300 border-t p-4 md:p-6">{exp.footer}</div>}
-            </div>
-          </div>
+            </motion.article>
+          ))}
         </div>
-      ))}
+      </div>
     </section>
   )
 }

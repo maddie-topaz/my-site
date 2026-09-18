@@ -11,6 +11,7 @@ import {
   FaSeedling,
   FaToolbox,
 } from "react-icons/fa"
+import { FiArrowLeft, FiBarChart2, FiClock, FiCompass, FiRefreshCw, FiTrendingDown, FiUsers } from "react-icons/fi"
 import { SiNodedotjs, SiReact, SiTypescript } from "react-icons/si"
 import { TbArrowMerge } from "react-icons/tb"
 import { Button } from "components/Button/Button"
@@ -28,8 +29,8 @@ const fadeInUp = {
 
 export default function StatsigCaseStudy() {
   return (
-    <section className="bg-base-100 py-10 text-gray-800 dark:bg-black dark:text-gray-100">
-      <div className="container mx-auto max-w-screen-xl px-4">
+    <section className="py-32">
+      <div className="mx-auto max-w-6xl px-6">
         {/* Hero Section */}
         <motion.div
           id="atlassian-hero"
@@ -38,37 +39,37 @@ export default function StatsigCaseStudy() {
           whileInView="visible"
           variants={fadeInUp}
         >
-          <h1 className="bg-gradient-to-r from-blue-500 to-purple-400 bg-clip-text text-5xl leading-normal font-extrabold text-transparent">
+          <h1 className="text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
             Driving Scalable Experimentation at Atlassian
           </h1>
-          <p className="mx-auto max-w-2xl text-xl text-gray-400">
-            Unlocking experimentation at scale with Statsig—driving rapid innovation and smarter, data-informed product
+          <p className="muted-strong mx-auto max-w-2xl text-xl">
+            Unlocking experimentation at scale with Statsig, driving rapid innovation and smarter, data-informed product
             decisions.
           </p>
 
-          <div className="mt-6 text-sm text-gray-500">
-            <a href="#background" className="mx-2 hover:underline">
+          <div className="muted mt-8 font-mono text-xs">
+            <a href="#background" className="hover:text-base-content mx-2 transition-colors">
               Background
             </a>{" "}
             |
-            <a href="#goals" className="mx-2 hover:underline">
+            <a href="#goals" className="hover:text-base-content mx-2 transition-colors">
               Goals
             </a>{" "}
             |
-            <a href="#implementation" className="mx-2 hover:underline">
+            <a href="#implementation" className="hover:text-base-content mx-2 transition-colors">
               Implementation
             </a>{" "}
             |
-            <a href="#challenges" className="mx-2 hover:underline">
+            <a href="#challenges" className="hover:text-base-content mx-2 transition-colors">
               Challenges
             </a>{" "}
             |
-            <a href="#outcomes" className="mx-2 hover:underline">
+            <a href="#outcomes" className="hover:text-base-content mx-2 transition-colors">
               Outcomes
             </a>
           </div>
 
-          <div className="mt-6 flex justify-center gap-4 text-2xl text-white">
+          <div className="muted mt-8 flex justify-center gap-5 text-2xl">
             <SiTypescript title="TypeScript" />
             <SiNodedotjs title="Node.js" />
             <SiReact title="React" />
@@ -85,23 +86,23 @@ export default function StatsigCaseStudy() {
           custom={0.05}
           variants={fadeInUp}
         >
-          <h2 className="mb-6 text-center text-2xl font-bold text-white">🎯 Background & Challenges</h2>
+          <h2 className="mb-6 text-center text-2xl font-semibold tracking-tight">Background & Challenges</h2>
 
-          <div className="mx-auto max-w-3xl space-y-6 text-center text-gray-400">
+          <div className="muted-strong mx-auto max-w-3xl space-y-6 text-center">
             <p>
               Atlassian lacked a scalable and intuitive experimentation platform. While most products had migrated to
               the cloud, the legacy of on-prem infrastructure left significant gaps in our ability to run controlled
-              experiments effectively. Experimentation was unintuitive, difficult to configure, and poorly
-              supported—resulting in low adoption of feature flags and minimal experimentation across teams. UI tooling
-              was fragmented and lacked usability, limiting experimentation velocity.
+              experiments effectively. Experimentation was unintuitive, difficult to configure, and poorly supported,
+              resulting in low adoption of feature flags and minimal experimentation across teams. UI tooling was
+              fragmented and lacked usability, limiting experimentation velocity.
             </p>
             <p>
               Compared to industry leaders like Facebook, Atlassian’s experimentation culture and tooling were lagging.
               Teams lacked confidence, and iteration was often driven by instinct instead of data.
             </p>
-            <p className="font-medium text-white">
-              This project embraced a <span className="font-semibold text-indigo-400">cloud-native mindset</span> to
-              introduce standardized, developer-friendly tools—enabling fast, safe, and scalable experimentation.
+            <p className="font-medium">
+              This project embraced a <span className="text-primary font-semibold">cloud-native mindset</span> to
+              introduce standardized, developer-friendly tools, enabling fast, safe, and scalable experimentation.
             </p>
           </div>
         </motion.div>
@@ -115,7 +116,7 @@ export default function StatsigCaseStudy() {
           custom={0.1}
           variants={fadeInUp}
         >
-          <h2 className="mb-4 text-center text-2xl font-bold text-white">🎯 Project Goals</h2>
+          <h2 className="mb-4 text-center text-2xl font-semibold tracking-tight">Project Goals</h2>
           <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
             <GoalCard
               icon={<FaCubes />}
@@ -151,10 +152,10 @@ export default function StatsigCaseStudy() {
         </motion.div>
 
         {/*  Moving to Statsig */}
-        <motion.div className="bg-base-100 mt-12 text-gray-800 dark:bg-black dark:text-gray-100">
-          <h2 className="mb-6 text-center text-2xl font-bold text-white">🚚 The Move to Statsig</h2>
-          <p className="text-center text-sm text-gray-400">
-            To meet our goals around experimentation, we adopted Statsig—giving us a fast, reliable way to launch
+        <motion.div className="mt-24">
+          <h2 className="mb-6 text-center text-2xl font-semibold tracking-tight">The Move to Statsig</h2>
+          <p className="muted-strong text-center text-sm">
+            To meet our goals around experimentation, we adopted Statsig, giving us a fast, reliable way to launch
             experiments with confidence.
           </p>
 
@@ -162,25 +163,29 @@ export default function StatsigCaseStudy() {
         </motion.div>
 
         {/*  How It Works */}
-        <motion.div className="bg-base-100 mt-12 text-gray-800 dark:bg-black dark:text-gray-100">
-          <h2 className="mb-6 text-center text-2xl font-bold text-white">⚙️ How It Works</h2>
-          <p className="text-center text-sm text-gray-400">
+        <motion.div className="mt-24">
+          <h2 className="mb-6 text-center text-2xl font-semibold tracking-tight">How It Works</h2>
+          <p className="muted-strong text-center text-sm">
             Running an experiment using statsig involves the following steps.
           </p>
           <br />
 
-          <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical text-white">
+          <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
             {experimentTimelineSteps.map((step, index) => (
               <li key={index}>
                 {index !== 0 && <hr />}
                 <div className="timeline-middle">
-                  <div className="bg-base-200 rounded-full p-4 text-2xl text-white shadow-md">{step.icon}</div>
+                  <div className="bg-base-300/60 text-primary rounded-md p-4 text-xl">{step.icon}</div>
                 </div>
                 <div
                   className={`${index % 2 === 0 ? "timeline-start mx-8 mb-12 md:text-end" : "timeline-end mx-8 mb-12"}`}
                 >
-                  <div className="text-lg font-black">{step.title}</div>
-                  {typeof step.desc === "string" ? <p className="text-sm text-gray-400">{step.desc}</p> : step.desc}
+                  <div className="text-lg font-semibold tracking-tight">{step.title}</div>
+                  {typeof step.desc === "string" ? (
+                    <p className="muted text-sm leading-relaxed">{step.desc}</p>
+                  ) : (
+                    step.desc
+                  )}
                 </div>
                 {index !== experimentTimelineSteps.length - 1 && <hr />}
               </li>
@@ -197,22 +202,22 @@ export default function StatsigCaseStudy() {
           viewport={{ once: true }}
           variants={fadeInUp}
         >
-          <h2 className="mb-6 text-center text-2xl font-bold text-white">⚙️ Implementation</h2>
+          <h2 className="mb-6 text-center text-2xl font-semibold tracking-tight">Implementation</h2>
           <div className="mx-auto max-w-5xl space-y-10">
             {/* Statsig Node.js Wrapper */}
-            <motion.div className="card bg-base-200 rounded-2xl p-8 shadow-lg" custom={0.2} variants={fadeInUp}>
-              <h3 className="mb-4 text-xl font-bold text-indigo-300">Statsig Node.js Wrapper</h3>
-              <p className="mb-4 text-gray-400">
+            <motion.div className="panel p-8" custom={0.2} variants={fadeInUp}>
+              <h3 className="text-primary mb-4 text-xl font-bold">Statsig Node.js Wrapper</h3>
+              <p className="muted-strong mb-4">
                 While Statsig provides robust SDKs for multiple platforms, we chose to develop our own internal wrappers
                 to ensure consistent and scalable integration across ourS services.
               </p>
-              <p className="mb-4 text-gray-400">
+              <p className="muted-strong mb-4">
                 By building these wrappers, we were able to embed native support for our internal Traits and Attributes
                 Platform (TAP), allowing both sidecar-based and API-based trait resolution to integrate seamlessly into
                 the experiment workflow. It also enabled us to enforce standardized evaluation logic across teams,
                 reducing duplication and potential misconfigurations.
               </p>
-              <p className="mb-4 text-gray-400">
+              <p className="muted-strong mb-4">
                 Furthermore, the wrappers offered a clean developer interface with utility functions such as
                 buildStatsigUser, checkGate, and getExperiment, streamlining adoption and ensuring a unified developer
                 experience regardless of the service or team implementing Statsig.
@@ -220,16 +225,16 @@ export default function StatsigCaseStudy() {
 
               <div className="join join-vertical w-full space-y-4">
                 {/* Support for Traits */}
-                <div className="collapse-arrow bg-base-100 collapse text-gray-400">
+                <div className="collapse-arrow panel muted-strong collapse">
                   <input type="checkbox" />
-                  <div className="collapse-title text-xl font-medium">
-                    <FaDatabase className="mr-2 inline-block h-5 w-5 text-indigo-400" />
+                  <div className="collapse-title text-lg font-medium">
+                    <FaDatabase className="text-primary mr-2 inline-block h-5 w-5" />
                     Traits
                   </div>
                   <div className="collapse-content space-y-4">
                     <p>
-                      In Statsig, the <code className="font-mono text-xs text-white">StatsigUser</code> object includes
-                      traits for targeting:
+                      In Statsig, the <code className="font-mono text-xs">StatsigUser</code> object includes traits for
+                      targeting:
                     </p>
                     <ul className="list-disc pl-6">
                       <li>
@@ -254,18 +259,18 @@ export default function StatsigCaseStudy() {
                     <p>
                       The wrappers support both sidecar-based and API-based TAP trait retrieval methods with graceful
                       fallback logic. For developer ergonomics, I introduced helper methods like
-                      <code className="font-mono text-xs text-white"> buildStatsigUser</code>,
-                      <code className="font-mono text-xs text-white"> checkGate</code>, and
-                      <code className="font-mono text-xs text-white"> getExperiment</code>.
+                      <code className="font-mono text-xs"> buildStatsigUser</code>,
+                      <code className="font-mono text-xs"> checkGate</code>, and
+                      <code className="font-mono text-xs"> getExperiment</code>.
                     </p>
                   </div>
                 </div>
 
                 {/* Support for Bootstrapping */}
-                <div className="collapse-arrow bg-base-100 collapse text-gray-400">
+                <div className="collapse-arrow panel muted-strong collapse">
                   <input type="checkbox" />
-                  <div className="collapse-title text-xl font-medium">
-                    <FaSeedling className="mr-2 inline-block h-5 w-5 text-indigo-400" />
+                  <div className="collapse-title text-lg font-medium">
+                    <FaSeedling className="text-primary mr-2 inline-block h-5 w-5" />
                     Bootstrapping
                   </div>
                   <div className="collapse-content space-y-4">
@@ -282,15 +287,15 @@ export default function StatsigCaseStudy() {
                 </div>
 
                 {/* Trait Merging */}
-                <div className="collapse-arrow bg-base-100 collapse text-gray-400">
+                <div className="collapse-arrow panel muted-strong collapse">
                   <input type="checkbox" />
-                  <div className="collapse-title text-xl font-medium">
-                    <TbArrowMerge className="mr-2 inline-block h-5 w-5 text-indigo-400" />
+                  <div className="collapse-title text-lg font-medium">
+                    <TbArrowMerge className="text-primary mr-2 inline-block h-5 w-5" />
                     Trait Merging
                   </div>
                   <div className="collapse-content space-y-4">
                     <p>
-                      Trait merging combines traits from multiple sources—auth, runtime, and environment—into a single
+                      Trait merging combines traits from multiple sources, auth, runtime, and environment, into a single
                       user object. This enables:
                     </p>
                     <ul className="list-disc pl-6">
@@ -300,8 +305,8 @@ export default function StatsigCaseStudy() {
                     </ul>
                     <p>
                       The wrappers also resolve merge conflicts deterministically and provides lifecycle methods like
-                      <code className="font-mono text-xs text-white"> initializeStatsig()</code> and
-                      <code className="font-mono text-xs text-white"> shutdownStatsig()</code>.
+                      <code className="font-mono text-xs"> initializeStatsig()</code> and
+                      <code className="font-mono text-xs"> shutdownStatsig()</code>.
                     </p>
                   </div>
                 </div>
@@ -320,36 +325,36 @@ export default function StatsigCaseStudy() {
           custom={0.2}
           variants={fadeInUp}
         >
-          <h2 className="mb-16 text-center text-3xl font-semibold text-white">📈 Outcomes</h2>
+          <h2 className="mb-16 text-center text-3xl font-semibold tracking-tight">Outcomes</h2>
           <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                icon: "🧭",
+                icon: <FiCompass />,
                 title: "Data-Driven Culture",
                 desc: "Empowered product teams to make release decisions based on experiment outcomes rather than intuition",
               },
               {
-                icon: "📉",
+                icon: <FiTrendingDown />,
                 title: "Reduced Experiment Setup Errors",
                 desc: "Cut experiment configuration errors by 70%",
               },
               {
-                icon: "👥",
+                icon: <FiUsers />,
                 title: "Developer Adoption",
                 desc: "100+ teams actively using the platform for experimentation",
               },
               {
-                icon: "🔄",
+                icon: <FiRefreshCw />,
                 title: "Experiment Velocity",
                 desc: "3x increase in the number of concurrent experiments run",
               },
               {
-                icon: "⏱️",
+                icon: <FiClock />,
                 title: "Time to Insight",
                 desc: "Faster time to insight, enabling teams to iterate faster and make more informed decisions",
               },
               {
-                icon: "📊",
+                icon: <FiBarChart2 />,
                 title: "Simplified Experiment Setup",
                 desc: "Significantly reduced experiment setup time by 80%",
               },
@@ -361,14 +366,13 @@ export default function StatsigCaseStudy() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="group bg-base-200 flex flex-col items-center rounded-xl p-6 text-center shadow transition hover:shadow-lg"
+                className="panel panel-hover group flex flex-col items-center p-6 text-center"
               >
-                <div className="from-primary to-secondary relative mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br text-2xl text-white shadow-md group-hover:scale-110 group-hover:shadow-xl">
+                <div className="bg-base-300/60 text-primary mb-5 flex h-12 w-12 items-center justify-center rounded-md text-xl">
                   {icon}
-                  <div className="absolute inset-0 rounded-full border-4 border-white/20 transition-all duration-300 group-hover:border-white/40"></div>
                 </div>
-                <h3 className="mb-1 text-lg font-bold text-white">{title}</h3>
-                <p className="text-sm text-gray-400">{desc}</p>
+                <h3 className="mb-1 text-lg font-semibold tracking-tight">{title}</h3>
+                <p className="muted text-sm leading-relaxed">{desc}</p>
               </motion.div>
             ))}
           </div>
@@ -376,8 +380,9 @@ export default function StatsigCaseStudy() {
       </div>
       {/* CTA */}
       <div className="mt-24 text-center">
-        <Button href="/#projects" className="btn btn-primary">
-          ← Back to Projects
+        <Button href="/#projects" intent="secondary">
+          <FiArrowLeft aria-hidden />
+          Back to projects
         </Button>
       </div>
     </section>

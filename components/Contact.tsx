@@ -2,13 +2,7 @@
 
 import { motion } from "framer-motion"
 import { FaLinkedin } from "react-icons/fa"
-
-interface SocialButtonProps {
-  href?: string
-  icon: React.ReactNode
-  ariaLabel: string
-  onClick?: () => void
-}
+import { SectionHeading } from "components/SectionHeading"
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -19,59 +13,41 @@ const fadeInUp = {
   }),
 }
 
-const SocialButton = ({ href, icon, ariaLabel, onClick }: SocialButtonProps) => {
-  const baseClass = "btn btn-circle btn-ghost hover:bg-base-300"
-
-  return href ? (
-    <a href={href} target="_blank" rel="noopener noreferrer" className={baseClass} aria-label={ariaLabel}>
-      {icon}
-    </a>
-  ) : (
-    <button onClick={onClick} className={baseClass} aria-label={ariaLabel}>
-      {icon}
-    </button>
-  )
-}
-
 const Contact = () => {
   return (
-    <section id="contact" className="bg-base-100 py-20 text-center dark:bg-black">
-      <div className="container mx-auto max-w-2xl px-4">
-        <motion.h2
-          className="mb-6 text-4xl font-bold dark:text-white"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-        >
-          Contact Me
-        </motion.h2>
-
-        <motion.p
-          className="mb-10 text-lg leading-relaxed text-gray-400 dark:text-gray-400"
-          initial="hidden"
-          whileInView="visible"
-          custom={0.1}
-          variants={fadeInUp}
-          viewport={{ once: true }}
-        >
-          Want to work together, chat dev tools, or just say hi? I’m always open to thoughtful messages.
-        </motion.p>
+    <section id="contact" className="hairline border-t py-24 sm:py-32">
+      <div className="mx-auto max-w-6xl px-6">
+        <SectionHeading
+          eyebrow="08 / Contact"
+          title="Get in touch"
+          intro="Want to work together, chat dev tools, or just say hi? I’m always open to thoughtful messages."
+          align="center"
+        />
 
         <motion.div
-          className="flex justify-center gap-6"
+          className="flex justify-center"
           initial="hidden"
           whileInView="visible"
           custom={0.2}
           variants={fadeInUp}
           viewport={{ once: true }}
         >
-          <SocialButton
+          <a
             href="https://www.linkedin.com/in/maddisen-topaz-sw-developer/"
-            icon={<FaLinkedin className="h-8 w-8 text-gray-700 dark:text-gray-200" />}
-            ariaLabel="LinkedIn"
-          />
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary gap-2"
+            aria-label="LinkedIn"
+          >
+            <FaLinkedin className="h-5 w-5" aria-hidden />
+            Message me on LinkedIn
+          </a>
         </motion.div>
+
+        <footer className="muted mt-32 flex flex-col items-center justify-between gap-2 font-mono text-xs sm:flex-row">
+          <span>© {new Date().getFullYear()} Maddie Topaz</span>
+          <span>Built with Next.js and Tailwind.</span>
+        </footer>
       </div>
     </section>
   )

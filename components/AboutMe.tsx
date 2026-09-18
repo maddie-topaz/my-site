@@ -6,6 +6,7 @@ import { FiLayers, FiMonitor, FiTool } from "react-icons/fi"
 import { LuBrain } from "react-icons/lu"
 import { SiAmazon, SiDocker, SiNodedotjs, SiPostgresql, SiReact, SiTypescript } from "react-icons/si"
 import { TbTestPipe } from "react-icons/tb"
+import { SectionHeading } from "components/SectionHeading"
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -51,80 +52,69 @@ const skillItems = [
   },
 ]
 
+const Highlight = ({ children }: { children: React.ReactNode }) => (
+  <span className="text-primary font-medium">{children}</span>
+)
+
 export const AboutMe = () => {
   return (
-    <section id="about" className="bg-base-300 py-8 sm:py-16">
-      <div className="mx-auto max-w-screen-xl px-4 lg:px-6">
-        <motion.h2
-          className="mb-8 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-center text-3xl font-bold text-transparent"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-        >
-          About Me
-        </motion.h2>
+    <section id="about" className="hairline border-t py-24 sm:py-32">
+      <div className="mx-auto max-w-6xl px-6">
+        <SectionHeading eyebrow="01 / About" title="From curiosity to code" />
 
-        <div className="grid gap-12 md:grid-cols-2">
+        <div className="grid gap-16 lg:grid-cols-[1.2fr_1fr]">
           {/* Text Content */}
           <div className="max-w-prose">
-            <motion.h3 className="mt-0 mb-2 text-lg font-semibold text-white">From Curiosity to Code</motion.h3>
+            <motion.h3 className="mb-2 text-lg font-semibold">Getting started</motion.h3>
             <motion.p
-              className="mb-5 leading-relaxed text-gray-400 dark:text-gray-100"
+              className="muted-strong mb-8 leading-relaxed"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               custom={0.0}
               variants={fadeInUp}
             >
-              I'm Maddie, a software engineer with a background in full stack development, cloud architecture, and
-              real time graphics programming. I always wanted to be a programmer, but for a long time I assumed you had
-              to be a maths genius to make it in tech. I started in business admin, until I found myself constantly
-              peeking over at the programming coursework. A tech lecturer noticed, handed me a brochure, and suggested I
-              switch. I did, and I haven’t looked back since.
+              I'm Maddie, a software engineer with a background in full stack development, cloud architecture, and real
+              time graphics programming. I always wanted to be a programmer, but for a long time I assumed you had to be
+              a maths genius to make it in tech. I started in business admin, until I found myself constantly peeking
+              over at the programming coursework. A tech lecturer noticed, handed me a brochure, and suggested I switch.
+              I did, and I haven’t looked back since.
             </motion.p>
 
-            <motion.h3 className="mt-6 mb-2 text-lg font-semibold text-white">Engineering at Scale</motion.h3>
+            <motion.h3 className="mb-2 text-lg font-semibold">Engineering at scale</motion.h3>
             <motion.p
-              className="mb-5 leading-relaxed text-gray-400 dark:text-gray-100"
+              className="muted-strong mb-8 leading-relaxed"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               custom={0.1}
               variants={fadeInUp}
             >
-              Since then, I’ve worked across the stack from designing{" "}
-              <span className="font-medium text-blue-400">OpenGL</span> rendering engines to building experimentation
-              platforms and disaster recovery systems at <span className="font-medium text-blue-400">Atlassian</span>.
-              I’ve led end to end feature development for high-traffic products like{" "}
-              <span className="font-medium text-blue-400">Chumba Casino</span> and built systems to safeguard{" "}
-              <span className="font-medium text-blue-400">petabytes</span> of user generated content in{" "}
-              <span className="font-medium text-blue-400">AWS</span>.
+              Since then, I’ve worked across the stack from designing <Highlight>OpenGL</Highlight> rendering engines to
+              building experimentation platforms and disaster recovery systems at <Highlight>Atlassian</Highlight>. I’ve
+              led end to end feature development for high-traffic products like <Highlight>Chumba Casino</Highlight> and
+              built systems to safeguard <Highlight>petabytes</Highlight> of user generated content in{" "}
+              <Highlight>AWS</Highlight>.
             </motion.p>
 
-            <motion.h3 className="mt-6 mb-2 text-lg font-semibold text-white">How I Build</motion.h3>
+            <motion.h3 className="mb-2 text-lg font-semibold">How I build</motion.h3>
             <motion.p
-              className="mb-5 leading-relaxed text-gray-400 dark:text-gray-100"
+              className="muted-strong mb-8 leading-relaxed"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               custom={0.2}
               variants={fadeInUp}
             >
-              Today, I build with a <span className="font-medium text-blue-400">platform mindset</span> and a{" "}
-              <span className="font-medium text-blue-400">DevOps heart</span> focused on clarity, resilience, and
-              full stack responsibility from infrastructure to interface. My core stack includes{" "}
-              <span className="font-medium text-blue-400">TypeScript</span>,{" "}
-              <span className="font-medium text-blue-400">Node.js</span>,{" "}
-              <span className="font-medium text-blue-400">React</span>,{" "}
-              <span className="font-medium text-blue-400">PostgreSQL</span>,{" "}
-              <span className="font-medium text-blue-400">AWS</span>,{" "}
-              <span className="font-medium text-blue-400">Docker</span>, and{" "}
-              <span className="font-medium text-blue-400">Pulumi</span>.
+              Today, I build with a <Highlight>platform mindset</Highlight> and a <Highlight>DevOps heart</Highlight>{" "}
+              focused on clarity, resilience, and full stack responsibility from infrastructure to interface. My core
+              stack includes <Highlight>TypeScript</Highlight>, <Highlight>Node.js</Highlight>,{" "}
+              <Highlight>React</Highlight>, <Highlight>PostgreSQL</Highlight>, <Highlight>AWS</Highlight>,{" "}
+              <Highlight>Docker</Highlight>, and <Highlight>Pulumi</Highlight>.
             </motion.p>
 
-            <motion.p
-              className="mb-6 border-l-4 border-blue-500 pl-4 text-gray-300 italic"
+            <motion.blockquote
+              className="border-primary/60 muted-strong border-l-2 pl-5 leading-relaxed"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -136,7 +126,7 @@ export const AboutMe = () => {
                 href="https://itrevolution.com/accelerate"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-400 underline hover:text-blue-600"
+                className="text-primary decoration-primary/40 hover:decoration-primary underline underline-offset-4"
               >
                 Accelerate
               </a>{" "}
@@ -145,27 +135,27 @@ export const AboutMe = () => {
                 href="https://itrevolution.com/the-phoenix-project"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-400 underline hover:text-blue-600"
+                className="text-primary decoration-primary/40 hover:decoration-primary underline underline-offset-4"
               >
                 The Phoenix Project
               </a>{" "}
               didn’t just teach me about delivery practices, they helped me rethink what great engineering looks like.
-            </motion.p>
+            </motion.blockquote>
           </div>
 
           {/* Skills Section */}
           <div>
             <motion.h3
-              className="mb-2 text-xl font-bold dark:text-white"
+              className="mb-1 text-lg font-semibold"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeInUp}
             >
-              Technical Stack
+              Technical stack
             </motion.h3>
             <motion.p
-              className="mb-6 text-sm text-gray-400 dark:text-gray-200"
+              className="muted mb-8 text-sm"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -175,25 +165,23 @@ export const AboutMe = () => {
               Tools, languages, and systems I use to build reliable, scalable software.
             </motion.p>
 
-            <div className="space-y-6">
+            <div className="space-y-8">
               {skillItems.map((group, groupIdx) => (
-                <div key={group.category} className="mb-6">
-                  <h4 className="mb-3 text-xs font-semibold tracking-wide text-gray-500 uppercase dark:text-gray-400">
-                    {group.category}
-                  </h4>
-                  <div className={"grid grid-cols-2 gap-x-6 gap-y-6"}>
+                <div key={group.category}>
+                  <h4 className="eyebrow mb-3 text-[0.65rem]">{group.category}</h4>
+                  <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                     {group.skills.map(({ name, icon: Icon }, i) => (
                       <motion.div
                         key={name}
-                        className="hover:bg-base-100/20 mb-4 flex items-center gap-3 rounded-lg px-2 py-2 transition-all duration-300 hover:scale-105 hover:shadow-md"
+                        className="panel panel-hover flex items-center gap-3 px-3 py-2.5"
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true }}
-                        custom={(groupIdx + i) * 0.1}
+                        custom={(groupIdx + i) * 0.05}
                         variants={fadeInUp}
                       >
-                        <Icon className="text-3xl text-blue-600 transition-transform duration-300 dark:text-blue-300" />
-                        <span className="text-sm text-gray-400 dark:text-gray-100">{name}</span>
+                        <Icon className="text-primary shrink-0 text-xl" />
+                        <span className="muted-strong text-sm">{name}</span>
                       </motion.div>
                     ))}
                   </div>

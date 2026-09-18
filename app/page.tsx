@@ -11,7 +11,7 @@ import { SkillsIcons } from "components/SkillsIcons"
 
 export default function Web() {
   return (
-    <div className="bg-base-100 flex min-h-screen flex-col">
+    <main className="flex min-h-screen flex-col">
       <Hero />
       <AboutMe />
       <ExperienceSection />
@@ -21,6 +21,6 @@ export default function Web() {
       <DeveloperPresenceSection />
       <BookshelfWithBoard />
       <Contact />
-    </div>
+    </main>
   )
 }

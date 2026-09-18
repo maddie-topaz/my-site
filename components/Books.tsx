@@ -3,6 +3,8 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { useRef } from "react"
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi"
+import { SectionHeading } from "components/SectionHeading"
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -94,62 +96,44 @@ export const BookshelfWithBoard = () => {
     }
   }
 
+  const arrowClass = "panel panel-hover muted-strong hover:text-base-content flex h-9 w-9 items-center justify-center"
+
   return (
-    <section className="bg-base-200 border-base-300 relative border-t py-16 dark:border-gray-800 dark:bg-black">
-      <div className="container mx-auto px-4">
-        <h2 className="mb-8 text-center text-4xl font-bold dark:text-white">Bookshelf</h2>
+    <section id="bookshelf" className="hairline border-t py-24 sm:py-32">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="flex items-end justify-between gap-6">
+          <SectionHeading
+            eyebrow="07 / Bookshelf"
+            title="Bookshelf"
+            intro="Stuff I’ve read so you don’t have to. (But you should.)"
+          />
+          <div className="mb-12 hidden shrink-0 gap-2 sm:flex">
+            <button onClick={() => scroll("left")} className={arrowClass} aria-label="Scroll left">
+              <FiChevronLeft aria-hidden />
+            </button>
+            <button onClick={() => scroll("right")} className={arrowClass} aria-label="Scroll right">
+              <FiChevronRight aria-hidden />
+            </button>
+          </div>
+        </div>
 
-        <motion.p
-          className="mb-12 text-center text-lg leading-relaxed text-gray-400 dark:text-gray-200"
-          initial="hidden"
-          whileInView="visible"
-          custom={0.1}
-          variants={fadeInUp}
-          viewport={{ once: true }}
-        >
-          Stuff I’ve read so you don’t have to. (But you should.)
-        </motion.p>
-
-        {/* Arrow Buttons with inline SVGs */}
-        <button
-          onClick={() => scroll("left")}
-          className="absolute top-1/2 left-2 z-10 -translate-y-1/2 rounded-full bg-white/10 p-2 text-white shadow-lg backdrop-blur-md transition hover:bg-white/20 dark:text-gray-200"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
-
-        <button
-          onClick={() => scroll("right")}
-          className="absolute top-1/2 right-2 z-10 -translate-y-1/2 rounded-full bg-white/10 p-2 text-white shadow-lg backdrop-blur-md transition hover:bg-white/20 dark:text-gray-200"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
-
-        {/* Scrollable Bookshelf */}
+        {/* Scrollable bookshelf */}
         <div
           ref={shelfRef}
-          className="scrollbar-hide cursor-grab snap-x snap-mandatory overflow-x-auto scroll-smooth pb-10 [-ms-overflow-style:none] [scrollbar-width:none] active:cursor-grabbing [&::-webkit-scrollbar]:hidden"
+          className="scrollbar-hide -mx-6 cursor-grab snap-x snap-mandatory overflow-x-auto scroll-smooth px-6 pb-4 active:cursor-grabbing"
         >
-          <div className="inline-flex gap-6 px-2">
-            {books.map((book) => (
-              <div key={book.id} className="relative h-[216px] w-36 flex-shrink-0 cursor-pointer snap-start">
-                <div className="h-full w-full overflow-hidden rounded-sm border bg-white shadow-lg dark:border-gray-600 dark:bg-gray-800">
+          <div className="inline-flex gap-5">
+            {books.map((book, i) => (
+              <motion.figure
+                key={book.id}
+                className="group relative w-36 shrink-0 snap-start"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                custom={Math.min(i, 6) * 0.05}
+                variants={fadeInUp}
+              >
+                <div className="hairline h-[216px] w-full overflow-hidden rounded-sm border shadow-lg transition-transform duration-300 group-hover:-translate-y-1">
                   <Image
                     src={book.cover}
                     alt={book.title}
@@ -158,7 +142,12 @@ export const BookshelfWithBoard = () => {
                     className="h-full w-full object-cover"
                   />
                 </div>
-              </div>
+                {book.status === "Favorite" && (
+                  <figcaption className="text-accent mt-3 font-mono text-[0.65rem] tracking-widest uppercase">
+                    Favourite
+                  </figcaption>
+                )}
+              </motion.figure>
             ))}
           </div>
         </div>
