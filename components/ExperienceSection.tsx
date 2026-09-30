@@ -102,7 +102,7 @@ export const ExperienceSection = () => {
           </p>
           <p>
             I visited Nepal, hiking to <span className="font-bold text-gray-300">Everest Base Camp</span>, a
-            high altitude journey through remote Himalayan villages, suspension bridges, and snow covered trails. Later,
+            high altitude journey through remote Himalayan villages and suspension bridges. Later,
             I continued to Europe and walked the{" "}
             <span className="font-bold text-gray-300">French Camino de Santiago</span>, a 780 km pilgrimage from
             Saint-Jean-Pied-de-Port in France to Santiago de Compostela in Spain.
@@ -146,7 +146,7 @@ export const ExperienceSection = () => {
               <span className="font-medium text-blue-400">20 petabytes</span> of media data and more than{" "}
               <span className="font-medium text-blue-400">20 billion objects</span> in Amazon S3. I developed automated
               systems using AWS Lambda to enforce recovery settings such as point in time recovery and continuous
-              backups for services like DynamoDB and RDS, remediating misconfigurations in real time.
+              backups for services like DynamoDB and RDS, alerting on and remediating misconfigurations in real time.
             </p>
           </div>
         </div>

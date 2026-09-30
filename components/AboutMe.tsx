@@ -77,11 +77,13 @@ export const AboutMe = () => {
               custom={0.0}
               variants={fadeInUp}
             >
-              I'm Maddie, a software engineer with a background in full stack development, cloud architecture, and
-              real time graphics programming. I always wanted to be a programmer, but for a long time I assumed you had
-              to be a maths genius to make it in tech. I started in business admin, until I found myself constantly
-              peeking over at the programming coursework. A tech lecturer noticed, handed me a brochure, and suggested I
-              switch. I did, and I haven’t looked back since.
+              I'm Maddie, a software engineer with experience across full stack development, cloud infrastructure, and real time graphics engines.
+
+Programming was something I wanted to do long before I thought it was a realistic career. I had somehow decided software engineering was reserved for mathematical prodigies, so I did the sensible thing and enrolled in business administration instead.
+
+This did not make me any less interested in programming.
+
+Eventually, a lecturer suggested I stop looking over at the programming coursework and actually enrol in it. So I did.
             </motion.p>
 
             <motion.h3 className="mt-6 mb-2 text-lg font-semibold text-white">Engineering at Scale</motion.h3>
