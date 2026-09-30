@@ -15,7 +15,7 @@ function Help() {
       <ul className="mt-1 list-inside list-disc">
         {allCommands.map((cmd, index) => (
           <li key={index}>
-            <kbd className="kbd kbd-sm border border-green-500 bg-black text-green-400">{cmd.command}</kbd> —{" "}
+            <kbd className="kbd kbd-sm border border-green-500 bg-black text-green-400">{cmd.command}</kbd>:{" "}
             {cmd.description}
           </li>
         ))}

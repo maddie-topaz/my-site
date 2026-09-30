@@ -92,9 +92,9 @@ export default function StatsigCaseStudy() {
             <p>
               Atlassian lacked a scalable and intuitive experimentation platform. While most products had migrated to
               the cloud, the legacy of on-prem infrastructure left significant gaps in our ability to run controlled
-              experiments effectively. Experimentation was unintuitive, difficult to configure, and poorly
-              supported—resulting in low adoption of feature flags and minimal experimentation across teams. UI tooling
-              was fragmented and lacked usability, limiting experimentation velocity.
+              experiments effectively. Experimentation was unintuitive, difficult to configure, and poorly supported,
+              resulting in low adoption of feature flags and minimal experimentation across teams. UI tooling was
+              fragmented and lacked usability, limiting experimentation velocity.
             </p>
             <p>
               Compared to industry leaders like Facebook, Atlassian’s experimentation culture and tooling were lagging.
@@ -102,7 +102,7 @@ export default function StatsigCaseStudy() {
             </p>
             <p className="font-medium text-white">
               This project embraced a <span className="font-medium text-indigo-400">cloud-native mindset</span> to
-              introduce standardized, developer-friendly tools—enabling fast, safe, and scalable experimentation.
+              introduce standardized, developer-friendly tools, enabling fast, safe, and scalable experimentation.
             </p>
           </div>
         </motion.div>
@@ -155,7 +155,7 @@ export default function StatsigCaseStudy() {
         <motion.div className="bg-base-100 mt-12 text-gray-800 dark:bg-black dark:text-gray-100">
           <h2 className="mb-6 text-center text-2xl font-bold text-white">The Move to Statsig</h2>
           <p className="text-center text-sm text-gray-400">
-            To meet our goals around experimentation, we adopted Statsig—giving us a fast, reliable way to launch
+            To meet our goals around experimentation, we adopted Statsig, giving us a fast, reliable way to launch
             experiments with confidence.
           </p>
 
@@ -291,7 +291,7 @@ export default function StatsigCaseStudy() {
                   </div>
                   <div className="collapse-content space-y-4">
                     <p>
-                      Trait merging combines traits from multiple sources—auth, runtime, and environment—into a single
+                      Trait merging combines traits from multiple sources (auth, runtime, and environment) into a single
                       user object. This enables:
                     </p>
                     <ul className="list-disc pl-6">

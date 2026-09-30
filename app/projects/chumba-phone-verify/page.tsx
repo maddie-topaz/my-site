@@ -218,7 +218,7 @@ export default function ChumbaCaseStudy() {
             <h2 className="text-2xl font-semibold text-white">Integration Challenges </h2>
             <p className="text-base text-gray-400">
               The integration of phone verification into Chumba Casino's existing authentication system posed
-              significant complexity due to multiple existing login flows — including Facebook OAuth and standard email
+              significant complexity due to multiple existing login flows, including Facebook OAuth and standard email
               verification. A complete overhaul of the existing verification logic was required to avoid conflicts
               between phone and email verification states.
             </p>

@@ -56,19 +56,19 @@ const operationsEthos = [
     icon: <LuShip />,
     title: "Built to Ship, Built to Scale",
     description:
-      "DevOps isn’t a separate phase — it’s embedded into everything I build. From CI/CD pipelines to IAC, I automate the full delivery lifecycle — deployment, testing, monitoring, and analytics — to enable rapid, resilient, and fault-tolerant software delivery.",
+      "DevOps isn’t a separate phase. It’s embedded into everything I build. From CI/CD pipelines to IAC, I automate the full delivery lifecycle (deployment, testing, monitoring, and analytics) to enable rapid, resilient, and fault-tolerant software delivery.",
   },
   {
     icon: <LuWrench />,
     title: "Built to Last, Built to Adapt",
     description:
-      "I design cloud systems that are built to scale, stay reliable under pressure, stay secure by design, and optimize performance and cost — all guided by the AWS Well-Architected Framework.",
+      "I design cloud systems that are built to scale, stay reliable under pressure, stay secure by design, and optimize performance and cost, all guided by the AWS Well-Architected Framework.",
   },
   {
     icon: <LuStethoscope />,
     title: "DevOps as a Diagnostic Lens",
     description:
-      "I use DevOps as more than automation — it's a lens for understanding systems end-to-end. With observability, logging, and continuous feedback loops, I get to the root cause of issues fast and build solutions that last.",
+      "I use DevOps as more than automation. It's a lens for understanding systems end-to-end. With observability, logging, and continuous feedback loops, I get to the root cause of issues fast and build solutions that last.",
   },
 ]
 
@@ -77,19 +77,19 @@ const deliveryEthos = [
     icon: <LuTarget />,
     title: "Idea to Impact",
     description:
-      "I guide features from discovery to delivery, focusing on solving the right problems, not just shipping code. I lead features with a focus on delivering measurable business and user outcomes — not just checking off tasks.",
+      "I guide features from discovery to delivery, focusing on solving the right problems, not just shipping code. I lead features with a focus on delivering measurable business and user outcomes, not just checking off tasks.",
   },
   {
     icon: <LuRefreshCw />,
     title: "Feedback-Driven Development",
     description:
-      "I build iteratively — testing assumptions early, learning fast, and refining features based on real feedback, not guesswork.",
+      "I build iteratively: testing assumptions early, learning fast, and refining features based on real feedback, not guesswork.",
   },
   {
     icon: <LuLink />,
     title: "No Broken Links",
     description:
-      "I see delivery as a full-stack responsibility — from database migrations to UI polish — ensuring nothing gets dropped between handoffs.",
+      "I see delivery as a full-stack responsibility (from database migrations to UI polish), ensuring nothing gets dropped between handoffs.",
   },
 ]
 

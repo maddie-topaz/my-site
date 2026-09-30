@@ -39,7 +39,7 @@ export const DeveloperPresenceSection = () => {
           variants={fadeInUp}
           viewport={{ once: true }}
         >
-          I’m active across the dev community — contributing code, answering questions, and building open tooling that
+          I’m active across the dev community: contributing code, answering questions, and building open tooling that
           helps others ship better software.
         </motion.p>
 

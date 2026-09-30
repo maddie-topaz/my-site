@@ -41,7 +41,7 @@ export const experimentTimelineSteps = [
                 icon: <LuSlidersHorizontal />,
                 label: "Control Group",
                 definition:
-                  "The baseline experience — this is what users currently see. All impact is measured against this group.",
+                  "The baseline experience: this is what users currently see. All impact is measured against this group.",
               },
               {
                 icon: <LuFlaskConical />,
@@ -53,7 +53,7 @@ export const experimentTimelineSteps = [
                 icon: <LuTarget />,
                 label: "Targeting",
                 definition:
-                  "Rules that define who sees the experiment — by geography, platform, feature flag, or user segment.",
+                  "Rules that define who sees the experiment: by geography, platform, feature flag, or user segment.",
               },
               {
                 icon: <LuChartColumn />,
