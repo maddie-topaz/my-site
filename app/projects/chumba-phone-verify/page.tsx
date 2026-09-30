@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { FaFingerprint, FaMobileAlt, FaRobot, FaUserCheck, FaUserLock, FaUserShield } from "react-icons/fa"
+import { LuFlaskConical, LuPhone, LuRepeat, LuScanSearch, LuTrendingDown, LuTrendingUp } from "react-icons/lu"
 import { SiAmazon, SiNodedotjs, SiPostgresql, SiReact, SiTwilio } from "react-icons/si"
 import { Button } from "components/Button/Button"
 import { FeatureCard } from "components/FeatureCard"
@@ -23,7 +24,7 @@ export default function ChumbaCaseStudy() {
       <div className="container mx-auto max-w-screen-xl px-4">
         {/* Hero Section */}
         <motion.div className="space-y-6 text-center" initial="hidden" whileInView="visible" variants={fadeInUp}>
-          <h1 className="bg-gradient-to-r from-pink-500 to-yellow-400 bg-clip-text text-5xl leading-normal font-extrabold text-transparent">
+          <h1 className="text-5xl leading-normal font-extrabold text-white">
             Text. Verify. Play: Securing Signups at Chumba Casino
           </h1>
           <p className="mx-auto max-w-2xl text-xl text-gray-400">
@@ -76,7 +77,7 @@ export default function ChumbaCaseStudy() {
           custom={0.05}
           variants={fadeInUp}
         >
-          <h2 className="mb-4 text-center text-2xl font-bold text-white">🧨 Background & Challenges</h2>
+          <h2 className="mb-4 text-center text-2xl font-bold text-white">Background & Challenges</h2>
           <p className="mx-auto max-w-3xl text-center text-gray-400">
             Chumba Casino faced increasing challenges around account fraud, duplicate signups, and inconsistent
             verification across multiple login pathways like Facebook OAuth and email/password. To comply with evolving
@@ -94,7 +95,7 @@ export default function ChumbaCaseStudy() {
           custom={0.1}
           variants={fadeInUp}
         >
-          <h2 className="mb-4 text-center text-2xl font-bold text-white">🎯 Project Goals</h2>
+          <h2 className="mb-4 text-center text-2xl font-bold text-white">Project Goals</h2>
           <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
             <GoalCard
               icon={<FaUserLock />}
@@ -139,7 +140,7 @@ export default function ChumbaCaseStudy() {
           custom={0.15}
           variants={fadeInUp}
         >
-          <h2 className="mb-6 text-center text-2xl font-bold text-white">⚙️ How It Works</h2>
+          <h2 className="mb-6 text-center text-2xl font-bold text-white">How It Works</h2>
           <p className="mx-auto mb-16 max-w-3xl text-center text-gray-400">
             A step-by-step walkthrough of how users verify their identity using a secure SMS-based flow.
           </p>
@@ -190,7 +191,7 @@ export default function ChumbaCaseStudy() {
           custom={0.2}
           variants={fadeInUp}
         >
-          <h2 className="mb-4 text-2xl font-bold text-white">🧩 Architecture Diagram</h2>
+          <h2 className="mb-4 text-2xl font-bold text-white">Architecture Diagram</h2>
           <p className="mb-6 text-gray-400">Visual overview of service orchestration and API flows.</p>
           <div className="bg-base-200 relative mx-auto h-[600px] w-full max-w-5xl overflow-hidden rounded-xl">
             <Image
@@ -214,7 +215,7 @@ export default function ChumbaCaseStudy() {
           variants={fadeInUp}
         >
           <div className="space-y-6 text-center">
-            <h2 className="text-2xl font-semibold text-white">🔧 Integration Challenges </h2>
+            <h2 className="text-2xl font-semibold text-white">Integration Challenges </h2>
             <p className="text-base text-gray-400">
               The integration of phone verification into Chumba Casino's existing authentication system posed
               significant complexity due to multiple existing login flows — including Facebook OAuth and standard email
@@ -223,22 +224,22 @@ export default function ChumbaCaseStudy() {
             </p>
             <div className="grid gap-6 text-left">
               <FeatureCard
-                title="📞 Phone Verify Service Integration"
+                title="Phone Verify Service Integration"
                 problem="The product lacked a phone verification solution and proof of concept. Implementation was blocked by unclear ownership and no agreed-upon service provider."
                 solution="Took ownership of the verification flow, proposed and implemented Twilio SMS as the provider, and documented the approach to unblock engineering and improve team clarity."
               />
               <FeatureCard
-                title="🪢 UI/Logic Coupling"
+                title="UI/Logic Coupling"
                 problem="The existing verification logic was tightly coupled with login flow UI, making it challenging to integrate and maintain additional verification logic."
                 solution="Uncoupled verification logic from UI components by centralizing all user verification checks into a single utility function to handle mixed verification states across login flows, as well as canary rollout/feature flag states for controlled exposure of changes."
               />
               <FeatureCard
-                title="🕸️ Branch Complexity"
+                title="Branch Complexity"
                 problem="Feature flags, multiple login flows, canary release logic and feature flagging introduced a large amount of branching, making the system brittle and hard to maintain."
                 solution="Reduced branching complexity by introducing dedicated utility functions for feature flag evaluation and login state handling, improving code clarity and maintainability across environments."
               />
               <FeatureCard
-                title="🧬 Database Mutation"
+                title="Database Mutation"
                 problem="Email verification logic prematurely set database flags indicating the user was fully verified, leading to inconsistent authentication states and security edge cases."
                 solution="Extracted verification logic into a centralized utility function and deprecated unreliable flags, ensuring that user verification status accurately reflects completed steps across all flows."
               />
@@ -256,37 +257,37 @@ export default function ChumbaCaseStudy() {
           custom={0.3}
           variants={fadeInUp}
         >
-          <h2 className="mb-16 text-center text-3xl font-semibold text-white">🚀 Outcomes </h2>
+          <h2 className="mb-16 text-center text-3xl font-semibold text-white">Outcomes </h2>
 
           <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                icon: "🔍",
+                icon: <LuScanSearch />,
                 title: "Stronger Identity Assurance",
                 desc: "Enabled phone verification to support KYC compliance and secure key user data.",
               },
               {
-                icon: "📉",
+                icon: <LuTrendingDown />,
                 title: "Fraud Rate Reduction",
                 desc: "Noticed a significant drop in duplicate and bot signups post-deployment.",
               },
               {
-                icon: "📈",
+                icon: <LuTrendingUp />,
                 title: "Increased Verification Coverage",
                 desc: "Achieved high opt-in rates for phone number collection across login types.",
               },
               {
-                icon: "🔁",
+                icon: <LuRepeat />,
                 title: "Seamless Multi-Flow Handling",
                 desc: "Authentication logic now smoothly supports Facebook, Email, and Phone logins without edge case regressions.",
               },
               {
-                icon: "🧪",
+                icon: <LuFlaskConical />,
                 title: "Robust Test Coverage",
                 desc: "Test suite ensures safe iteration across authentication pathways with near-zero regressions.",
               },
               {
-                icon: "📞",
+                icon: <LuPhone />,
                 title: "Resilient SMS Delivery",
                 desc: "Integrated fallback and retry logic to improve Twilio delivery success rates.",
               },
@@ -300,9 +301,9 @@ export default function ChumbaCaseStudy() {
                 viewport={{ once: true }}
                 className="group bg-base-200 flex flex-col items-center rounded-xl p-6 text-center shadow transition hover:shadow-lg"
               >
-                <div className="from-primary to-secondary relative mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br text-2xl text-white shadow-md group-hover:scale-110 group-hover:shadow-xl">
+                <div className="relative mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-indigo-500/15 text-3xl text-indigo-400 transition-transform group-hover:scale-110">
                   {icon}
-                  <div className="absolute inset-0 rounded-full border-4 border-white/20 transition-all duration-300 group-hover:border-white/40"></div>
+                  <div className="absolute inset-0 rounded-full border-2 border-indigo-400/30 transition-all duration-300 group-hover:border-indigo-400/60"></div>
                 </div>
                 <h3 className="mb-1 text-lg font-bold text-white">{title}</h3>
                 <p className="text-sm text-gray-400">{desc}</p>

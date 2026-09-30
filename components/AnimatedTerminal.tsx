@@ -10,11 +10,11 @@ const taglines = [
   "✔ Tests: 213 passed, 0 failed",
   "$ rm -rf manual-tasks",
   "types !== suggestions; types === contracts;",
-  "🚧 red → green → refactor",
+  "red → green → refactor",
   "$ secure && scale && serve",
   "$ ./migrate.sh --safe --no-downtime",
   "$ mkdir -p /systems/composable",
-  "📈 metrics > intuition",
+  "metrics > intuition",
 ]
 
 const TYPING_SPEED = 60

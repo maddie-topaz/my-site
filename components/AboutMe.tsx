@@ -56,7 +56,7 @@ export const AboutMe = () => {
     <section id="about" className="bg-base-300 py-8 sm:py-16">
       <div className="mx-auto max-w-screen-xl px-4 lg:px-6">
         <motion.h2
-          className="mb-8 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-center text-3xl font-bold text-transparent"
+          className="mb-8 text-center text-3xl font-bold text-white"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -116,7 +116,7 @@ export const AboutMe = () => {
             </motion.p>
 
             <motion.p
-              className="mb-6 border-l-4 border-blue-500 pl-4 text-gray-300 italic"
+              className="mb-6 border-l-4 border-indigo-500 pl-4 text-gray-300 italic"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -184,7 +184,7 @@ export const AboutMe = () => {
                         custom={(groupIdx + i) * 0.1}
                         variants={fadeInUp}
                       >
-                        <Icon className="text-3xl text-blue-600 transition-transform duration-300 dark:text-blue-300" />
+                        <Icon className="text-3xl text-indigo-400 transition-transform duration-300" />
                         <span className="text-sm text-gray-400 dark:text-gray-100">{name}</span>
                       </motion.div>
                     ))}

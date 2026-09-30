@@ -1,4 +1,5 @@
 import { FaChartBar, FaCheckCircle, FaCode, FaComments, FaEye, FaLightbulb, FaSlidersH } from "react-icons/fa"
+import { LuActivity, LuChartColumn, LuFlaskConical, LuSlidersHorizontal, LuTarget } from "react-icons/lu"
 
 export const experimentTimelineSteps = [
   {
@@ -12,7 +13,7 @@ export const experimentTimelineSteps = [
         </p>
         <br />
         <p className="text-sm text-gray-400">
-          <span className="font-medium text-indigo-400">🔍 Example Scenario</span>
+          <span className="font-medium text-indigo-400">Example Scenario</span>
           <br />
           You’re working on a SaaS app and want to test whether changing the primary CTA button from “Start Free Trial”
           to “Get Started Now” improves sign-up conversion.
@@ -37,38 +38,38 @@ export const experimentTimelineSteps = [
           <div className="grid grid-cols-1 gap-3">
             {[
               {
-                icon: "🎛️",
+                icon: <LuSlidersHorizontal />,
                 label: "Control Group",
                 definition:
                   "The baseline experience — this is what users currently see. All impact is measured against this group.",
               },
               {
-                icon: "🧪",
+                icon: <LuFlaskConical />,
                 label: "Variant(s)",
                 definition:
                   "The new version(s) being tested. You compare these against the control to determine if your change is effective.",
               },
               {
-                icon: "🎯",
+                icon: <LuTarget />,
                 label: "Targeting",
                 definition:
                   "Rules that define who sees the experiment — by geography, platform, feature flag, or user segment.",
               },
               {
-                icon: "📊",
+                icon: <LuChartColumn />,
                 label: "Metrics",
                 definition:
                   "Quantitative measurements that indicate success. Common examples include conversion rate, retention, or revenue.",
               },
               {
-                icon: "📊",
+                icon: <LuActivity />,
                 label: "Exposure Events",
                 definition:
                   "Events that track when a user is exposed to a feature variant, allowing experiments to accurately measure impact and attribute outcomes.",
               },
             ].map(({ icon, label, definition }, i) => (
               <div key={i} className="bg-base-200 flex items-start gap-3 rounded-lg border border-gray-700 p-3">
-                <div className="bg-base-300 border-primary flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-lg text-white shadow-inner">
+                <div className="bg-base-300 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-indigo-400/40 text-lg text-indigo-400 shadow-inner">
                   {icon}
                 </div>
                 <div className="space-y-0.5">
@@ -89,8 +90,8 @@ export const experimentTimelineSteps = [
       <div className="space-y-2 text-sm text-gray-400">
         <p>
           Use Statsig's SDK to integrate the experiment. Call{" "}
-          <code className="bg-base-200 rounded px-1 py-0.5 text-blue-400">getExperiment()</code> or{" "}
-          <code className="bg-base-200 rounded px-1 py-0.5 text-blue-400">getConfig()</code> to control logic in your
+          <code className="bg-base-200 rounded px-1 py-0.5 text-indigo-300">getExperiment()</code> or{" "}
+          <code className="bg-base-200 rounded px-1 py-0.5 text-indigo-300">getConfig()</code> to control logic in your
           product based on user assignment.
         </p>
       </div>

@@ -11,6 +11,7 @@ import {
   FaSeedling,
   FaToolbox,
 } from "react-icons/fa"
+import { LuChartColumn, LuCompass, LuRefreshCw, LuTimer, LuTrendingDown, LuUsers } from "react-icons/lu"
 import { SiNodedotjs, SiReact, SiTypescript } from "react-icons/si"
 import { TbArrowMerge } from "react-icons/tb"
 import { Button } from "components/Button/Button"
@@ -38,7 +39,7 @@ export default function StatsigCaseStudy() {
           whileInView="visible"
           variants={fadeInUp}
         >
-          <h1 className="bg-gradient-to-r from-blue-500 to-purple-400 bg-clip-text text-5xl leading-normal font-extrabold text-transparent">
+          <h1 className="text-5xl leading-normal font-extrabold text-white">
             Driving Scalable Experimentation at Atlassian
           </h1>
           <p className="mx-auto max-w-2xl text-xl text-gray-400">
@@ -85,7 +86,7 @@ export default function StatsigCaseStudy() {
           custom={0.05}
           variants={fadeInUp}
         >
-          <h2 className="mb-6 text-center text-2xl font-bold text-white">🎯 Background & Challenges</h2>
+          <h2 className="mb-6 text-center text-2xl font-bold text-white">Background & Challenges</h2>
 
           <div className="mx-auto max-w-3xl space-y-6 text-center text-gray-400">
             <p>
@@ -115,7 +116,7 @@ export default function StatsigCaseStudy() {
           custom={0.1}
           variants={fadeInUp}
         >
-          <h2 className="mb-4 text-center text-2xl font-bold text-white">🎯 Project Goals</h2>
+          <h2 className="mb-4 text-center text-2xl font-bold text-white">Project Goals</h2>
           <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
             <GoalCard
               icon={<FaCubes />}
@@ -152,7 +153,7 @@ export default function StatsigCaseStudy() {
 
         {/*  Moving to Statsig */}
         <motion.div className="bg-base-100 mt-12 text-gray-800 dark:bg-black dark:text-gray-100">
-          <h2 className="mb-6 text-center text-2xl font-bold text-white">🚚 The Move to Statsig</h2>
+          <h2 className="mb-6 text-center text-2xl font-bold text-white">The Move to Statsig</h2>
           <p className="text-center text-sm text-gray-400">
             To meet our goals around experimentation, we adopted Statsig—giving us a fast, reliable way to launch
             experiments with confidence.
@@ -163,7 +164,7 @@ export default function StatsigCaseStudy() {
 
         {/*  How It Works */}
         <motion.div className="bg-base-100 mt-12 text-gray-800 dark:bg-black dark:text-gray-100">
-          <h2 className="mb-6 text-center text-2xl font-bold text-white">⚙️ How It Works</h2>
+          <h2 className="mb-6 text-center text-2xl font-bold text-white">How It Works</h2>
           <p className="text-center text-sm text-gray-400">
             Running an experiment using statsig involves the following steps.
           </p>
@@ -197,11 +198,11 @@ export default function StatsigCaseStudy() {
           viewport={{ once: true }}
           variants={fadeInUp}
         >
-          <h2 className="mb-6 text-center text-2xl font-bold text-white">⚙️ Implementation</h2>
+          <h2 className="mb-6 text-center text-2xl font-bold text-white">Implementation</h2>
           <div className="mx-auto max-w-5xl space-y-10">
             {/* Statsig Node.js Wrapper */}
             <motion.div className="card bg-base-200 rounded-2xl p-8 shadow-lg" custom={0.2} variants={fadeInUp}>
-              <h3 className="mb-4 text-xl font-bold text-indigo-300">Statsig Node.js Wrapper</h3>
+              <h3 className="mb-4 text-xl font-bold text-white">Statsig Node.js Wrapper</h3>
               <p className="mb-4 text-gray-400">
                 While Statsig provides robust SDKs for multiple platforms, we chose to develop our own internal wrappers
                 to ensure consistent and scalable integration across ourS services.
@@ -320,36 +321,36 @@ export default function StatsigCaseStudy() {
           custom={0.2}
           variants={fadeInUp}
         >
-          <h2 className="mb-16 text-center text-3xl font-semibold text-white">📈 Outcomes</h2>
+          <h2 className="mb-16 text-center text-3xl font-semibold text-white">Outcomes</h2>
           <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                icon: "🧭",
+                icon: <LuCompass />,
                 title: "Data-Driven Culture",
                 desc: "Empowered product teams to make release decisions based on experiment outcomes rather than intuition",
               },
               {
-                icon: "📉",
+                icon: <LuTrendingDown />,
                 title: "Reduced Experiment Setup Errors",
                 desc: "Cut experiment configuration errors by 70%",
               },
               {
-                icon: "👥",
+                icon: <LuUsers />,
                 title: "Developer Adoption",
                 desc: "100+ teams actively using the platform for experimentation",
               },
               {
-                icon: "🔄",
+                icon: <LuRefreshCw />,
                 title: "Experiment Velocity",
                 desc: "3x increase in the number of concurrent experiments run",
               },
               {
-                icon: "⏱️",
+                icon: <LuTimer />,
                 title: "Time to Insight",
                 desc: "Faster time to insight, enabling teams to iterate faster and make more informed decisions",
               },
               {
-                icon: "📊",
+                icon: <LuChartColumn />,
                 title: "Simplified Experiment Setup",
                 desc: "Significantly reduced experiment setup time by 80%",
               },
@@ -363,9 +364,9 @@ export default function StatsigCaseStudy() {
                 viewport={{ once: true }}
                 className="group bg-base-200 flex flex-col items-center rounded-xl p-6 text-center shadow transition hover:shadow-lg"
               >
-                <div className="from-primary to-secondary relative mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br text-2xl text-white shadow-md group-hover:scale-110 group-hover:shadow-xl">
+                <div className="relative mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-indigo-500/15 text-3xl text-indigo-400 transition-transform group-hover:scale-110">
                   {icon}
-                  <div className="absolute inset-0 rounded-full border-4 border-white/20 transition-all duration-300 group-hover:border-white/40"></div>
+                  <div className="absolute inset-0 rounded-full border-2 border-indigo-400/30 transition-all duration-300 group-hover:border-indigo-400/60"></div>
                 </div>
                 <h3 className="mb-1 text-lg font-bold text-white">{title}</h3>
                 <p className="text-sm text-gray-400">{desc}</p>

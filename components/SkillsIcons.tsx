@@ -1,6 +1,17 @@
 "use client"
 
 import { motion } from "framer-motion"
+import {
+  LuFlaskConical,
+  LuLink,
+  LuLock,
+  LuPuzzle,
+  LuRefreshCw,
+  LuShip,
+  LuStethoscope,
+  LuTarget,
+  LuWrench,
+} from "react-icons/lu"
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -21,19 +32,19 @@ const hoverCard = {
 
 const developerEthos = [
   {
-    icon: "🧩",
+    icon: <LuPuzzle />,
     title: "Composability over Complexity",
     description:
       "I favor modular, composable design. Breaking problems down into reusable, testable parts to reduce complexity.",
   },
   {
-    icon: "🔐",
+    icon: <LuLock />,
     title: "Types That Tell the Truth",
     description:
       "I treat types as clear contracts. Type safe code boosts maintainability, developer experience, and early bug detection.",
   },
   {
-    icon: "🧪",
+    icon: <LuFlaskConical />,
     title: "Test with Purpose, Ship with Confidence",
     description:
       "I use TDD to enable fearless iteration, using tests to shape design and catch issues early, before they reach production.",
@@ -42,19 +53,19 @@ const developerEthos = [
 
 const operationsEthos = [
   {
-    icon: "🚢",
+    icon: <LuShip />,
     title: "Built to Ship, Built to Scale",
     description:
       "DevOps isn’t a separate phase — it’s embedded into everything I build. From CI/CD pipelines to IAC, I automate the full delivery lifecycle — deployment, testing, monitoring, and analytics — to enable rapid, resilient, and fault-tolerant software delivery.",
   },
   {
-    icon: "🛠️",
+    icon: <LuWrench />,
     title: "Built to Last, Built to Adapt",
     description:
       "I design cloud systems that are built to scale, stay reliable under pressure, stay secure by design, and optimize performance and cost — all guided by the AWS Well-Architected Framework.",
   },
   {
-    icon: "🩺",
+    icon: <LuStethoscope />,
     title: "DevOps as a Diagnostic Lens",
     description:
       "I use DevOps as more than automation — it's a lens for understanding systems end-to-end. With observability, logging, and continuous feedback loops, I get to the root cause of issues fast and build solutions that last.",
@@ -63,19 +74,19 @@ const operationsEthos = [
 
 const deliveryEthos = [
   {
-    icon: "🎯",
+    icon: <LuTarget />,
     title: "Idea to Impact",
     description:
       "I guide features from discovery to delivery, focusing on solving the right problems, not just shipping code. I lead features with a focus on delivering measurable business and user outcomes — not just checking off tasks.",
   },
   {
-    icon: "🔄",
+    icon: <LuRefreshCw />,
     title: "Feedback-Driven Development",
     description:
       "I build iteratively — testing assumptions early, learning fast, and refining features based on real feedback, not guesswork.",
   },
   {
-    icon: "⛓️",
+    icon: <LuLink />,
     title: "No Broken Links",
     description:
       "I see delivery as a full-stack responsibility — from database migrations to UI polish — ensuring nothing gets dropped between handoffs.",
@@ -115,7 +126,7 @@ const EthosSection = ({ ethos, title }: { ethos: typeof developerEthos; title: s
             >
               <div className="card-body items-center text-center">
                 <motion.div
-                  className="bg-base-200 mb-4 flex h-24 w-24 items-center justify-center rounded-full text-4xl"
+                  className="bg-base-200 mb-4 flex h-24 w-24 items-center justify-center rounded-full text-4xl text-indigo-400"
                   whileHover={{ rotate: 8 }}
                   transition={{ type: "spring", stiffness: 200 }}
                 >

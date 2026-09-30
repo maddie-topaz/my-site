@@ -9,7 +9,7 @@ export const Hero = () => {
         </div>
         <div className="w-full text-center lg:w-1/2 lg:text-left">
           <h1 className="mb-6 text-5xl leading-tight font-bold md:text-6xl">
-            <span className="text-primary">Hi</span> 👋 I'm Maddie
+            <span className="text-primary">Hi</span>, I'm Maddie
           </h1>
           <p className="text-primary-content animate-fade-in-up mb-8 text-xl font-medium opacity-0 md:text-2xl">
             Full-stack engineer building software from interface to infrastructure.

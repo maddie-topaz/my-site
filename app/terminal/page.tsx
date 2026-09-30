@@ -94,12 +94,12 @@ export default function TerminalHero() {
 
   const fullText = "> yarn maddie-dev --launch"
   const introLines = [
-    "📦 Installing portfolio dependencies...",
-    "⚙️ Initializing dev environment...",
-    "🔍 Fetching project highlights...",
-    "✨ Deploying to DOM...",
-    "✅ Site successfully launched! Welcome to Maddie's Portfolio!",
-    "💡Tip: type help to see a list of available commands.",
+    "Installing portfolio dependencies...",
+    "Initializing dev environment...",
+    "Fetching project highlights...",
+    "Deploying to DOM...",
+    "Site successfully launched! Welcome to Maddie's Portfolio!",
+    "Tip: type help to see a list of available commands.",
   ]
 
   useEffect(() => {

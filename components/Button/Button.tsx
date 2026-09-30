@@ -10,15 +10,15 @@ const button = cva(
     "rounded-xl",
     "text-center",
     "border",
-    "border-blue-400",
+    "border-indigo-500",
     "transition-colors",
     "delay-50",
   ],
   {
     variants: {
       intent: {
-        primary: ["bg-blue-400", "text-white", "hover:enabled:bg-blue-700"],
-        secondary: ["bg-transparent", "text-blue-400", "hover:enabled:bg-blue-400", "hover:enabled:text-white"],
+        primary: ["bg-indigo-500", "text-white", "hover:enabled:bg-indigo-600"],
+        secondary: ["bg-transparent", "text-indigo-400", "hover:enabled:bg-indigo-500", "hover:enabled:text-white"],
       },
       size: {
         sm: ["min-w-20", "h-full", "min-h-10", "text-sm", "py-1.5", "px-4"],
