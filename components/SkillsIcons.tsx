@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { useState } from "react"
 import {
   LuFlaskConical,
   LuLink,
@@ -20,14 +21,6 @@ const fadeInUp = {
     y: 0,
     transition: { delay, duration: 0.6, ease: "easeOut" },
   }),
-}
-
-const hoverCard = {
-  hover: {
-    scale: 1.03,
-    rotate: 0.2,
-    transition: { type: "spring", stiffness: 300 },
-  },
 }
 
 const developerEthos = [
@@ -93,62 +86,85 @@ const deliveryEthos = [
   },
 ]
 
-const EthosSection = ({ ethos, title }: { ethos: typeof developerEthos; title: string }) => {
-  return (
-    <section className="bg-base-100 py-16">
-      <div className="container mx-auto px-4">
-        <motion.h2
-          className="mb-12 text-center text-3xl font-bold"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-        >
-          {title}
-        </motion.h2>
-        <motion.div
-          className="flex flex-wrap justify-center gap-8"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-        >
-          {ethos.map((skill, index) => (
-            <motion.div
-              key={index}
-              className="card bg-base-200 w-96 cursor-pointer shadow-xl"
-              initial="hidden"
-              whileInView="visible"
-              whileHover="hover"
-              viewport={{ once: true }}
-              custom={index * 0.1}
-              variants={{ ...fadeInUp, ...hoverCard }}
-            >
-              <div className="card-body items-center text-center">
-                <motion.div
-                  className="bg-base-200 mb-4 flex h-24 w-24 items-center justify-center rounded-full text-4xl text-indigo-400"
-                  whileHover={{ rotate: 8 }}
-                  transition={{ type: "spring", stiffness: 200 }}
-                >
-                  {skill.icon}
-                </motion.div>
-                <h3 className="text-xl font-semibold text-white">{skill.title}</h3>
-                <p className="mb-4 text-base text-gray-400">{skill.description}</p>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
-    </section>
-  )
+const hoverCard = {
+  hover: {
+    scale: 1.03,
+    rotate: 0.2,
+    transition: { type: "spring", stiffness: 300 },
+  },
 }
 
+const ethosTabs = [
+  { id: "developer", label: "Developer", ethos: developerEthos },
+  { id: "operations", label: "Operations", ethos: operationsEthos },
+  { id: "delivery", label: "Delivery", ethos: deliveryEthos },
+]
+
 export const SkillsIcons = () => {
+  const [activeId, setActiveId] = useState(ethosTabs[0].id)
+  const active = ethosTabs.find((tab) => tab.id === activeId) ?? ethosTabs[0]
+
   return (
     <div className="bg-black">
-      <EthosSection ethos={developerEthos} title="Developer Ethos" />
-      <EthosSection ethos={operationsEthos} title="Operations Ethos" />
-      <EthosSection ethos={deliveryEthos} title="Delivery Ethos" />
+      <section className="bg-base-100 py-16">
+        <div className="container mx-auto px-4">
+          <motion.h2
+            className="mb-8 text-center text-3xl font-bold"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+          >
+            Ethos
+          </motion.h2>
+          <div role="tablist" className="tabs tabs-border mb-8 justify-center">
+            {ethosTabs.map(({ id, label }) => (
+              <button
+                key={id}
+                role="tab"
+                id={`ethos-tab-${id}`}
+                aria-selected={id === activeId}
+                aria-controls="ethos-panel"
+                className={`tab text-base ${id === activeId ? "tab-active font-semibold text-white" : "text-gray-400"}`}
+                onClick={() => setActiveId(id)}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+          <div
+            key={active.id}
+            id="ethos-panel"
+            role="tabpanel"
+            aria-labelledby={`ethos-tab-${active.id}`}
+            className="mx-auto grid max-w-6xl gap-6 md:grid-cols-3"
+          >
+            {active.ethos.map(({ icon, title, description }, index) => (
+              <motion.div
+                key={title}
+                className="card bg-base-200 cursor-pointer shadow-md"
+                initial="hidden"
+                animate="visible"
+                whileHover="hover"
+                custom={index * 0.1}
+                variants={{ ...fadeInUp, ...hoverCard }}
+              >
+                <div className="card-body items-center gap-2 p-6 text-center">
+                  <motion.div
+                    className="bg-base-300 mb-2 flex h-16 w-16 items-center justify-center rounded-full text-3xl text-indigo-400"
+                    whileHover={{ rotate: 8 }}
+                    transition={{ type: "spring", stiffness: 200 }}
+                  >
+                    {icon}
+                  </motion.div>
+                  <h3 className="text-lg leading-snug font-semibold text-white">{title}</h3>
+                  <p className="text-sm text-gray-400">{description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   )
 }
