@@ -28,19 +28,19 @@ const developerEthos = [
     icon: <LuPuzzle />,
     title: "Composability over Complexity",
     description:
-      "I favor modular, composable design. Breaking problems down into reusable, testable parts to reduce complexity.",
+      "I favour modular, composable design, breaking problems into reusable, testable parts to reduce complexity.",
   },
   {
     icon: <LuLock />,
     title: "Types That Tell the Truth",
     description:
-      "I treat types as clear contracts. Type safe code boosts maintainability, developer experience, and early bug detection.",
+      "I treat types as clear contracts that improve maintainability, developer experience, and early bug detection.",
   },
   {
     icon: <LuFlaskConical />,
     title: "Test with Purpose, Ship with Confidence",
     description:
-      "I use TDD to enable fearless iteration, using tests to shape design and catch issues early, before they reach production.",
+      "I use TDD to shape design, support confident iteration, and catch issues before production..",
   },
 ]
 
@@ -49,7 +49,7 @@ const operationsEthos = [
     icon: <LuShip />,
     title: "Built to Ship, Built to Scale",
     description:
-      "DevOps isn’t a separate phase. It’s embedded into everything I build. From CI/CD pipelines to IAC, I automate the full delivery lifecycle (deployment, testing, monitoring, and analytics) to enable rapid, resilient, and fault-tolerant software delivery.",
+      "I build DevOps into development, using CI/CD and infrastructure as code to automate testing, deployment, and monitoring for reliable delivery.",
   },
   {
     icon: <LuWrench />,
@@ -61,7 +61,7 @@ const operationsEthos = [
     icon: <LuStethoscope />,
     title: "DevOps as a Diagnostic Lens",
     description:
-      "I use DevOps as more than automation. It's a lens for understanding systems end-to-end. With observability, logging, and continuous feedback loops, I get to the root cause of issues fast and build solutions that last.",
+      "I use observability, logging, and feedback from production to understand systems end to end and get to the root cause of problems.",
   },
 ]
 
@@ -76,13 +76,13 @@ const deliveryEthos = [
     icon: <LuRefreshCw />,
     title: "Feedback-Driven Development",
     description:
-      "I build iteratively: testing assumptions early, learning fast, and refining features based on real feedback, not guesswork.",
+      "I test assumptions early and refine features iteratively based on real feedback.",
   },
   {
     icon: <LuLink />,
     title: "No Broken Links",
     description:
-      "I see delivery as a full-stack responsibility (from database migrations to UI polish), ensuring nothing gets dropped between handoffs.",
+      "I treat delivery as a full-stack responsibility, from database migrations to UI polish, ensuring nothing is lost between handoffs.",
   },
 ]
 
