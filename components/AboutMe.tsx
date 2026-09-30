@@ -77,13 +77,12 @@ export const AboutMe = () => {
               custom={0.0}
               variants={fadeInUp}
             >
-              I'm Maddie, a software engineer with experience across full stack development, cloud infrastructure, and real time graphics engines.
-
-Programming was something I wanted to do long before I thought it was a realistic career. I had somehow decided software engineering was reserved for mathematical prodigies, so I did the sensible thing and enrolled in business administration instead.
-
-This did not make me any less interested in programming.
-
-Eventually, a lecturer suggested I stop looking over at the programming coursework and actually enrol in it. So I did.
+              I'm Maddie, a software engineer with experience across full stack development, cloud infrastructure, and
+              real time graphics engines. Programming was something I wanted to do long before I thought it was a
+              realistic career. I had somehow decided software engineering was reserved for mathematical prodigies, so I
+              did the sensible thing and enrolled in business administration instead. This did not make me any less
+              interested in programming. Eventually, a lecturer suggested I stop looking over at the programming
+              coursework and actually enrol in it. So I did.
             </motion.p>
 
             <motion.h3 className="mt-6 mb-2 text-lg font-semibold text-white">Engineering at Scale</motion.h3>
@@ -95,13 +94,10 @@ Eventually, a lecturer suggested I stop looking over at the programming coursewo
               custom={0.1}
               variants={fadeInUp}
             >
-              Since then, I’ve worked across the stack from designing{" "}
-              <span className="font-medium text-blue-400">OpenGL</span> rendering engines to building experimentation
-              platforms and disaster recovery systems at <span className="font-medium text-blue-400">Atlassian</span>.
-              I’ve led end to end feature development for high-traffic products like{" "}
-              <span className="font-medium text-blue-400">Chumba Casino</span> and built systems to safeguard{" "}
-              <span className="font-medium text-blue-400">petabytes</span> of user generated content in{" "}
-              <span className="font-medium text-blue-400">AWS</span>.
+              Since then, I’ve worked across the stack from designing OpenGL rendering engines to building
+              experimentation platforms and disaster recovery systems at Atlassian. I’ve led end to end feature
+              development for high-traffic products like Chumba Casino and built systems to safeguard petabytes of user
+              generated content in AWS.
             </motion.p>
 
             <motion.h3 className="mt-6 mb-2 text-lg font-semibold text-white">How I Build</motion.h3>
@@ -113,16 +109,10 @@ Eventually, a lecturer suggested I stop looking over at the programming coursewo
               custom={0.2}
               variants={fadeInUp}
             >
-              Today, I build with a <span className="font-medium text-blue-400">platform mindset</span> and a{" "}
-              <span className="font-medium text-blue-400">DevOps heart</span> focused on clarity, resilience, and
-              full stack responsibility from infrastructure to interface. My core stack includes{" "}
-              <span className="font-medium text-blue-400">TypeScript</span>,{" "}
-              <span className="font-medium text-blue-400">Node.js</span>,{" "}
-              <span className="font-medium text-blue-400">React</span>,{" "}
-              <span className="font-medium text-blue-400">PostgreSQL</span>,{" "}
-              <span className="font-medium text-blue-400">AWS</span>,{" "}
-              <span className="font-medium text-blue-400">Docker</span>, and{" "}
-              <span className="font-medium text-blue-400">Pulumi</span>.
+              Today, I build with a <span className="font-medium text-indigo-400">platform mindset</span> and a{" "}
+              <span className="font-medium text-indigo-400">DevOps heart</span> focused on clarity, resilience, and full
+              stack responsibility from infrastructure to interface. My core stack includes TypeScript, Node.js, React,{" "}
+              PostgreSQL, AWS, Docker, and Pulumi.
             </motion.p>
 
             <motion.p

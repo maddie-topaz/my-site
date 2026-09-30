@@ -100,7 +100,7 @@ export default function StatsigCaseStudy() {
               Teams lacked confidence, and iteration was often driven by instinct instead of data.
             </p>
             <p className="font-medium text-white">
-              This project embraced a <span className="font-semibold text-indigo-400">cloud-native mindset</span> to
+              This project embraced a <span className="font-medium text-indigo-400">cloud-native mindset</span> to
               introduce standardized, developer-friendly tools—enabling fast, safe, and scalable experimentation.
             </p>
           </div>

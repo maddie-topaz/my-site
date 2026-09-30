@@ -69,9 +69,9 @@ export const ExperienceSection = () => {
       description: (
         <div>
           <p className="text-gray-400">
-            At FTP Solutions, I work on Faarm, a real time monitoring platform for all things agriculture.
-            Faarm combines third party data ingestion from monitoring devices into a single pane of glass,
-            giving farmers a clear view of their operations, even in the most remote environments.
+            At FTP Solutions, I work on Faarm, a real time monitoring platform for all things agriculture. Faarm
+            combines third party data ingestion from monitoring devices into a single pane of glass, giving farmers a
+            clear view of their operations, even in the most remote environments.
           </p>
         </div>
       ),
@@ -101,11 +101,9 @@ export const ExperienceSection = () => {
             travel and reconnect with life.
           </p>
           <p>
-            I visited Nepal, hiking to <span className="font-bold text-gray-300">Everest Base Camp</span>, a
-            high altitude journey through remote Himalayan villages and suspension bridges. Later,
-            I continued to Europe and walked the{" "}
-            <span className="font-bold text-gray-300">French Camino de Santiago</span>, a 780 km pilgrimage from
-            Saint-Jean-Pied-de-Port in France to Santiago de Compostela in Spain.
+            I visited Nepal, hiking to Everest Base Camp, a high altitude journey through remote Himalayan villages and
+            suspension bridges. Later, I continued to Europe and walked the French Camino de Santiago, a 780 km
+            pilgrimage from Saint-Jean-Pied-de-Port in France to Santiago de Compostela in Spain.
           </p>
           <p>
             The break gave me time to reflect and recharge. I came back with a sharper mindset and renewed energy for
@@ -131,22 +129,21 @@ export const ExperienceSection = () => {
           <div>
             <h3 className="text-md font-bold text-gray-300">Measurement & Experimentation Platform (MEP)</h3>
             <p className="text-gray-400">
-              I helped build scalable <span className="font-medium text-blue-400">experimentation tooling</span> that
-              enabled product teams to make <span className="font-medium text-blue-400">data driven decisions</span>{" "}
-              across Atlassian. Integrating with <span className="font-medium text-blue-400">Statsig</span> and internal
-              systems like Switcheroo, we streamlined the rollout, tracking, and analysis of feature flags and
-              experiments across frontend and backend services.
+              I helped build scalable experimentation tooling that enabled product teams to make{" "}
+              <span className="font-medium text-indigo-400">data driven decisions</span> across Atlassian. Integrating
+              with Statsig and internal systems like Switcheroo, we streamlined the rollout, tracking, and analysis of
+              feature flags and experiments across frontend and backend services.
             </p>
           </div>
 
           <div>
             <h2 className="text-md font-bold text-gray-300">Atlassian Disaster Recovery (ADR)</h2>
             <p className="text-gray-400">
-              I led automation efforts for disaster recovery across AWS, securing over{" "}
-              <span className="font-medium text-blue-400">20 petabytes</span> of media data and more than{" "}
-              <span className="font-medium text-blue-400">20 billion objects</span> in Amazon S3. I developed automated
-              systems using AWS Lambda to enforce recovery settings such as point in time recovery and continuous
-              backups for services like DynamoDB and RDS, alerting on and remediating misconfigurations in real time.
+              I led automation efforts for disaster recovery across AWS, securing over 20 petabytes of media data and
+              more than <span className="font-medium text-indigo-400">20 billion objects</span> in Amazon S3. I
+              developed automated systems using AWS Lambda to enforce recovery settings such as point in time recovery
+              and continuous backups for services like DynamoDB and RDS, alerting on and remediating misconfigurations
+              in real time.
             </p>
           </div>
         </div>
@@ -175,17 +172,14 @@ export const ExperienceSection = () => {
       description: (
         <div>
           <p className="text-gray-400">
-            At VGW, I led end to end feature development for{" "}
-            <span className="font-medium text-blue-400">Chumba Casino</span>, a high traffic social gaming platform
+            At VGW, I led end to end feature development for Chumba Casino, a high traffic social gaming platform
             generating millions in daily revenue. My role required close collaboration with stakeholders and a strong
-            understanding of domain driven design and{" "}
-            <span className="font-medium text-blue-400">microservice architecture</span>, supporting the company’s shift
-            away from a monolithic system.
+            understanding of domain driven design and microservice architecture, supporting the company’s shift away
+            from a monolithic system.
           </p>
           <p className="text-gray-400">
-            I implemented key features such as <span className="font-medium text-blue-400">phone verification</span> to
-            improve platform security, and an <span className="font-medium text-blue-400">in product messaging</span>{" "}
-            system that empowered the marketing team to deliver targeted user notifications.
+            I implemented key features such as phone verification to improve platform security, and an in product
+            messaging system that empowered the marketing team to deliver targeted user notifications.
           </p>
         </div>
       ),
@@ -226,12 +220,11 @@ export const ExperienceSection = () => {
         <div>
           <p className="text-gray-400">
             At Hexagon Mining, I contributed to the{" "}
-            <span className="font-medium text-blue-400">in house OpenGL rendering engine</span> powering the xViewer in
-            MinePlan 3D, a flagship geological modeling tool. I implemented multiple viewers to render different
+            <span className="font-medium text-indigo-400">in house OpenGL rendering engine</span> powering the xViewer
+            in MinePlan 3D, a flagship geological modeling tool. I implemented multiple viewers to render different
             geometry perspectives simultaneously, a feature that significantly improved usability for geologists and
-            engineers. Alongside this, I collaborated with senior developers to{" "}
-            <span className="font-medium text-blue-400">optimize rendering performance</span> and enhance the overall
-            user experience.
+            engineers. Alongside this, I collaborated with senior developers to optimize rendering performance and
+            enhance the overall user experience.
           </p>
         </div>
       ),
