@@ -40,7 +40,7 @@ const developerEthos = [
     icon: <LuFlaskConical />,
     title: "Test with Purpose, Ship with Confidence",
     description:
-      "I use TDD to shape design, support confident iteration, and catch issues before production..",
+      "I use TDD to shape design, support confident iteration, and catch issues before production.",
   },
 ]
 
