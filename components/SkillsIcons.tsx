@@ -94,15 +94,19 @@ const hoverCard = {
   },
 }
 
-const ethosTabs = [
-  { id: "developer", label: "Developer", ethos: developerEthos },
-  { id: "operations", label: "Operations", ethos: operationsEthos },
-  { id: "delivery", label: "Delivery", ethos: deliveryEthos },
-]
+const ethosById = {
+  developer: { label: "Developer", ethos: developerEthos },
+  operations: { label: "Operations", ethos: operationsEthos },
+  delivery: { label: "Delivery", ethos: deliveryEthos },
+}
+
+type EthosId = keyof typeof ethosById
+
+const ethosIds = Object.keys(ethosById) as EthosId[]
 
 export const SkillsIcons = () => {
-  const [activeId, setActiveId] = useState(ethosTabs[0].id)
-  const active = ethosTabs.find((tab) => tab.id === activeId) ?? ethosTabs[0]
+  const [activeId, setActiveId] = useState<EthosId>("developer")
+  const active = ethosById[activeId]
 
   return (
     <div className="bg-black">
@@ -118,7 +122,7 @@ export const SkillsIcons = () => {
             Ethos
           </motion.h2>
           <div role="tablist" className="tabs tabs-border mb-8 justify-center">
-            {ethosTabs.map(({ id, label }) => (
+            {ethosIds.map((id) => (
               <button
                 key={id}
                 role="tab"
@@ -128,15 +132,15 @@ export const SkillsIcons = () => {
                 className={`tab text-base ${id === activeId ? "tab-active font-semibold text-white" : "text-gray-400"}`}
                 onClick={() => setActiveId(id)}
               >
-                {label}
+                {ethosById[id].label}
               </button>
             ))}
           </div>
           <div
-            key={active.id}
+            key={activeId}
             id="ethos-panel"
             role="tabpanel"
-            aria-labelledby={`ethos-tab-${active.id}`}
+            aria-labelledby={`ethos-tab-${activeId}`}
             className="mx-auto grid max-w-6xl gap-6 md:grid-cols-3"
           >
             {active.ethos.map(({ icon, title, description }, index) => (
