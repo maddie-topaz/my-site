@@ -12,8 +12,7 @@ export const Hero = () => {
             <span className="text-primary">Hi</span> 👋 I'm Maddie
           </h1>
           <p className="text-primary-content animate-fade-in-up mb-8 text-xl font-medium opacity-0 md:text-2xl">
-            Full-stack engineer with a <span className="font-bold">platform mindset</span> and a{" "}
-            <span className="font-bold">DevOps heart</span>.
+            Full-stack engineer building software from interface to infrastructure.
           </p>
           <div className="flex justify-center gap-4 lg:justify-start">
             <button
